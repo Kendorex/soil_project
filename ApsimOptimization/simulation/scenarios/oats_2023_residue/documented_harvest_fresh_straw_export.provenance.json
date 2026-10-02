@@ -1,0 +1,37 @@
+{
+  "status": "explicit_historical_management_scenario",
+  "created_utc": "2026-09-29T12:59:47.152741+00:00",
+  "recommendation_status": "uncertainty_scenario_not_confirmed_management",
+  "source_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/calibrated/full_field2019_2023_calibrated_v2.apsimx",
+  "source_model_sha256": "74aaee9dae2df7c9a72d725a550b0695ac7b62b9fa0ea640dab18b9736cc6f65",
+  "output_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/scenarios/oats_2023_residue/documented_harvest_fresh_straw_export.apsimx",
+  "output_model_sha256": "9eae945811fec3019c5575c9dc07a869447f356328e5e2029af8e4e6921776f7",
+  "scenario": "documented_harvest_fresh_straw_export",
+  "fields": [
+    "Field2",
+    "Field7"
+  ],
+  "wheat_harvest_year": 2022,
+  "documented_harvest_date": "2022-08-17",
+  "lifecycle_changes": [
+    {
+      "field": "Field2",
+      "years_deferred_to_rotation_manager": [
+        2022
+      ],
+      "manager": "Harvest"
+    },
+    {
+      "field": "Field7",
+      "years_deferred_to_rotation_manager": [
+        2022
+      ],
+      "manager": "Harvest"
+    }
+  ],
+  "fresh_harvest_residue_export_changes": [
+    "/Simulations/Wheat/Field2/Sow using a variable rule",
+    "/Simulations/Wheat/Field7/Sow using a variable rule"
+  ],
+  "interpretation": "documented wheat harvest with export of only the new residue increment"
+}

@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-09-29T12:59:47.311247+00:00",
+  "base_config": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/configs/multifield_2023_n_diagnostic.yaml",
+  "base_config_sha256": "56f636dcf965edf5f6e19bfed42a722dd434d23af2cff6de79c4fd76eea7065e",
+  "source_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/calibrated/full_field2019_2023_calibrated_v2.apsimx",
+  "source_model_sha256": "74aaee9dae2df7c9a72d725a550b0695ac7b62b9fa0ea640dab18b9736cc6f65",
+  "generated_config": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/configs/multifield_2023_n_residue_ensemble.yaml",
+  "generated_config_sha256": "019c41021d6f121cb5c1310714a4226ba7c8ebe00d1a44ff96149c301986ce95",
+  "variants": [
+    {
+      "name": "documented_harvest_residue_retained",
+      "model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/scenarios/oats_2023_residue/documented_harvest_residue_retained.apsimx",
+      "model_provenance": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/scenarios/oats_2023_residue/documented_harvest_residue_retained.provenance.json",
+      "model_sha256": "417005d60fb853b1d689704b4bb11dc6519045355146389849ad48030880da20",
+      "interpretation": "documented wheat harvest with all generated residue retained"
+    },
+    {
+      "name": "documented_harvest_fresh_straw_export",
+      "model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/scenarios/oats_2023_residue/documented_harvest_fresh_straw_export.apsimx",
+      "model_provenance": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/scenarios/oats_2023_residue/documented_harvest_fresh_straw_export.provenance.json",
+      "model_sha256": "9eae945811fec3019c5575c9dc07a869447f356328e5e2029af8e4e6921776f7",
+      "interpretation": "documented wheat harvest with export of only the new residue increment"
+    }
+  ],
+  "aggregation": {
+    "yield": "worst_case",
+    "profit": "worst_case",
+    "soil": "worst_case"
+  },
+  "base_model_changed": false
+}

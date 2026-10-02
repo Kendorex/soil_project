@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# Conda
+.conda/
+*.conda
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+run_output/
+*.log
+*.csv
+!pinn_sw_history.csv
+
+# Кэш pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Модели (тяжелые файлы)
+*.pt
+*.ckpt
+*.onnx
+*.h5
+*.pkl
+*.joblib
+
+# Базы данных APSIM (создаются при запуске)
+run_output/*.db
+run_output/*.db-shm
+run_output/*.db-wal
+*.db-shm
+*.db-wal
+
+# Временные патченные .apsimx
+run_output/*_patched.apsimx
+
+# Бэкапы
+*.bak
+*.backup
+*.orig
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Прочее
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

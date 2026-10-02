@@ -1,0 +1,208 @@
+# Диагностический сценарий. Числа ниже нужны для проверки поведения модели и
+# NSGA-II; они не являются агрономическими рекомендациями или рабочим заданием.
+schema_version: 1
+scenario:
+  kind: diagnostic
+  name: historical_2023_n_only
+  recommendation_status: prohibited
+  sources:
+    - data/observations/historical_2022_2023.json
+    - data/economics/fertilizer_prices.csv
+    - data/economics/economic_constants.csv
+    - outputs/multifield/DIAGNOSTIC_2023_N/baseline_6bb330dd7223/historical_comparison.json
+  limitations:
+    - P and K are absent because the APSIMX model has no responsive P/K pools.
+    - Dose brackets reproduce the model dose and the N30/N60 historical labels.
+    - Soil lower bounds reproduce the simulated 2023 baseline, not an agronomic norm.
+    - Soil deviations are explored as objective 3 and are not hard constraints in this diagnostic.
+    - Economics reuse old project proxies and must not support a farm decision.
+model: ../simulation/calibrated/full_field2019_2023_calibrated_v2.apsimx
+model_provenance: ../simulation/calibrated/full_field2019_2023_calibrated_v2.provenance.json
+weather: ../data/weather/weather_2019_2023_units_corrected.met
+weather_provenance: ../data/weather/weather_2019_2023_units_corrected.provenance.json
+environment_scenarios:
+  - name: calibrated_baseline
+scenario_aggregation: {yield: mean, profit: mean, soil: worst_case}
+rotation_parameter_reference: null
+output_dir: ../outputs/multifield/DIAGNOSTIC_2023_N
+runtime:
+  command:
+    - /home/user/ApsimX/bin/Release/net8.0/Models
+  timeout_seconds: 600
+year: 2023
+decision_period:
+  start: '2022-09-01'
+  end: '2023-12-31'
+planning_mode: historical_fixed_rotation
+# В двух переходах фактическая дата укоса неизвестна. Для диагностики биомасса
+# убирается непосредственно перед известным посевом следующей озимой культуры.
+rotation_transition_policy: harvest_on_winter_sowing_proxy
+historical_observations: ../data/observations/historical_2022_2023.json
+# Подтверждено только как воспроизводимый диагностический сценарий.
+domain_values_confirmed: true
+currency: RUB_DIAGNOSTIC_PROXY
+yield_aggregation: total_harvest_dry_matter_kg
+soil_constraint_mode: objective_only
+nsga2:
+  population: 8
+  generations: 2
+  seed: 42
+fertilizer_options:
+  NO3N_old_price_proxy:
+    price_per_kg_product: 323.53
+    components:
+      - apsim_type: NO3N
+        mass_fraction: 1.0
+        apsim_amount_per_kg_product: 1.0
+  NH4NO3N_old_price_proxy:
+    price_per_kg_product: 69.77
+    components:
+      - apsim_type: NH4NO3N
+        mass_fraction: 1.0
+        apsim_amount_per_kg_product: 1.0
+dose_ratios: []
+reference_decision:
+  Field1: {option: NO3N_old_price_proxy, dose_kg_product_ha: 0.0}
+  Field2: {option: NO3N_old_price_proxy, dose_kg_product_ha: 30.0}
+  Field3: {option: NO3N_old_price_proxy, dose_kg_product_ha: 30.0}
+  Field4: {option: NO3N_old_price_proxy, dose_kg_product_ha: 0.0}
+  Field5: {option: NO3N_old_price_proxy, dose_kg_product_ha: 30.0}
+  Field6: {option: NO3N_old_price_proxy, dose_kg_product_ha: 0.0}
+  Field7: {option: NO3N_old_price_proxy, dose_kg_product_ha: 30.0}
+  Field8: {option: NO3N_old_price_proxy, dose_kg_product_ha: 30.0}
+  Field9: {option: NO3N_old_price_proxy, dose_kg_product_ha: 30.0}
+  Field10: {option: NO3N_old_price_proxy, dose_kg_product_ha: 0.0}
+crop_economics:
+  Wheat: &grain_proxy
+    price_per_kg: 14.3
+    marketable_kg_per_kg_dm: 1.0
+  Oats: *grain_proxy
+  RedClover: &unpriced_forage
+    price_per_kg: 0.0
+    marketable_kg_per_kg_dm: 1.0
+  PlantainForage: *unpriced_forage
+
+fields:
+  Field1:
+    area_ha: 0.2
+    objective_yield_components: [RedClover, PlantainForage]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 0.0, max: 0.0}
+    application_dates: ['2023-05-01']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 39.427308970467195, max: null, normalization_scale: 39.427308970467195, period: date, date: '2023-12-31'}
+  Field2:
+    area_ha: 0.2
+    objective_yield_components: [Oats]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy, NH4NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 30.0, max: 30.0}
+    application_dates: ['2023-05-04']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 13.394072047707567, max: null, normalization_scale: 13.394072047707567, period: date, date: '2023-12-31'}
+  Field3:
+    area_ha: 0.2
+    objective_yield_components: [Wheat]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy, NH4NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 30.0, max: 30.0}
+    application_dates: ['2023-05-03']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 27.3257739751136, max: null, normalization_scale: 27.3257739751136, period: date, date: '2023-12-31'}
+  Field4:
+    area_ha: 0.2
+    objective_yield_components: [RedClover, PlantainForage]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 0.0, max: 0.0}
+    application_dates: ['2023-05-01']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 19.047445784979807, max: null, normalization_scale: 19.047445784979807, period: date, date: '2023-12-31'}
+  Field5:
+    area_ha: 0.2
+    objective_yield_components: [Wheat]
+    # Wheat is the APSIM component used for the calibrated winter rye cultivar.
+    product_economics:
+      Wheat: *grain_proxy
+    fertilizer_options: [NO3N_old_price_proxy, NH4NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 30.0, max: 30.0}
+    application_dates: ['2022-09-05']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 61.31851693467619, max: null, normalization_scale: 61.31851693467619, period: date, date: '2023-12-31'}
+  Field6:
+    area_ha: 0.2
+    objective_yield_components: [RedClover, PlantainForage]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 0.0, max: 0.0}
+    application_dates: ['2023-05-01']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 16.722248567219914, max: null, normalization_scale: 16.722248567219914, period: date, date: '2023-12-31'}
+  Field7:
+    area_ha: 0.2
+    objective_yield_components: [Oats]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy, NH4NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 30.0, max: 60.0}
+    application_dates: ['2023-05-04']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 13.174881327699067, max: null, normalization_scale: 13.174881327699067, period: date, date: '2023-12-31'}
+  Field8:
+    area_ha: 0.2
+    objective_yield_components: [Wheat]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy, NH4NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 30.0, max: 60.0}
+    application_dates: ['2023-05-03']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 61.9868839085572, max: null, normalization_scale: 61.9868839085572, period: date, date: '2023-12-31'}
+  Field9:
+    area_ha: 0.2
+    objective_yield_components: [Wheat]
+    product_economics:
+      Wheat: *grain_proxy
+    fertilizer_options: [NO3N_old_price_proxy, NH4NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 30.0, max: 60.0}
+    application_dates: ['2022-09-05']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 48.357100382131705, max: null, normalization_scale: 48.357100382131705, period: date, date: '2023-12-31'}
+  Field10:
+    area_ha: 0.2
+    objective_yield_components: [RedClover, PlantainForage]
+    product_economics: null
+    fertilizer_options: [NO3N_old_price_proxy]
+    dose_kg_product_ha: {min: 0.0, max: 0.0}
+    application_dates: ['2023-05-01']
+    application_depth_mm: 0.0
+    application_cost_per_ha: 480.0
+    other_cost_per_ha: 23000.0
+    nutrients:
+      - {name: mineral_n_end, expression: 'sum([NO3].kgha) + sum([NH4].kgha)', unit: kg/ha, depth_description: full APSIM soil profile, min: 11.847839703232916, max: null, normalization_scale: 11.847839703232916, period: date, date: '2023-12-31'}

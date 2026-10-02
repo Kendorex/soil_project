@@ -1,0 +1,904 @@
+{
+  "status": "assembled_from_explicit_calibration_evidence",
+  "source_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/source/full_field2019_2023_calibrated_no_rye_user_20260908.apsimx",
+  "source_model_sha256": "e864d7ff2c72be87b1d26eb12505c07e043bd8bf4371f34c2f1ed0babc1d38a1",
+  "output_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/calibrated/full_field2019_2023_calibrated_v2.apsimx",
+  "output_model_sha256": "74aaee9dae2df7c9a72d725a550b0695ac7b62b9fa0ea640dab18b9736cc6f65",
+  "zlata_calibration_result": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/outputs/cultivar_calibration_zlata_final_evaluation/best_cultivar_parameters.json",
+  "zlata_calibration_result_sha256": "783302ea45d59deaf9a78b6456ef7acffb8c0519765a1c78582468f533e10818",
+  "rye_calibration_provenance": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/calibrated/full_field2019_2023_calibrated_with_rye.provenance.json",
+  "rye_calibration_provenance_sha256": "99a9f5dea54163fcbd8de2d5f66ed22bc0a7b6fedb456e5c43edd15329f083d5",
+  "irgina_reference_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/simulation/standart.apsimx",
+  "irgina_reference_model_sha256": "20799e083136c15159f3d5a61a0e2e3facdadc84ab278145847eb76c03759140",
+  "changes": [
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Zlata",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "5.5",
+      "new": "5.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Zlata",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "70",
+      "new": "75.0"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "6",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "120",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.2",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.MinLN",
+      "old": "4",
+      "new": "7.25"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.PpLN",
+      "old": "2.0",
+      "new": "0.9"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VrnLN",
+      "old": "10",
+      "new": "5.7"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.FLNparams.VxPLN",
+      "old": "0.0",
+      "new": "5.5"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].Phyllochron.BasePhyllochron.FixedValue",
+      "old": "80",
+      "new": "98"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].PhyllochronPpSensitivity.FixedValue",
+      "old": "0.3",
+      "new": "0.2"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatTemp",
+      "old": null,
+      "new": "5.8"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].CAMP.EnvData.VrnTreatDuration",
+      "old": null,
+      "new": "60"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergenceLongDayBase.FixedValue",
+      "old": null,
+      "new": "50"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke",
+      "command": "[Phenology].HeadEmergencePpSensitivity.FixedValue",
+      "old": "1.5",
+      "new": "2.8"
+    }
+  ],
+  "cultivars": {
+    "Zlata": {
+      "cultivar": "Zlata",
+      "node_count": 10,
+      "variant_count": 1,
+      "variants": [
+        {
+          "commands": {
+            "[Phenology].HeadEmergencePpSensitivity.FixedValue": "2.0",
+            "[Phenology].Phyllochron.BasePhyllochron.FixedValue": "75.0",
+            "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue": "0.8",
+            "[Phenology].PhyllochronPpSensitivity.FixedValue": "0.4",
+            "[Phenology].CAMP.FLNparams.MinLN": "5.0",
+            "[Phenology].CAMP.FLNparams.PpLN": "2.5",
+            "[Phenology].CAMP.FLNparams.VrnLN": "7",
+            "[Phenology].CAMP.FLNparams.VxPLN": "0.0",
+            "[Phenology].GrainFilling.Target.FixedValue": "250",
+            "[Phenology].GrainRipening.Target.FixedValue": "100"
+          },
+          "paths": [
+            "/Simulations/Wheat/Field1/Wheat/Zlata",
+            "/Simulations/Wheat/Field2/Wheat/Zlata",
+            "/Simulations/Wheat/Field3/Wheat/Zlata",
+            "/Simulations/Wheat/Field4/Wheat/Zlata",
+            "/Simulations/Wheat/Field5/Wheat/Zlata",
+            "/Simulations/Wheat/Field6/Wheat/Zlata",
+            "/Simulations/Wheat/Field7/Wheat/Zlata",
+            "/Simulations/Wheat/Field8/Wheat/Zlata",
+            "/Simulations/Wheat/Field9/Wheat/Zlata",
+            "/Simulations/Wheat/Field10/Wheat/Zlata"
+          ]
+        }
+      ]
+    },
+    "Irgina": {
+      "cultivar": "Irgina",
+      "node_count": 10,
+      "variant_count": 1,
+      "variants": [
+        {
+          "commands": {
+            "[Phenology].HeadEmergencePpSensitivity.FixedValue": "2.0",
+            "[Phenology].Phyllochron.BasePhyllochron.FixedValue": "50",
+            "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue": "0.8",
+            "[Phenology].PhyllochronPpSensitivity.FixedValue": "0.4",
+            "[Phenology].CAMP.FLNparams.MinLN": "5",
+            "[Phenology].CAMP.FLNparams.PpLN": "2.5",
+            "[Phenology].CAMP.FLNparams.VrnLN": "7",
+            "[Phenology].CAMP.FLNparams.VxPLN": "0.0",
+            "[Phenology].GrainFilling.Target.FixedValue": "225",
+            "[Phenology].GrainRipening.Target.FixedValue": "100"
+          },
+          "paths": [
+            "/Simulations/Wheat/Field1/Wheat/Irgina",
+            "/Simulations/Wheat/Field2/Wheat/Irgina",
+            "/Simulations/Wheat/Field3/Wheat/Irgina",
+            "/Simulations/Wheat/Field4/Wheat/Irgina",
+            "/Simulations/Wheat/Field5/Wheat/Irgina",
+            "/Simulations/Wheat/Field6/Wheat/Irgina",
+            "/Simulations/Wheat/Field7/Wheat/Irgina",
+            "/Simulations/Wheat/Field8/Wheat/Irgina",
+            "/Simulations/Wheat/Field9/Wheat/Irgina",
+            "/Simulations/Wheat/Field10/Wheat/Irgina"
+          ]
+        }
+      ]
+    },
+    "Winter_rye_smoke": {
+      "cultivar": "Winter_rye_smoke",
+      "node_count": 10,
+      "variant_count": 2,
+      "variants": [
+        {
+          "commands": {
+            "[Phenology].HeadEmergencePpSensitivity.FixedValue": "2.8",
+            "[Phenology].Phyllochron.BasePhyllochron.FixedValue": "98",
+            "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue": "0.85",
+            "[Phenology].PhyllochronPpSensitivity.FixedValue": "0.2",
+            "[Phenology].CAMP.FLNparams.MinLN": "7.25",
+            "[Phenology].CAMP.FLNparams.PpLN": "0.9",
+            "[Phenology].CAMP.FLNparams.VrnLN": "5.7",
+            "[Phenology].CAMP.FLNparams.VxPLN": "5.5",
+            "[Phenology].GrainFilling.Target.FixedValue": "280",
+            "[Phenology].GrainRipening.Target.FixedValue": "120",
+            "[Phenology].CAMP.EnvData.VrnTreatTemp": "5.8",
+            "[Phenology].CAMP.EnvData.VrnTreatDuration": "60",
+            "[Phenology].HeadEmergenceLongDayBase.FixedValue": "50"
+          },
+          "paths": [
+            "/Simulations/Wheat/Field1/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field3/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field4/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field5/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field6/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field7/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field8/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field9/Wheat/Winter_rye_smoke",
+            "/Simulations/Wheat/Field10/Wheat/Winter_rye_smoke"
+          ]
+        },
+        {
+          "commands": {
+            "[Phenology].HeadEmergencePpSensitivity.FixedValue": "2.8",
+            "[Phenology].Phyllochron.BasePhyllochron.FixedValue": "98",
+            "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue": "0.85",
+            "[Phenology].PhyllochronPpSensitivity.FixedValue": "0.2",
+            "[Phenology].CAMP.FLNparams.MinLN": "7.25",
+            "[Phenology].CAMP.FLNparams.PpLN": "0.9",
+            "[Phenology].CAMP.FLNparams.VrnLN": "5.7",
+            "[Phenology].CAMP.FLNparams.VxPLN": "5.5",
+            "[Phenology].GrainFilling.Target.FixedValue": "350",
+            "[Phenology].GrainRipening.Target.FixedValue": "150",
+            "[Phenology].CAMP.EnvData.VrnTreatTemp": "5.8",
+            "[Phenology].CAMP.EnvData.VrnTreatDuration": "60",
+            "[Phenology].HeadEmergenceLongDayBase.FixedValue": "50"
+          },
+          "paths": [
+            "/Simulations/Wheat/Field2/Wheat/Winter_rye_smoke"
+          ]
+        }
+      ]
+    },
+    "Yakov": {
+      "cultivar": "Yakov",
+      "node_count": 10,
+      "variant_count": 1,
+      "variants": [
+        {
+          "commands": {
+            "[Phenology].MinimumLeafNumber.FixedValue": "6.5",
+            "[Phenology].VrnSensitivity.FixedValue": "0",
+            "[Phenology].PpSensitivity.FixedValue": "3.5",
+            "[Phenology].EarlyReproductiveLongDayBase.FixedValue": "5.5",
+            "[Phenology].EarlyReproductivePpSensitivity.FixedValue": "0.5",
+            "[Structure].Phyllochron.BasePhyllochron.FixedValue": "85",
+            "[Leaf].CohortParameters.MaxArea.AreaLargestLeaves.FixedValue": "3500",
+            "[Leaf].CohortParameters.SenescenceDuration.Multiplier.FixedValue": "2.5",
+            "[Leaf].CohortParameters.GrowthDuration.AgeFactor.XYPairs.Y": "1,1,0.1",
+            "[Grain].MaximumPotentialGrainSize.FixedValue": "0.04",
+            "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue": "45",
+            "[Leaf].ExtinctionCoeff.FixedValue": "0.7"
+          },
+          "paths": [
+            "/Simulations/Wheat/Field1/Oats/Yakov",
+            "/Simulations/Wheat/Field2/Oats/Yakov",
+            "/Simulations/Wheat/Field3/Oats/Yakov",
+            "/Simulations/Wheat/Field4/Oats/Yakov",
+            "/Simulations/Wheat/Field5/Oats/Yakov",
+            "/Simulations/Wheat/Field6/Oats/Yakov",
+            "/Simulations/Wheat/Field7/Oats/Yakov",
+            "/Simulations/Wheat/Field8/Oats/Yakov",
+            "/Simulations/Wheat/Field9/Oats/Yakov",
+            "/Simulations/Wheat/Field10/Oats/Yakov"
+          ]
+        }
+      ]
+    }
+  },
+  "rye_variant_note": {
+    "before": 2,
+    "after": 2,
+    "explanation": "Accepted rye phenology commands are uniform. Existing grain-filling and grain-ripening differences are preserved because they were not part of the rye phenology calibration."
+  },
+  "original_user_model": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/more_calibration/full_field2019_2023_calibrated_no_rye.apsimx",
+  "original_user_model_sha256": "e864d7ff2c72be87b1d26eb12505c07e043bd8bf4371f34c2f1ed0babc1d38a1",
+  "weather_source": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/data/weather/weather_2019_2023_normalized.met",
+  "weather_source_sha256": "ddf6979bee020486ce6483e3d4b5e52f378a868c7012109f2eb2998cf8468a17",
+  "weather_corrected": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/data/weather/weather_2019_2023_units_corrected.met",
+  "weather_corrected_sha256": "b7a74f9978cdb312281bbdfd9d03d5827901ffef82b6cc753c26945cd26a5cef"
+}

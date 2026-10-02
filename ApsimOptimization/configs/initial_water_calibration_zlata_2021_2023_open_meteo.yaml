@@ -1,0 +1,73 @@
+calibration:
+  cultivar: Zlata
+  source_cultivar_name: Злата
+  base_template: simulation/standart.apsimx
+  observations_workbook: docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx
+  observations_sheet: Фенофазы
+  technology_filter: N30
+  years: [2021, 2023]
+  calibration_years: [2021]
+  validation_years: [2023]
+  weather_source: colleague_approved_open_meteo
+  weather_files:
+    2021: data/calibration_weather/weather_zlata_2021.met
+    2023: data/calibration_weather/weather_zlata_2023.met
+  simulation_start_days_before_sowing: 0
+  sowing_depth_mm: 30
+  row_spacing_mm: 250
+  population_source: seed_density_times_germination
+
+  fertilizer:
+    type_apsimx: NH4NO3N
+    amount_kg_ha: 30
+    status: provisional_product_form
+
+  # Fixed cultivar settings selected during the preceding phenology stages.
+  parameter_grid:
+    MinLN:
+      command: "[Phenology].CAMP.FLNparams.MinLN"
+      values: [5.0]
+    PpLN:
+      command: "[Phenology].CAMP.FLNparams.PpLN"
+      values: [2.5]
+    BasePhyllochron:
+      command: "[Phenology].Phyllochron.BasePhyllochron.FixedValue"
+      values: [75.0]
+    GrainFillingTarget:
+      command: "[Phenology].GrainFilling.Target.FixedValue"
+      allow_new_command: true
+      values: [250.0]
+    GrainRipeningTarget:
+      command: "[Phenology].GrainRipening.Target.FixedValue"
+      allow_new_command: true
+      values: [100.0]
+
+  reporter:
+    yield_source_unit: kg_per_ha
+    stage_column: Wheat.Phenology.CurrentStageName
+    zadok_column: Wheat.Phenology.Zadok.Stage
+    heading_zadok_min: 50
+    date_candidates: ["Date", "Today", "Clock.Today"]
+    heading_stage_names: ["Heading", "HeadEmergence"]
+    maturity_stage_names: ["Maturity", "HarvestRipe"]
+
+initial_water_calibration:
+  measurement_sheet: Влажность
+  density_sheet: Плотность
+  measurement_dates:
+    2021: "31.05"
+    2023: "16.05"
+
+  # The workbook labels moisture as percent but does not specify whether it is
+  # gravimetric or volumetric. This test uses the gravimetric interpretation and
+  # converts each point with its measured bulk density (water density = 1 g/cm3).
+  moisture_units_assumption: gravimetric_percent_converted_with_bulk_density
+
+  # APSIM layers 1 and 2 represent 0-15 and 15-30 cm. Both are varied because
+  # the observation represents 0-20 cm. Deeper layers remain unchanged.
+  layers_to_adjust: 2
+  # Range from AirDry (0) to DUL (1). The measured values can be below the
+  # current LL15, so an LL15-to-DUL grid would not cover the observations.
+  airdry_to_dul_fractions: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+  work_dir: outputs/.initial_water_calibration_zlata_work
+  output_dir: outputs/initial_water_calibration_zlata

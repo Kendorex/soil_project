@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-08-27T10:54:02.966098+00:00",
+  "purpose": "Isolated base copy for hydrology-v2 development",
+  "source": "simulation/standart.apsimx",
+  "source_sha256": "01ef8edfc3a4410815754fa80ec91e322af04d3caca35b8f5913daa9a79abfee",
+  "base_copy": "experiments/hydrology_v2/template/standart_hydrology_v2_base.apsimx",
+  "base_copy_sha256": "01ef8edfc3a4410815754fa80ec91e322af04d3caca35b8f5913daa9a79abfee",
+  "byte_identical": true,
+  "original_modification_policy": "simulation/standart.apsimx must not be edited by hydrology-v2 tools",
+  "status": "baseline_copy_only_no_hydrology_fix_applied"
+}

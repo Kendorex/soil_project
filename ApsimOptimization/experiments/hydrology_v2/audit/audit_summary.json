@@ -1,0 +1,57 @@
+{
+  "apsimx": "simulation/standart.apsimx",
+  "apsimx_sha256": "01ef8edfc3a4410815754fa80ec91e322af04d3caca35b8f5913daa9a79abfee",
+  "soil_data_source": "CSIRO Sustainable Ecosystems, Toowoomba; Characteriesd as part of the GRDC funded project\"Doing it better, doing it smarter, managing soil water in Australian agriculture' 2011",
+  "soil_comments": "Clay - OC, CLL for all crops estimated-based on Bongeen Mywybilla Soil No1",
+  "soil_latitude": 56.77719,
+  "soil_longitude": 36.11066,
+  "layer_count": 7,
+  "workbook": "docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx",
+  "workbook_sha256": "d234590b8bee54025609749598d914ae74b19539e2153dddb4091f1643e22e73",
+  "model_top_layer_bd_g_cm3": 0.865,
+  "observed_density_mean_g_cm3": 1.2369883056873072,
+  "observed_density_count": 2700,
+  "observed_2023_field3_density_mean_g_cm3": 1.1945292974647514,
+  "observed_2023_field3_density_count": 30,
+  "model_top_layer_ll15_m3_m3": 0.260500109036505,
+  "recent_topsoil_observation_groups": 131,
+  "recent_groups_below_model_top_ll15": 116,
+  "topsoil_measurements_excluded_by_quality_flag": 13,
+  "groundwater_observation_count": 1663,
+  "groundwater_years": [
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "groundwater_2023_landscapes": [
+    2,
+    4,
+    5,
+    6,
+    7
+  ],
+  "confirmed_findings": [
+    "The active APSIMX soil profile is sourced from an Australian CSIRO reference soil, not this field.",
+    "Measured bulk density differs materially from the active profile value.",
+    "Some recent observed 0-20 cm water contents are below the active top-layer LL15."
+  ],
+  "not_identified_from_available_measurements": [
+    "layer-specific AirDry",
+    "layer-specific LL15",
+    "layer-specific DUL",
+    "layer-specific SAT",
+    "layer-specific Ks and retention-curve parameters",
+    "continuous groundwater boundary for years other than the measured period"
+  ],
+  "status": "audit_only_no_soil_parameters_changed"
+}

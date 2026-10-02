@@ -1,0 +1,23 @@
+candidates:
+  N_NO3:
+    - "sum([NO3].kgha) as NO3kgHa"
+    - "[NO3].kgha as NO3Layers"
+    - "[NO3].InitialValues as NO3Initial"
+  N_NH4:
+    - "sum([NH4].kgha) as NH4kgHa"
+    - "[NH4].kgha as NH4Layers"
+    - "[NH4].InitialValues as NH4Initial"
+  MineralN:
+    - "sum([NO3].kgha + [NH4].kgha) as MineralN"
+  MineralNWithUrea:
+    - "sum([NO3].kgha + [NH4].kgha + [Urea].kgha) as MineralNWithUrea"
+  OrganicC:
+    - "sum([Nutrient].Organic.C) as OrganicC"
+    - "[Nutrient].Organic.C as OrganicCLayers"
+  DenitrifiedN:
+    - "[Denitrification].Value + [Denitrification].Natm as DenitrifiedN"
+  NAtmosphereLoss:
+    - "[NFlow].Natm as NAtmosphereLoss"
+  # NO3Leaching intentionally has no guessed expression. Add only after a
+  # technically working expression from this APSIMX model is confirmed.
+  NO3Leaching:
