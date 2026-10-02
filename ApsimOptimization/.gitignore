@@ -1,24 +1,32 @@
+# Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .coverage
 htmlcov/
-
-venv/
 .venv/
-.vendor/
+venv/
 
-outputs/.optimizer_work/
-outputs/.*_work/
-outputs/cache/
+# Editors and operating systems
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.code-workspace
+
+# Generated APSIM and optimizer files
 outputs/*
 !outputs/.gitkeep
-outputs_from_wsl*/
-archive/wsl_results/
-archive/cleanup_*/
-*.inspect.ndjson
 *.db
 *.db-shm
 *.db-wal
 *.apsimx.bak
-multifield_check_*.tar.gz
+*.log
+
+# Local archives and temporary work
+*.tar
+*.tar.gz
+*.zip
+archive/
+deliverables/
+*.inspect.ndjson

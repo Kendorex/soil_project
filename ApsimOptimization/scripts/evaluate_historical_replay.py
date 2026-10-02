@@ -208,7 +208,7 @@ def write_report(path, payload, control_checkpoint, replay_checkpoint):
     Path(path).write_text('\n'.join(body), encoding='utf-8')
 
 
-def create_archive(path, evaluation_dir, checkpoints):
+def create_archive(path, evaluation_dir, checkpoints, config):
     files = []
     allowed_case = {'config_snapshot.json', 'model_inventory.json', 'preparation.json',
                     'baseline.json', 'historical_comparison.json',
@@ -225,7 +225,7 @@ def create_archive(path, evaluation_dir, checkpoints):
     files += [ROOT/'configs'/'multifield_historical_replay.yaml',
               ROOT/'data'/'observations'/'multifield_2019_2023.json',
               ROOT/'data'/'weather'/'weather_2019_2023_units_corrected.provenance.json',
-              ROOT/'simulation'/'calibrated'/'full_field2019_2023_calibrated_v2.provenance.json']
+              Path(config['model_provenance'])]
     files = sorted(set(p.resolve() for p in files if p.is_file()))
     manifest = {
         'created_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -301,7 +301,8 @@ def main(argv=None):
 
     print('[4/4] Compact evidence archive', flush=True)
     archive = ROOT/f'historical_replay_{stamp}.tar.gz'
-    create_archive(archive, evaluation_dir, [control_checkpoint, replay_checkpoint])
+    create_archive(
+        archive, evaluation_dir, [control_checkpoint, replay_checkpoint], config)
     validation = payload['replay_minus_control']['validation_2023']['rmse_t_ha']
     calibration = payload['replay_minus_control']['calibration_2019_2022']['rmse_t_ha']
     print(f'STATUS: {payload["acceptance_status"]}', flush=True)

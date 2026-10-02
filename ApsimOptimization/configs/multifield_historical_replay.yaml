@@ -8,8 +8,8 @@ scenario:
   name: observed_rotation_and_n_labels_2019_2023
   recommendation_status: prohibited
   purpose: evaluate historical plausibility before optimization
-model: ../simulation/calibrated/full_field2019_2023_calibrated_v2.apsimx
-model_provenance: ../simulation/calibrated/full_field2019_2023_calibrated_v2.provenance.json
+model: ../simulation/calibrated/full_field2019_2023_calibrated_v3.apsimx
+model_provenance: ../simulation/calibrated/full_field2019_2023_calibrated_v3.provenance.json
 # Derived from the requested weather file by correcting its declared pressure
 # unit and recalculating tav/amp from the unchanged daily temperatures. See the
 # adjacent .provenance.json; the supplied source file remains untouched.

@@ -1,8 +1,8 @@
 {
   "created_utc": "2026-09-10T14:57:03.855770+00:00",
-  "source": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/data/weather/weather_2019_2023_normalized.met",
+  "source": "data/weather/weather_2019_2023_normalized.met (source artifact not included in clean release)",
   "source_sha256": "ddf6979bee020486ce6483e3d4b5e52f378a868c7012109f2eb2998cf8468a17",
-  "output": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/ApsimOptimization_Work_in_prog/data/weather/weather_2019_2023_units_corrected.met",
+  "output": "data/weather/weather_2019_2023_units_corrected.met",
   "output_sha256": "b7a74f9978cdb312281bbdfd9d03d5827901ffef82b6cc753c26945cd26a5cef",
   "changes": [
     {
