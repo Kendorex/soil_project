@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "source": {
-    "workbook": "../../more_calibration/20260804_ВНИИМЗ_трансекта ЧИСТАЯ.xlsx",
+    "workbook": "20260804_ВНИИМЗ_трансекта ЧИСТАЯ.xlsx (source workbook not included in clean release)",
     "sheet": "Фенофазы",
-    "derived_via": "more_calibration/analyze_baseline.py",
+    "derived_via": "historical extraction workflow",
     "purpose": "historical crop placement, technology labels and observed yield"
   },
   "objective_year": 2023,

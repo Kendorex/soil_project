@@ -148,6 +148,62 @@ def report(name, variables, events):
             'VariableNames': variables, 'EventNames': events, 'Children': []}
 
 
+def _rotation_components(value):
+    return [part.strip() for part in value.split(';')]
+
+
+def patch_sowing_decision(manager, harvest_year, clock_start_year, settings, decision):
+    """Patch one crop component in one rotation year from an optimizer decision."""
+    index = harvest_year - clock_start_year
+    values = parameters(manager)
+    arrays = {key: [part.strip() for part in values[key].split(',')]
+              for key in ROTATION_KEYS}
+    if not 0 <= index < len(arrays['RotationCrops']):
+        raise ValueError(f'{manager["Name"]}: harvest year outside rotation arrays')
+    crops = [part.strip() for part in arrays['RotationCrops'][index].split('+')]
+    cultivars = _rotation_components(arrays['RotationCultivars'][index])
+    expected_crop = settings['model_crop']
+    expected_cultivar = settings.get('model_cultivar')
+    matches = [position for position, crop in enumerate(crops) if crop == expected_crop]
+    if expected_cultivar:
+        matches = [position for position in matches
+                   if position < len(cultivars) and cultivars[position] == expected_cultivar]
+    if len(matches) != 1:
+        raise ValueError(
+            f'{manager["Name"]}: expected one {expected_crop}/{expected_cultivar} '
+            f'component in rotation year {harvest_year}, found {len(matches)}')
+    component = matches[0]
+    mapping = {
+        'cultivar': 'RotationCultivars',
+        'population_m2': 'RotationPopulations',
+        'depth_mm': 'RotationSowingDepths',
+        'row_spacing_mm': 'RotationRowSpacings',
+    }
+    changes = {'harvest_year': harvest_year, 'rotation_index': index,
+               'model_crop': expected_crop, 'component_index': component}
+    for decision_key, rotation_key in mapping.items():
+        if decision_key not in decision:
+            continue
+        components = _rotation_components(arrays[rotation_key][index])
+        if len(components) != len(crops):
+            raise ValueError(f'{manager["Name"]}: {rotation_key} component count differs')
+        changes[decision_key] = {'before': components[component],
+                                 'after': decision[decision_key]}
+        components[component] = str(decision[decision_key])
+        arrays[rotation_key][index] = ';'.join(components)
+    if 'sowing_date' in decision:
+        date = dt.date.fromisoformat(decision['sowing_date'])
+        month = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')[date.month - 1]
+        before = arrays['RotationSowingDates'][index]
+        arrays['RotationSowingDates'][index] = f'{date.day}-{month}'
+        changes['sowing_date'] = {'before': before, 'after': decision['sowing_date']}
+    by_key = {item['Key']: item for item in manager.get('Parameters', [])}
+    for key, parts in arrays.items():
+        by_key[key]['Value'] = ','.join(parts)
+    return changes
+
+
 def fertilizer_code(original, config, field, decision):
     """Keep original applications outside the decision period and replace those inside it."""
     period_start = config['decision_period']['start']
@@ -166,9 +222,13 @@ def fertilizer_code(original, config, field, decision):
     for component in option['components']:
         amount = decision['dose_kg_product_ha'] * component['mass_fraction'] * component['apsim_amount_per_kg_product']
         calls.append(f'Fertiliser.Apply(amount: {amount:.17g}, type: {json.dumps(component["apsim_type"])}, depth: {fs["application_depth_mm"]:.17g});')
+    application_dates = fs['application_dates']
+    if ((fs.get('sowing') or {}).get('fertilizer_follows_sowing') and
+            decision.get('sowing_date')):
+        application_dates = [decision['sowing_date']]
     conditions = ' || '.join(
         f'(Clock.Today.Date == new DateTime({int(d[:4])}, {int(d[5:7])}, {int(d[8:10])}))'
-        for d in fs['application_dates'])
+        for d in application_dates)
     block = f'''
         public double OptimizerAppliedProduct {{ get; private set; }}
         public int OptimizerPasses {{ get; private set; }}
@@ -322,15 +382,14 @@ def prepare(config, directory, decisions=None):
     removed = []
     transition_patched = []
     replay = historical_replay_plan(config, sim, zones)
+    clock_start_year = int(child(sim, 'Clock')['Start'][:4])
+    sowing_changes = []
     for path, node in list(walk(data)):
         node['Children'] = [c for c in node.get('Children', []) if c.get('Name') != 'Synchroniser']
         if node.get('Name') == 'Synchroniser':
             removed.append(path)
         if kind(node) == 'Models.Report':
-            node['VariableNames'] = [
-                v for v in node.get('VariableNames', [])
-                if v.strip() and '[NFlow].Natm' not in v
-            ]
+            node['VariableNames'] = [v for v in node['VariableNames'] if v.strip()]
         if node.get('Name') == 'Sow using a variable rule':
             code, changed = rotation_transition_code(
                 '\n'.join(node.get('CodeArray') or []),
@@ -355,6 +414,16 @@ def prepare(config, directory, decisions=None):
         for i, nutrient in enumerate(config.get('fields', {}).get(field, {}).get('nutrients') or []):
             variables.append(f'{nutrient["expression"]} as Nutrient{i}')
         if decisions is not None:
+            sowing = (config.get('fields', {}).get(field, {}).get('sowing') or {})
+            sowing_keys = {'cultivar', 'sowing_date', 'population_m2',
+                           'depth_mm', 'row_spacing_mm'}
+            if sowing and sowing_keys.intersection(decisions[field]):
+                sowing_changes.append({
+                    'field': field,
+                    **patch_sowing_decision(
+                        child(zone, 'Sow using a variable rule'), config['year'],
+                        clock_start_year, sowing, decisions[field]),
+                })
             manager = child(zone, 'Fertilise at sowing')
             manager['CodeArray'] = fertilizer_code('\n'.join(manager['CodeArray']), config, field, decisions[field]).splitlines()
             variables += ['[Fertilise at sowing].Script.OptimizerAppliedProduct as AppliedProduct',
@@ -370,6 +439,7 @@ def prepare(config, directory, decisions=None):
         'transition_managers_patched': transition_patched,
         'historical_replay': replay,
         'decisions': decisions,
+        'sowing_changes': sowing_changes,
         'source_sha256': fingerprint(config['model']),
     })
     return path

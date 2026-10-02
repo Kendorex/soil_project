@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": {
-    "workbook": "/mnt/c/Users/user/Desktop/APSIMX_Main_Task/more_calibration/20260804_ВНИИМЗ_трансекта ЧИСТАЯ.xlsx",
+    "workbook": "20260804_ВНИИМЗ_трансекта ЧИСТАЯ.xlsx (source workbook not included in clean release)",
     "workbook_sha256": "e9e12a0032bc098a0f27973bd6d03c5c490ecccbde243d30a1552fd43839bf0b",
     "sheet": "Фенофазы",
     "yield_column": "Средняя урожайность, т/га",

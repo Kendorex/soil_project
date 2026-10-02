@@ -1,0 +1,398 @@
+{
+  "status": "rejected_no_field_ranking_skill_or_no_gain_over_training_mean",
+  "selection_rule": "lowest blocked-year RMSE using 2019-2022 only",
+  "selected_model": {
+    "family": "training_mean",
+    "mean_observed_t_ha": 2.799259259259259
+  },
+  "calibration_years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "validation_year": 2023,
+  "raw_2023": {
+    "n": 10,
+    "mae_t_ha": 1.3022508095695804,
+    "rmse_t_ha": 1.5782607733429441,
+    "bias_t_ha": -0.20369694925920784,
+    "pearson_r": -0.36694770728449694
+  },
+  "corrected_2023": {
+    "n": 10,
+    "mae_t_ha": 0.7127037037037036,
+    "rmse_t_ha": 0.8368039908289249,
+    "bias_t_ha": 0.4242592592592592,
+    "pearson_r": null
+  },
+  "training_mean_2023": {
+    "n": 10,
+    "mae_t_ha": 0.7127037037037036,
+    "rmse_t_ha": 0.8368039908289249,
+    "bias_t_ha": 0.4242592592592592,
+    "pearson_r": null
+  },
+  "acceptance_checks": {
+    "positive_2023_field_ranking_correlation": false,
+    "rmse_better_than_raw_and_training_mean": false
+  },
+  "corrected_minus_raw": {
+    "mae_t_ha": -0.5895471058658768,
+    "rmse_t_ha": -0.7414567825140193,
+    "bias_t_ha": 0.6279562085184671
+  },
+  "limitations": [
+    "This is an empirical output correction, not a replacement for crop/soil process calibration.",
+    "Only 27 calibration observations and one ten-field holdout year are available.",
+    "Structural forage proxy and 2019 boundary/input-sensitive cases remain in the reported dataset."
+  ],
+  "cv_candidates": [
+    {
+      "name": "training_mean",
+      "specification": {
+        "name": "training_mean",
+        "family": "training_mean"
+      },
+      "n": 27,
+      "mae_t_ha": 1.1336839826839826,
+      "rmse_t_ha": 1.4236458441533835,
+      "bias_t_ha": 0.036785473785473546,
+      "pearson_r": -0.5752975722534401
+    },
+    {
+      "name": "ridge_crop_field_l100",
+      "specification": {
+        "name": "ridge_crop_field_l100",
+        "family": "ridge",
+        "penalty": 100.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.1482843949737809,
+      "rmse_t_ha": 1.436183853324667,
+      "bias_t_ha": 0.017385571574432716,
+      "pearson_r": -0.49256520313297103
+    },
+    {
+      "name": "ridge_crop_field_l30",
+      "specification": {
+        "name": "ridge_crop_field_l30",
+        "family": "ridge",
+        "penalty": 30.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.159999247854958,
+      "rmse_t_ha": 1.450045816049283,
+      "bias_t_ha": -0.0042391984790341435,
+      "pearson_r": -0.37598754787597516
+    },
+    {
+      "name": "ridge_crop_field_l10",
+      "specification": {
+        "name": "ridge_crop_field_l10",
+        "family": "ridge",
+        "penalty": 10.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.1789956044357883,
+      "rmse_t_ha": 1.4631901687203686,
+      "bias_t_ha": -0.02461097767341483,
+      "pearson_r": -0.22617716950445274
+    },
+    {
+      "name": "ridge_crop_field_l3",
+      "specification": {
+        "name": "ridge_crop_field_l3",
+        "family": "ridge",
+        "penalty": 3.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.2037237322191112,
+      "rmse_t_ha": 1.4996352371530288,
+      "bias_t_ha": -0.04333443811470305,
+      "pearson_r": -0.07791901647583917
+    },
+    {
+      "name": "ridge_crop_field_l1",
+      "specification": {
+        "name": "ridge_crop_field_l1",
+        "family": "ridge",
+        "penalty": 1.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.2679798443821932,
+      "rmse_t_ha": 1.58258646204566,
+      "bias_t_ha": -0.05996533210531584,
+      "pearson_r": -0.006933579386483472
+    },
+    {
+      "name": "ridge_crop_field_l0.1",
+      "specification": {
+        "name": "ridge_crop_field_l0.1",
+        "family": "ridge",
+        "penalty": 0.1
+      },
+      "n": 27,
+      "mae_t_ha": 1.467307341640444,
+      "rmse_t_ha": 1.7800753287236597,
+      "bias_t_ha": -0.07558935603138549,
+      "pearson_r": 0.030643406703970325
+    },
+    {
+      "name": "field_additive_s3",
+      "specification": {
+        "name": "field_additive_s3",
+        "family": "group_additive",
+        "group_keys": [
+          "field"
+        ],
+        "shrinkage": 3.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.552162082228484,
+      "rmse_t_ha": 1.8401307999412166,
+      "bias_t_ha": 0.09211372621594605,
+      "pearson_r": 0.12000600629159545
+    },
+    {
+      "name": "field_additive_s1",
+      "specification": {
+        "name": "field_additive_s1",
+        "family": "group_additive",
+        "group_keys": [
+          "field"
+        ],
+        "shrinkage": 1.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.5326150203268913,
+      "rmse_t_ha": 1.8469147084145472,
+      "bias_t_ha": 0.07417874527885054,
+      "pearson_r": 0.1585528893783616
+    },
+    {
+      "name": "field_additive_s10",
+      "specification": {
+        "name": "field_additive_s10",
+        "family": "group_additive",
+        "group_keys": [
+          "field"
+        ],
+        "shrinkage": 10.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.5753189401310208,
+      "rmse_t_ha": 1.8742683209772952,
+      "bias_t_ha": 0.08466291417454237,
+      "pearson_r": 0.07302932765841073
+    },
+    {
+      "name": "raw_apsim",
+      "specification": {
+        "name": "raw_apsim",
+        "family": "raw"
+      },
+      "n": 27,
+      "mae_t_ha": 1.445547830918674,
+      "rmse_t_ha": 1.8942445685359077,
+      "bias_t_ha": -0.913424366917897,
+      "pearson_r": 0.14264366319942542
+    },
+    {
+      "name": "field_additive_s0",
+      "specification": {
+        "name": "field_additive_s0",
+        "family": "group_additive",
+        "group_keys": [
+          "field"
+        ],
+        "shrinkage": 0.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.4947362507107338,
+      "rmse_t_ha": 1.895036554968756,
+      "bias_t_ha": 0.009245615603652306,
+      "pearson_r": 0.1955829243828756
+    },
+    {
+      "name": "global_additive",
+      "specification": {
+        "name": "global_additive",
+        "family": "group_additive",
+        "group_keys": [],
+        "shrinkage": 0.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.6280764414876427,
+      "rmse_t_ha": 1.9310659577462888,
+      "bias_t_ha": 0.06632857074451783,
+      "pearson_r": 0.030730622474506347
+    },
+    {
+      "name": "crop_group_additive_s10",
+      "specification": {
+        "name": "crop_group_additive_s10",
+        "family": "group_additive",
+        "group_keys": [
+          "crop_group"
+        ],
+        "shrinkage": 10.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.6641553967628828,
+      "rmse_t_ha": 1.9577207163803765,
+      "bias_t_ha": 0.06288319421569867,
+      "pearson_r": 0.02416501368216435
+    },
+    {
+      "name": "crop_group_additive_s3",
+      "specification": {
+        "name": "crop_group_additive_s3",
+        "family": "group_additive",
+        "group_keys": [
+          "crop_group"
+        ],
+        "shrinkage": 3.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.699325080813484,
+      "rmse_t_ha": 1.9862493319577827,
+      "bias_t_ha": 0.05880582137881508,
+      "pearson_r": 0.02560869962551289
+    },
+    {
+      "name": "crop_group_additive_s1",
+      "specification": {
+        "name": "crop_group_additive_s1",
+        "family": "group_additive",
+        "group_keys": [
+          "crop_group"
+        ],
+        "shrinkage": 1.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.7296672723876199,
+      "rmse_t_ha": 2.012316106464898,
+      "bias_t_ha": 0.05702318618434643,
+      "pearson_r": 0.029688826597160087
+    },
+    {
+      "name": "crop_group_additive_s0",
+      "specification": {
+        "name": "crop_group_additive_s0",
+        "family": "group_additive",
+        "group_keys": [
+          "crop_group"
+        ],
+        "shrinkage": 0.0
+      },
+      "n": 27,
+      "mae_t_ha": 1.7558853674599253,
+      "rmse_t_ha": 2.0388078585570093,
+      "bias_t_ha": 0.057334684061913506,
+      "pearson_r": 0.034326755099856346
+    }
+  ],
+  "validation_predictions": [
+    {
+      "year": 2023,
+      "field": "Field1",
+      "crop_group": "Клевер + тимофеевка",
+      "observed": 2.36,
+      "simulated": 4.203032440461559,
+      "evidence_tier": "structural_proxy",
+      "raw_prediction": 4.203032440461559,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field2",
+      "crop_group": "Овёс",
+      "observed": 3.4,
+      "simulated": 0.9355804682564198,
+      "evidence_tier": "standard",
+      "raw_prediction": 0.9355804682564198,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field3",
+      "crop_group": "Яровая пшеница",
+      "observed": 2.07,
+      "simulated": 1.3033615029169872,
+      "evidence_tier": "standard",
+      "raw_prediction": 1.3033615029169872,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field4",
+      "crop_group": "Клевер + тимофеевка",
+      "observed": 1.36,
+      "simulated": 1.463024001375847,
+      "evidence_tier": "structural_proxy",
+      "raw_prediction": 1.463024001375847,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field5",
+      "crop_group": "Озимая рожь",
+      "observed": 2.39,
+      "simulated": 2.4478821776823123,
+      "evidence_tier": "standard",
+      "raw_prediction": 2.4478821776823123,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field6",
+      "crop_group": "Клевер + тимофеевка",
+      "observed": 1.23,
+      "simulated": 3.975336480664357,
+      "evidence_tier": "structural_proxy",
+      "raw_prediction": 3.975336480664357,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field7",
+      "crop_group": "Овёс",
+      "observed": 3.57,
+      "simulated": 1.5389287446253912,
+      "evidence_tier": "standard",
+      "raw_prediction": 1.5389287446253912,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field8",
+      "crop_group": "Яровая пшеница",
+      "observed": 2.33,
+      "simulated": 3.0734942013677875,
+      "evidence_tier": "standard",
+      "raw_prediction": 3.0734942013677875,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field9",
+      "crop_group": "Озимая рожь",
+      "observed": 2.87,
+      "simulated": 1.8963618713913934,
+      "evidence_tier": "standard",
+      "raw_prediction": 1.8963618713913934,
+      "corrected_prediction": 2.799259259259259
+    },
+    {
+      "year": 2023,
+      "field": "Field10",
+      "crop_group": "Клевер + тимофеевка",
+      "observed": 2.17,
+      "simulated": 0.8760286186658665,
+      "evidence_tier": "structural_proxy",
+      "raw_prediction": 0.8760286186658665,
+      "corrected_prediction": 2.799259259259259
+    }
+  ]
+}

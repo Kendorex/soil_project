@@ -264,6 +264,22 @@ def configuration_errors(config, meta):
         bounds = fs.get('dose_kg_product_ha') or {}
         interval(bounds.get('min'), bounds.get('max'), field+'.dose_kg_product_ha', False)
         number(bounds.get('min'), field+'.dose_kg_product_ha.min', 0)
+        dose_values = bounds.get('values')
+        if dose_values is not None:
+            if not isinstance(dose_values, list) or not dose_values:
+                errors.append(f'{field}.dose_kg_product_ha.values: nonempty list required')
+            else:
+                checked_values = [number(value,
+                                         f'{field}.dose_kg_product_ha.values', 0)
+                                  for value in dose_values]
+                if (all(value is not None for value in checked_values) and
+                        len(set(checked_values)) != len(checked_values)):
+                    errors.append(f'{field}.dose_kg_product_ha.values: values must be unique')
+                lo, hi = bounds.get('min'), bounds.get('max')
+                if (all(value is not None for value in checked_values) and
+                        isinstance(lo, (int, float)) and isinstance(hi, (int, float)) and
+                        any(not lo <= value <= hi for value in checked_values)):
+                    errors.append(f'{field}.dose_kg_product_ha.values: outside field bounds')
         for k in ('application_cost_per_ha', 'other_cost_per_ha', 'application_depth_mm'):
             number(fs.get(k), field+'.'+k, 0)
         dates = fs.get('application_dates') or []
@@ -276,6 +292,71 @@ def configuration_errors(config, meta):
                     raise ValueError('date outside decision period')
             except (ValueError, TypeError):
                 errors.append(f'{field}: invalid application date {date}')
+        sowing = fs.get('sowing')
+        if sowing is not None:
+            if not isinstance(sowing, dict):
+                errors.append(f'{field}.sowing: mapping required')
+            else:
+                unknown = set(sowing) - {
+                    'model_crop', 'model_cultivar', 'cultivar_options',
+                    'date_options', 'population_options_m2', 'depth_options_mm',
+                    'row_spacing_options_mm', 'fertilizer_follows_sowing',
+                }
+                if unknown:
+                    errors.append(f'{field}.sowing: unsupported keys {sorted(unknown)}')
+                if not sowing.get('model_crop'):
+                    errors.append(f'{field}.sowing.model_crop: required')
+                elif type(year) is int:
+                    rotation_values = meta['fields'][field]['rotation']
+                    rotation_index = year - int(meta['start'][:4])
+                    crop_years = rotation_values['RotationCrops'].split(',')
+                    cultivar_years = rotation_values['RotationCultivars'].split(',')
+                    if not 0 <= rotation_index < len(crop_years):
+                        errors.append(f'{field}.sowing: selected year outside rotation')
+                    else:
+                        crop_components = [value.strip() for value in
+                                           crop_years[rotation_index].split('+')]
+                        cultivar_components = [value.strip() for value in
+                                                cultivar_years[rotation_index].split(';')]
+                        matches = [position for position, crop in enumerate(crop_components)
+                                   if crop == sowing.get('model_crop')]
+                        if sowing.get('model_cultivar'):
+                            matches = [position for position in matches
+                                       if position < len(cultivar_components) and
+                                       cultivar_components[position] == sowing['model_cultivar']]
+                        if len(matches) != 1:
+                            errors.append(
+                                f'{field}.sowing: target crop/cultivar does not identify '
+                                'exactly one active rotation component')
+                option_specs = (
+                    ('cultivar_options', str), ('date_options', str),
+                    ('population_options_m2', (int, float)),
+                    ('depth_options_mm', (int, float)),
+                    ('row_spacing_options_mm', (int, float)),
+                )
+                for name, expected_type in option_specs:
+                    values = sowing.get(name)
+                    if values is None:
+                        continue
+                    if (not isinstance(values, list) or not values or
+                            len(values) != len(set(values)) or
+                            not all(isinstance(value, expected_type) for value in values)):
+                        errors.append(f'{field}.sowing.{name}: unique nonempty options required')
+                for name in ('population_options_m2', 'depth_options_mm',
+                             'row_spacing_options_mm'):
+                    for value in sowing.get(name) or []:
+                        if value <= 0:
+                            errors.append(f'{field}.sowing.{name}: positive values required')
+                for value in sowing.get('date_options') or []:
+                    try:
+                        sowing_date = dt.date.fromisoformat(value)
+                        if (period_start is None or period_end is None or
+                                not period_start <= sowing_date <= period_end):
+                            raise ValueError()
+                    except (ValueError, TypeError):
+                        errors.append(f'{field}.sowing.date_options: invalid date {value}')
+                if sowing.get('fertilizer_follows_sowing') not in (None, True, False):
+                    errors.append(f'{field}.sowing.fertilizer_follows_sowing: boolean required')
         nutrients = fs.get('nutrients') or []
         if not nutrients:
             errors.append(f'{field}.nutrients: approved soil intervals required')
@@ -331,6 +412,10 @@ def configuration_errors(config, meta):
                         isinstance(bounds.get('max'), (int, float)) and
                         not bounds['min'] <= dose <= bounds['max']):
                     errors.append(f'reference_decision.{field}.dose_kg_product_ha: outside field bounds')
+                if (dose is not None and bounds.get('values') is not None and
+                        dose not in bounds['values']):
+                    errors.append(
+                        f'reference_decision.{field}.dose_kg_product_ha: not in discrete values')
     search = config.get('nsga2') or {}
     for key, minimum in [('population', 4), ('generations', 1), ('seed', 0)]:
         if type(search.get(key)) is not int or search[key] < minimum:
@@ -388,15 +473,58 @@ def optimize(config, meta, outdir, evaluator=None):
             scenario_runtime.append((scenario['name'], scenario_cfg, scenario_meta))
     n_constraints = base_constraints * (len(scenario_runtime) if evaluator is None else 1)
     variables = {}
+    discrete_fertilizer_schemes = {}
     for field, fs in config['fields'].items():
-        variables[field+'__type'] = Choice(options=fs['fertilizer_options'])
-        lo, hi = fs['dose_kg_product_ha']['min'], fs['dose_kg_product_ha']['max']
-        variables[field+'__dose'] = Real(bounds=(lo, hi)) if lo != hi else Choice(options=[lo])
+        dose_spec = fs['dose_kg_product_ha']
+        lo, hi = dose_spec['min'], dose_spec['max']
+        dose_values = dose_spec.get('values')
+        if dose_values is not None:
+            # One zero-N control plus every form at each positive dose avoids
+            # wasting evaluations on equivalent zero-dose fertilizer labels.
+            schemes = []
+            if 0 in dose_values:
+                schemes.append((fs['fertilizer_options'][0], 0.0))
+            schemes.extend(
+                (option, float(dose))
+                for dose in dose_values if dose != 0
+                for option in fs['fertilizer_options'])
+            discrete_fertilizer_schemes[field] = schemes
+            variables[field+'__fertilizer_scheme'] = Choice(options=list(range(len(schemes))))
+        else:
+            variables[field+'__type'] = Choice(options=fs['fertilizer_options'])
+            variables[field+'__dose'] = (Real(bounds=(lo, hi)) if lo != hi
+                                         else Choice(options=[lo]))
+        sowing = fs.get('sowing') or {}
+        for config_key, decision_key in (
+                ('cultivar_options', 'cultivar'),
+                ('date_options', 'sowing_date'),
+                ('population_options_m2', 'population_m2'),
+                ('depth_options_mm', 'depth_mm'),
+                ('row_spacing_options_mm', 'row_spacing_mm')):
+            options = sowing.get(config_key)
+            if options:
+                variables[f'{field}__{decision_key}'] = Choice(options=options)
     cache, history = {}, []
 
     def decode(x):
-        return {field: {'option': str(x[field+'__type']), 'dose_kg_product_ha': float(x[field+'__dose'])}
-                for field in config['fields']}
+        decisions = {}
+        for field, fs in config['fields'].items():
+            if field in discrete_fertilizer_schemes:
+                option, dose = discrete_fertilizer_schemes[field][
+                    int(x[field+'__fertilizer_scheme'])]
+                decision = {'option': option, 'dose_kg_product_ha': dose}
+            else:
+                decision = {'option': str(x[field+'__type']),
+                            'dose_kg_product_ha': float(x[field+'__dose'])}
+            for key in ('cultivar', 'sowing_date', 'population_m2',
+                        'depth_mm', 'row_spacing_mm'):
+                variable = f'{field}__{key}'
+                if variable in x:
+                    value = x[variable]
+                    decision[key] = (float(value) if key in {
+                        'population_m2', 'depth_mm', 'row_spacing_mm'} else str(value))
+            decisions[field] = decision
+        return decisions
 
     def evaluate_decisions(decisions, source='nsga2'):
         key = hashlib.sha256(json.dumps(decisions, sort_keys=True).encode()).hexdigest()
@@ -496,6 +624,9 @@ def write_candidate_summary_csv(path, candidates, config):
     for field in config['fields']:
         field_columns.extend([
             f'{field}_option', f'{field}_dose_kg_product_ha',
+            f'{field}_cultivar', f'{field}_sowing_date',
+            f'{field}_population_m2', f'{field}_depth_mm',
+            f'{field}_row_spacing_mm',
             f'{field}_yield_dm_kg_ha', f'{field}_net_profit_per_ha',
             f'{field}_mineral_n_end_kg_ha',
             f'{field}_yield_dm_kg_ha_min', f'{field}_yield_dm_kg_ha_max',
@@ -532,6 +663,11 @@ def write_candidate_summary_csv(path, candidates, config):
                 yields = result.get('yield_dm_kg_ha') or {}
                 row[f'{field}_option'] = decision.get('option')
                 row[f'{field}_dose_kg_product_ha'] = decision.get('dose_kg_product_ha')
+                row[f'{field}_cultivar'] = decision.get('cultivar')
+                row[f'{field}_sowing_date'] = decision.get('sowing_date')
+                row[f'{field}_population_m2'] = decision.get('population_m2')
+                row[f'{field}_depth_mm'] = decision.get('depth_mm')
+                row[f'{field}_row_spacing_mm'] = decision.get('row_spacing_mm')
                 row[f'{field}_yield_dm_kg_ha'] = (sum(
                     float(yields.get(crop, 0.0))
                     for crop in fs.get('objective_yield_components') or [])
@@ -565,7 +701,10 @@ def write_candidate_summary_csv(path, candidates, config):
 def main(argv=None):
     parser = argparse.ArgumentParser(description='Calibrated multi-field fertilizer NSGA-II')
     parser.add_argument('action', choices=['inspect', 'validate', 'prepare', 'baseline', 'historical', 'optimize'])
-    parser.add_argument('--config', default=str(ROOT/'configs/multifield.yaml'))
+    parser.add_argument(
+        '--config',
+        default=str(ROOT/'configs/multifield_2023_n_diagnostic.yaml'),
+        help='multi-field scenario configuration')
     parser.add_argument('--year', type=int)
     parser.add_argument('--population', type=int, help='override NSGA-II population for this run')
     parser.add_argument('--generations', type=int, help='override NSGA-II generations for this run')

@@ -22,7 +22,7 @@ from src.historical_case import parse_technology_nutrients
 
 @pytest.fixture
 def actual_config():
-    return load_config(ROOT/'configs/multifield.yaml')
+    return load_config(ROOT/'configs/multifield_2023_n_diagnostic.yaml')
 
 
 def synthetic_config():
@@ -72,14 +72,16 @@ def test_actual_model_and_weather_provenance_are_verified(actual_config):
     assert meta['weather_provenance']['artifact_sha256_verified']
 
 
-def test_actual_config_refuses_assumptions(actual_config):
+def test_actual_diagnostic_config_is_complete_and_explicit(actual_config):
     errors = configuration_errors(actual_config, inventory(actual_config))
-    assert not any('area_ha' in x for x in errors)
-    assert not any('objective_yield_components' in x for x in errors)
-    assert any('soil intervals' in x for x in errors)
-    assert any('products or mixtures' in x for x in errors)
-    assert any('price_per_kg' in x for x in errors)
-    assert any('historical validation does not allow recommendations' in x for x in errors)
+    assert errors == []
+    assert actual_config['scenario']['kind'] == 'diagnostic'
+    assert actual_config['scenario']['recommendation_status'] == 'prohibited'
+    assert set(actual_config['fields']['Field2']['fertilizer_options']) == {
+        'UreaN_old_price_proxy', 'NH4NO3N_old_price_proxy',
+        'UAN_N_old_price_proxy', 'NO3N_old_price_proxy'}
+    assert actual_config['fields']['Field2']['dose_kg_product_ha']['values'] == [
+        0.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 210.0]
 
 
 def test_production_readiness_artifact_is_hash_bound(tmp_path):
@@ -347,6 +349,23 @@ def test_mixed_nsga2_and_failure_exclusion(tmp_path):
     assert (tmp_path/'pareto_summary.csv').is_file()
     result2 = optimize(cfg, meta, tmp_path/'repeat', evaluate)
     assert [v['F'] for v in result['pareto']] == [v['F'] for v in result2['pareto']]
+
+
+def test_nsga2_uses_only_configured_discrete_fertilizer_doses(tmp_path):
+    cfg, meta = synthetic_config(), synthetic_meta()
+    allowed = {0.0, 5.0, 10.0}
+    for field in cfg['fields'].values():
+        field['dose_kg_product_ha']['values'] = sorted(allowed)
+    seen = []
+
+    def evaluate(decisions):
+        seen.extend(value['dose_kg_product_ha'] for value in decisions.values())
+        total = sum(value['dose_kg_product_ha'] for value in decisions.values())
+        return {'F': [-total, total, 0.0], 'G': [-1] * 5, 'feasible': True}
+
+    assert configuration_errors(cfg, meta) == []
+    optimize(cfg, meta, tmp_path, evaluate)
+    assert seen and set(seen) <= allowed
 
 
 def test_no_feasible_front(tmp_path):
