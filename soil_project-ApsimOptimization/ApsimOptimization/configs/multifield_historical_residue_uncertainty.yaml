@@ -1,0 +1,52 @@
+# Historical 2023 evaluation of the unresolved wheat-residue management state.
+# Both endpoints preserve the observed rotation and replay only explicit N rates
+# from the supplied technology labels. Neither endpoint is treated as fact.
+schema_version: 1
+scenario:
+  kind: historical_replay
+  name: observed_2023_management_with_residue_uncertainty
+  recommendation_status: prohibited
+  purpose: quantify the prediction range caused by unknown 2022 wheat-straw fate
+model: ../simulation/calibrated/full_field2019_2023_calibrated_v2.apsimx
+model_provenance: ../simulation/calibrated/full_field2019_2023_calibrated_v2.provenance.json
+weather: ../data/weather/weather_2019_2023_units_corrected.met
+weather_provenance: ../data/weather/weather_2019_2023_units_corrected.provenance.json
+rotation_parameter_reference: null
+environment_scenarios:
+  - name: documented_harvest_residue_retained
+    model: ../simulation/scenarios/oats_2023_residue/documented_harvest_residue_retained.apsimx
+    model_provenance: ../simulation/scenarios/oats_2023_residue/documented_harvest_residue_retained.provenance.json
+  - name: documented_harvest_fresh_straw_export
+    model: ../simulation/scenarios/oats_2023_residue/documented_harvest_fresh_straw_export.apsimx
+    model_provenance: ../simulation/scenarios/oats_2023_residue/documented_harvest_fresh_straw_export.provenance.json
+scenario_aggregation: {yield: worst_case, profit: worst_case, soil: worst_case}
+output_dir: ../outputs/multifield/HISTORICAL_RESIDUE_UNCERTAINTY
+runtime:
+  command:
+    - /home/user/ApsimX/bin/Release/net8.0/Models
+  timeout_seconds: 600
+year: 2023
+rotation_transition_policy: harvest_on_winter_sowing_proxy
+historical_observations: ../data/observations/multifield_2019_2023.json
+historical_replay:
+  enabled: true
+  nitrogen_source: technology_labels
+  application_event: model_sowing_event_on_observed_date
+  fertilizer_type: preserve_model
+residue_uncertainty:
+  target_fields: [Field2, Field7]
+  preceding_crop: Wheat
+  harvest_year: 2022
+  documented_harvest_date: '2022-08-17'
+  interpretation: scenario envelope, not a probability interval
+fields:
+  Field1: {area_ha: 0.2}
+  Field2: {area_ha: 0.2}
+  Field3: {area_ha: 0.2}
+  Field4: {area_ha: 0.2}
+  Field5: {area_ha: 0.2}
+  Field6: {area_ha: 0.2}
+  Field7: {area_ha: 0.2}
+  Field8: {area_ha: 0.2}
+  Field9: {area_ha: 0.2}
+  Field10: {area_ha: 0.2}

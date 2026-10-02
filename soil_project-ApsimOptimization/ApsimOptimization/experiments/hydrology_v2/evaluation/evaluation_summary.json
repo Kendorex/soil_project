@@ -1,0 +1,10 @@
+{
+  "candidate": "01_measured_bd_top30",
+  "retention_profile_validated": false,
+  "prediction_allowed_years": [],
+  "rejected_hydrology_failure_years": [
+    "2021",
+    "2023"
+  ],
+  "conclusion": "Measured bulk density alone does not repair the water balance."
+}

@@ -1,0 +1,87 @@
+{
+  "base_copy": "experiments/hydrology_v2/template/standart_hydrology_v2_base.apsimx",
+  "base_copy_sha256": "01ef8edfc3a4410815754fa80ec91e322af04d3caca35b8f5913daa9a79abfee",
+  "field_input": "experiments/hydrology_v2/field_input_2023.json",
+  "candidates": [
+    {
+      "id": "00_baseline_copy",
+      "mode": "unchanged_reference",
+      "description": "Byte-derived reference; no field hydrology correction",
+      "apsimx": "experiments/hydrology_v2/candidates/00_baseline_copy.apsimx",
+      "apsimx_sha256": "432354578b865ea1d36f4d59c11a0f582180bd015cbf126120ab0d166aeabbf9",
+      "database": "00_baseline_copy.db",
+      "before_top30": {
+        "BD": [
+          0.865,
+          0.865
+        ],
+        "SAT": [
+          0.588654817693846,
+          0.565676863836273
+        ]
+      },
+      "after_top30": {
+        "BD": [
+          0.865,
+          0.865
+        ],
+        "SAT": [
+          0.588654817693846,
+          0.565676863836273
+        ]
+      },
+      "applied": {
+        "mode": "unchanged_reference"
+      },
+      "validation": "physical_ordering_passed"
+    },
+    {
+      "id": "01_measured_bd_top30",
+      "mode": "measured_bd_top30_sat_from_porosity",
+      "description": "Measured 2023 field-3 mean BD in layers 0-15 and 15-30 cm; SAT from BD",
+      "apsimx": "experiments/hydrology_v2/candidates/01_measured_bd_top30.apsimx",
+      "apsimx_sha256": "c2845072a4924da10cef98bcc6cebe830054a389af8924bec1611b2804e77800",
+      "database": "01_measured_bd_top30.db",
+      "before_top30": {
+        "BD": [
+          0.865,
+          0.865
+        ],
+        "SAT": [
+          0.588654817693846,
+          0.565676863836273
+        ]
+      },
+      "after_top30": {
+        "BD": [
+          1.1945292974647512,
+          1.1945292974647512
+        ],
+        "SAT": [
+          0.549234227371792,
+          0.549234227371792
+        ]
+      },
+      "applied": {
+        "mode": "measured_bd_top30_sat_from_porosity",
+        "layers": [
+          1,
+          2
+        ],
+        "BD_g_cm3": 1.1945292974647512,
+        "SAT_m3_m3": 0.549234227371792,
+        "SAT_formula": "1 - BD / 2.65",
+        "measurement_point_count": 30,
+        "inherited_unvalidated": [
+          "AirDry",
+          "LL15",
+          "DUL",
+          "WheatSoil.LL",
+          "Ks"
+        ]
+      },
+      "validation": "physical_ordering_passed"
+    }
+  ],
+  "status": "diagnostic_candidates_not_validated_for_prediction"
+}

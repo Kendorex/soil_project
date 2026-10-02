@@ -1,0 +1,72 @@
+calibration:
+  cultivar: Irgina
+  source_cultivar_name: Иргина
+  source_template_cultivar: Zlata
+  base_template: simulation/standart.apsimx
+  observations_workbook: docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx
+  observations_sheet: Фенофазы
+  technology_filter: N30
+  years: [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
+  calibration_years: [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
+  validation_years: [2017, 2018, 2019]
+  weather_source: colleague_approved_open_meteo
+  weather_files:
+    2007: data/calibration_weather/weather_irgina_2007.met
+    2008: data/calibration_weather/weather_irgina_2008.met
+    2009: data/calibration_weather/weather_irgina_2009.met
+    2010: data/calibration_weather/weather_irgina_2010.met
+    2011: data/calibration_weather/weather_irgina_2011.met
+    2012: data/calibration_weather/weather_irgina_2012.met
+    2013: data/calibration_weather/weather_irgina_2013.met
+    2014: data/calibration_weather/weather_irgina_2014.met
+    2015: data/calibration_weather/weather_irgina_2015.met
+    2016: data/calibration_weather/weather_irgina_2016.met
+    2017: data/calibration_weather/weather_irgina_2017.met
+    2018: data/calibration_weather/weather_irgina_2018.met
+    2019: data/calibration_weather/weather_irgina_2019.met
+  work_dir: outputs/.cultivar_calibration_irgina_final_evaluation_work
+  output_dir: outputs/cultivar_calibration_irgina_final_evaluation
+  simulation_start_days_before_sowing: 0
+
+  sowing_depth_mm: 30
+  row_spacing_mm: 250
+  population_source: seed_density_times_germination
+
+  fertilizer:
+    type_apsimx: NH4NO3N
+    amount_kg_ha: 30
+    status: provisional_product_form
+
+  # One candidate: the parameters currently stored in standart.apsimx.
+  # This run evaluates the selected calibration without reopening the search grid.
+  parameter_grid:
+    MinLN:
+      command: "[Phenology].CAMP.FLNparams.MinLN"
+      values: [5.0]
+    PpLN:
+      command: "[Phenology].CAMP.FLNparams.PpLN"
+      values: [2.5]
+    BasePhyllochron:
+      command: "[Phenology].Phyllochron.BasePhyllochron.FixedValue"
+      values: [50.0]
+    GrainFillingTarget:
+      command: "[Phenology].GrainFilling.Target.FixedValue"
+      allow_new_command: true
+      values: [225.0]
+    GrainRipeningTarget:
+      command: "[Phenology].GrainRipening.Target.FixedValue"
+      allow_new_command: true
+      values: [100.0]
+
+  selection:
+    mode: maturity_upper_bound_then_heading
+    observed_maturity_proxy: harvest_date_upper_bound
+
+  reporter:
+    yield_source_unit: kg_per_ha
+    stage_column: Wheat.Phenology.CurrentStageName
+    zadok_column: Wheat.Phenology.Zadok.Stage
+    heading_zadok_min: 50
+    date_candidates: ["Date", "Today", "Clock.Today"]
+    heading_stage_names: ["Heading", "HeadEmergence"]
+    maturity_stage_names: ["Maturity", "HarvestRipe"]

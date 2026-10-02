@@ -1,0 +1,35 @@
+# Уточнение вокруг лучшего стандартного пресета APSIM Winter Quick.
+# MinLN проверяется в документированном моделью диапазоне; остальные значения
+# сохраняются из Winter Quick, HeadEmergenceLongDayBase=50 встречается в Wheat.json.
+cultivar: Winter_rye_smoke
+observed_crop_group: Озимая рожь
+years: [2020, 2021, 2022, 2023]
+candidates:
+  quick_minln_8_4:
+    source: APSIM Winter Quick; HeadEmergenceLongDayBase 50
+    commands: &quick
+      '[Phenology].CAMP.FLNparams.MinLN': 8.4
+      '[Phenology].CAMP.FLNparams.PpLN': 0.9
+      '[Phenology].CAMP.FLNparams.VrnLN': 5.7
+      '[Phenology].CAMP.FLNparams.VxPLN': 5.5
+      '[Phenology].Phyllochron.BasePhyllochron.FixedValue': 98
+      '[Phenology].PhyllochronPpSensitivity.FixedValue': 0.2
+      '[Phenology].CAMP.EnvData.VrnTreatTemp': 5.8
+      '[Phenology].CAMP.EnvData.VrnTreatDuration': 60
+      '[Phenology].HeadEmergenceLongDayBase.FixedValue': 50
+      '[Phenology].HeadEmergencePpSensitivity.FixedValue': 2.8
+  quick_minln_8_0:
+    source: Winter Quick refinement; MinLN 8.0, HeadEmergenceLongDayBase 50
+    commands:
+      <<: *quick
+      '[Phenology].CAMP.FLNparams.MinLN': 8.0
+  quick_minln_7_5:
+    source: Winter Quick refinement; MinLN 7.5, HeadEmergenceLongDayBase 50
+    commands:
+      <<: *quick
+      '[Phenology].CAMP.FLNparams.MinLN': 7.5
+  quick_minln_7_0:
+    source: Winter Quick refinement; MinLN 7.0, HeadEmergenceLongDayBase 50
+    commands:
+      <<: *quick
+      '[Phenology].CAMP.FLNparams.MinLN': 7.0

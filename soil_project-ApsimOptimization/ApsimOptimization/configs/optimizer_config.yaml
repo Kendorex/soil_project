@@ -1,0 +1,125 @@
+project:
+  name: APSIMX spring wheat agro-technology optimization
+simulation:
+  start_date: '2021-01-01'
+  end_date: '2022-12-31'
+paths:
+  simulation_dir: simulation
+  weather_dir: data/weather
+  cultivars_file: data/cultivars/cultivars.txt
+  fertilizer_schemes_file: data/fertilizers/fertilizer_schemes.json
+  fertilizer_prices_file: data/economics/fertilizer_prices.csv
+  economic_constants_file: data/economics/economic_constants.csv
+  outputs_dir: outputs
+  work_dir: outputs/.optimizer_work
+apsim:
+  base_template: simulation/standart.apsimx
+  dotnet: /usr/bin/dotnet
+  zmq_server_dll: /home/user/ApsimX/bin/Release/net8.0/ApsimZMQServer.dll
+  zmq_profile: oneshot
+  zmq_port: 5555
+  models_dll: /home/user/ApsimX/bin/Release/net8.0/Models.dll
+  manager_names:
+    sowing: Sow using a variable rule
+    fertilizer: Fertilise at sowing
+  defaults:
+    sowing_date: 1-may..30-may
+    population: 250
+    depth: 30
+    row: 250
+results:
+  report_table: Report
+  yield_column: Yield
+  yield_fallback_columns: ["GrainWt", "Wheat.Yield"]
+  yield_rule: harvest_stage_then_last_nonzero
+  yield_source_unit: kg_per_ha
+  sowing_stage_names: ["Sowing"]
+  harvest_stage_names: ["HarvestRipe"]
+run_quality:
+  # Universal fail-closed policy: input or management defects must never become
+  # an apparently valid zero-yield economic result.
+  require_sowing: true
+  require_harvest: true
+  allow_zero_yield: false
+  minimum_sowing_events: 1
+  minimum_harvest_events: 1
+  require_relative_paths: true
+  require_weather_clock_coverage: true
+  warn_missing_weather_boundary_days: true
+  validate_soil_physical_bounds: true
+nitrogen_balance:
+  enabled: true
+  mineral_n_source: MineralN
+  allow_urea_in_mineral_n: false
+  additional_outputs: ["DenitrifiedN", "NAtmosphereLoss", "NO3Leaching"]
+seed_economics:
+  enabled: true
+  # Temporary engineering assumptions. Replace with the seed certificate,
+  # planned field establishment and the actual purchase price before final use.
+  mode: incremental_from_baseline
+  values_status: provisional
+  baseline_population: 250
+  thousand_seed_weight_g: 45
+  germination_fraction: 0.92
+  purity_fraction: 0.98
+  field_establishment_fraction: 0.90
+  seed_price_per_kg: 30
+soil_constraints:
+  strict: false
+  source: disabled
+  required_columns: ["N_NO3", "P_2O5", "SOC", "SOC_0"]
+  external_file: null
+  N_NO3_min: 4
+  P_2O5_min: 51
+  SOC_0: null
+weather_scenarios:
+  s1_dojdey:
+    enabled: true
+    weather_file: data/weather/weather_s1_dojdey.met
+  s2_holod:
+    # Temporarily excluded until both configured spring-wheat cultivars are
+    # validated against this weather scenario.
+    enabled: false
+    weather_file: data/weather/weather_s2_holod.met
+  s3_norm:
+    enabled: true
+    weather_file: data/weather/weather_s3_norm.met
+  s4_zasuha:
+    enabled: true
+    weather_file: data/weather/weather_s4_zasuha.met
+optimization:
+  search_space:
+    sowing_dates:
+      enabled: false
+      values: ["1-may", "10-may", "20-may", "30-may"]
+    cultivars:
+      enabled: true
+      # Both cultivars are discrete choices. Irgina phenology was calibrated
+      # on 2007-2016 observations and checked independently on 2017-2019.
+      values: ["Zlata", "Irgina"]
+    populations:
+      enabled: true
+      values: [250, 300, 350, 400, 450, 500]
+    depths:
+      enabled: true
+      values: [20, 30, 40, 50, 60]
+    rows:
+      enabled: true
+      # 125/150 mm represent ordinary grain-drill spacing; 250 mm preserves
+      # the current APSIMX template setting as a wider-row comparison.
+      values: [125, 150, 250]
+  safety:
+    max_staged_dry_run_files: 500
+    max_full_grid_runs: 2000
+  nsga2:
+    population_size: 20
+    generations: 10
+    seed: 42
+cultivar:
+  source: data/cultivars/cultivars.txt
+  default: Zlata
+fertilizer:
+  source: data/fertilizers/fertilizer_schemes.json
+  apply_at: sowing
+notes:
+- Use only files from data/ as optimization inputs.

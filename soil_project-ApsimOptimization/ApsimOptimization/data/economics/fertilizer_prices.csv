@@ -1,0 +1,5 @@
+type_apsimx,price_per_kg_amount,unit,comment
+UreaN,77.17,rub_per_kg_amount,Азот полностью в форме Urea
+NH4NO3N,69.77,rub_per_kg_amount,50% NO3 + 50% NH4
+UAN_N,110.94,rub_per_kg_amount,25% NO3 + 25% NH4 + 50% Urea
+NO3N,323.53,rub_per_kg_amount,Азот полностью в нитратной форме

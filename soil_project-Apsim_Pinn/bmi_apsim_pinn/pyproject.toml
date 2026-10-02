@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+"*" = ["meta/**/*.yaml", "meta/**/*.yml"]
+
+[project]
+name = "bmi-apsim-pinn"
+version = "0.1.0"
+description = "APSIM-PINN hybrid model with BMI interface for pymt"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "torch",
+    "pyzmq",
+    "msgpack",
+]
+
+# Опциональные зависимости
+[project.optional-dependencies]
+pymt = ["pymt"]          # PyMT желательно ставить через conda:
+                         #   conda install -c conda-forge pymt
+                         #   conda install -c conda-forge "setuptools<81"
+dev  = ["pytest"]
+
+# Регистрируем точку входа для pymt
+[project.entry-points."pymt.plugins"]
+ApsimPinn = "src.bmi_apsim_pinn:BmiApsimPinn"
+
+# Указываем, где искать пакет src
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

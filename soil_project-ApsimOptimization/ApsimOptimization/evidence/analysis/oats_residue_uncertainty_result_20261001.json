@@ -1,0 +1,63 @@
+{
+  "experiment": "historical_2023_wheat_residue_uncertainty_envelope",
+  "source_archive": "oats_residue_uncertainty_20261001_132501.tar.gz",
+  "run_status": "completed",
+  "base_model_changed": false,
+  "scope_validation": {
+    "changed_fields": [
+      "Field2",
+      "Field7"
+    ],
+    "non_target_fields_unchanged": true,
+    "apsim_errors": false
+  },
+  "all_fields_2023": {
+    "residue_retained": {
+      "mae_t_ha": 1.3609779733757685,
+      "rmse_t_ha": 1.6809422731109334,
+      "bias_t_ha": -0.11794562882583579
+    },
+    "fresh_straw_export": {
+      "mae_t_ha": 1.1882504402189833,
+      "rmse_t_ha": 1.486734581959809,
+      "bias_t_ha": 0.054781904330949274
+    }
+  },
+  "oats_2023": {
+    "residue_retained": {
+      "mae_t_ha": 2.2507282685770997,
+      "rmse_t_ha": 2.256582460678035,
+      "bias_t_ha": -2.2507282685770997
+    },
+    "fresh_straw_export": {
+      "mae_t_ha": 1.3870906027931742,
+      "rmse_t_ha": 1.4199395621501014,
+      "bias_t_ha": -1.3870906027931742
+    },
+    "rmse_reduction_from_export_t_ha": 0.8366428985279337,
+    "rmse_reduction_from_export_fraction": 0.3707663808190653
+  },
+  "field_results": {
+    "Field2": {
+      "observed_yield_t_ha": 3.4,
+      "retained_yield_t_ha": 0.9868320107026679,
+      "export_yield_t_ha": 1.709251662574739,
+      "export_increase_t_ha": 0.722419651872071,
+      "remaining_underprediction_t_ha": 1.690748337425261,
+      "retained_end_mineral_n_kg_ha": 13.671334758840462,
+      "export_end_mineral_n_kg_ha": 19.246349539229442
+    },
+    "Field7": {
+      "observed_yield_t_ha": 3.57,
+      "retained_yield_t_ha": 1.4817114521431332,
+      "export_yield_t_ha": 2.4865671318389126,
+      "export_increase_t_ha": 1.0048556796957795,
+      "remaining_underprediction_t_ha": 1.0834328681610872,
+      "retained_end_mineral_n_kg_ha": 14.7710242074764,
+      "export_end_mineral_n_kg_ha": 25.9919965307282
+    }
+  },
+  "conclusion": "Fresh wheat-straw export is a material part of the 2023 oat discrepancy, but neither documented endpoint contains the observations. Residue fate alone cannot explain or correct the remaining underprediction.",
+  "decision": "Keep both residue endpoints as explicit uncertainty scenarios. Do not calibrate the production model to the export endpoint until straw fate is confirmed.",
+  "next_single_iteration": "Under the fresh-straw-export endpoint, test equal observed N rates with supported fertilizer forms applied once at sowing. Historical labels specify N rate but not product, so fertilizer form is the next unresolved management input to quantify before changing oat physiology."
+}

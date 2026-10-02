@@ -1,0 +1,5 @@
+﻿year,candidate_id,apsim_run_status,simulated_yield_t_ha,observed_yield_t_ha,emergence_date,establishment_severe_stress_streak_days,max_lai,retention_profile_validated,prediction_allowed,quality_status,quality_reasons
+2020,e2d3d2856992,completed,1.1125949823178942,2.21,2020-05-24,0,1.196787723239333,False,False,diagnostic_only_unvalidated_soil,soil_retention_profile_not_field_validated
+2021,e2d3d2856992,completed,0.0121832964472461,1.5,2021-05-24,6,0.10417334262740921,False,False,rejected_hydrology_failure,early_severe_water_stress_with_near_zero_yield;soil_retention_profile_not_field_validated
+2022,e2d3d2856992,completed,0.9660808042858076,1.8,2022-05-21,0,1.1831758460387056,False,False,diagnostic_only_unvalidated_soil,soil_retention_profile_not_field_validated
+2023,e2d3d2856992,completed,0.0,2.07,2023-05-14,13,0.0808,False,False,rejected_hydrology_failure,early_severe_water_stress_with_near_zero_yield;soil_retention_profile_not_field_validated
