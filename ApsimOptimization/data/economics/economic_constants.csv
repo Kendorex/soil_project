@@ -1,9 +1,0 @@
-name,value,unit,comment
-grain_price,14300,rub_per_t,Цена зерна
-constant_C,23000,rub_per_ha,Постоянные и прочие одинаковые расходы
-application_cost,480,rub_per_ha_pass,Стоимость одного прохода внесения удобрения
-harvest_variable_cost,0,rub_per_t,Переменная уборка
-cleaning_cost,500,rub_per_t,Очистка и доработка
-handling_cost,350,rub_per_t,Погрузка и перевалка
-finance_rate,0.18,share_per_year,Стоимость оборотного капитала
-finance_days,240,days,Период финансирования
