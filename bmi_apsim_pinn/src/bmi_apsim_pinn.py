@@ -158,7 +158,7 @@ class BmiApsimPinn:
         if not cfg_file.exists():
             default_cfg = {
                 "apsimx":  "config/test_field_2021.apsimx",
-                "model":   "src/pi_deeponet_swim3_mvp.pth",
+                "model":   "pi_deeponet_swim3_mvp.pth",
                 "out_dir": "run_output",
                 "mode":    "replace",
 
