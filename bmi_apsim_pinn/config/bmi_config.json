@@ -1,6 +1,6 @@
 {
   "apsimx":  "config/test_field_2021.apsimx",
-  "model":   "pi_deeponet_apsim_campbell.pth",
+  "model":   "src/pi_deeponet_swim3_mvp.pth",
   "out_dir": "run_output",
   "mode":    "replace",
 

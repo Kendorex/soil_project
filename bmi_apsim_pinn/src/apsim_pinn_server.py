@@ -1,8 +1,8 @@
 import os
-import sys
 import json
 import threading
 import subprocess
+from collections import deque
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -14,13 +14,7 @@ import msgpack
 # Импорты из соседних файлов в src/ — относительные,
 # чтобы работало и как пакет (pymt, tests), и из корня проекта.
 from .pinn_inference import APSIMPINNBridge
-from . import pinn_inference as _pi
 from .prepare_pinn_input import parse_apsimx, build_apsim_soil_data
-
-# Патч для корректной загрузки модели, если она сохранялась как __main__
-sys.modules["__main__"].PIDeepONet = _pi.PIDeepONet
-sys.modules["__main__"].BranchNet  = _pi.BranchNet
-sys.modules["__main__"].TrunkNet   = _pi.TrunkNet
 
 
 # =========================================================
@@ -36,7 +30,7 @@ APSIM_WSL_BIN = None
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 APSIMX_WIN = BASE_DIR / "config" / "test_field_2021.apsimx"
-MODEL_PATH = BASE_DIR / "pi_deeponet_apsim_campbell.pth"
+MODEL_PATH = BASE_DIR / "src" / "pi_deeponet_swim3_mvp.pth"
 OUT_DIR    = BASE_DIR / "run_output"
 
 ZMQ_PORT = 5555
@@ -57,6 +51,8 @@ VAR_MAXT      = "[Weather].MaxT"
 VAR_MINT      = "[Weather].MinT"
 VAR_ES        = "[ISoilWater].Es"
 VAR_EO        = "[ISoilWater].Eo"
+VAR_EOS       = "[ISoilWater].Eos"
+VAR_POND      = "[Soil].Swim3.Pond"
 VAR_TODAY     = "Clock.Today"
 
 PSI_DUL_MM = -100.0
@@ -333,10 +329,12 @@ def today_to_str(today) -> str:
     return s[:10] if len(s) >= 10 else s
 
 
-def clip_sw_to_valid_range(sw_values, ll15, dul, eps=1e-4):
+def clip_sw_to_valid_range(sw_values, lower, upper, eps=1e-6):
     sw = np.asarray(sw_values, dtype=np.float64)
-    lo = np.asarray(ll15, dtype=np.float64) + eps
-    hi = np.asarray(dul, dtype=np.float64) - eps
+    lo = np.asarray(lower, dtype=np.float64) + eps
+    hi = np.asarray(upper, dtype=np.float64) - eps
+    if np.any(hi <= lo):
+        raise ValueError("Invalid soil-water bounds")
     n_below = int(np.sum(sw < lo))
     n_above = int(np.sum(sw > hi))
     return np.clip(sw, lo, hi).tolist(), n_below, n_above
@@ -476,11 +474,16 @@ class PinnServer:
         self.day_idx = 0
         self.history = []
         self.mode = mode
+        self._model_sw = list(sw_init)
+        self._model_pond_mm = 0.0
+        self._rain_history = deque(maxlen=bridge.history_days)
+        self._evap_history = deque(maxlen=bridge.history_days)
 
         n = len(soil_static["thickness"])
 
         self.latest = {
             "soil_water_volumetric": np.zeros(n, dtype=np.float64),
+            "pinn_soil_water_volumetric": np.zeros(n, dtype=np.float64),
             "soil_psi":              np.zeros(n, dtype=np.float64),
             "soil_psi_read":         np.zeros(n, dtype=np.float64),
             "rain":          0.0,
@@ -489,6 +492,14 @@ class PinnServer:
             "temp_min":      0.0,
             "evap_soil":     0.0,
             "evap_potential": 0.0,
+            "evap_potential_soil": 0.0,
+            "pond_depth": 0.0,
+            "pinn_q_top": 0.0,
+            "pinn_q_bottom": 0.0,
+            "pinn_runoff": 0.0,
+            "pinn_evap_actual": 0.0,
+            "pinn_pond_depth": 0.0,
+            "pinn_sink_total": 0.0,
             "date":          0,
         }
         self.step_done = threading.Event()
@@ -630,6 +641,8 @@ class PinnServer:
         mint     = self.get_var(VAR_MINT)
         es       = self.get_var(VAR_ES)
         eo       = self.get_var(VAR_EO)
+        eos      = self.get_var(VAR_EOS)
+        pond     = self.get_var(VAR_POND)
         today    = self.get_var(VAR_TODAY)
         psi_old  = self.get_var(VAR_PSI_READ)
 
@@ -637,25 +650,34 @@ class PinnServer:
         psi_old_list = [float(x) for x in psi_old]
         date_str     = today_to_str(today)
 
-        soil_data = build_apsim_soil_data(self.soil_static, sw_list)
-        climate = {"P": float(rain), "E_s": float(es), "E_p": float(eo)}
+        # paused1 follows today's water movement. The operator's input SW is
+        # yesterday's end-of-day state; today's rain/Eos end on the target day.
+        soil_data = build_apsim_soil_data(self.soil_static, self._model_sw)
+        self._rain_history.append(max(0.0, float(rain)))
+        self._evap_history.append(max(0.0, float(eos)))
+        h = self.bridge.history_days
+        rain_history = [0.0] * (h - len(self._rain_history)) + list(self._rain_history)
+        evap_history = [0.0] * (h - len(self._evap_history)) + list(self._evap_history)
         result = self.bridge.predict_next_state(
             apsim_soil_data=soil_data,
-            climate_data=climate,
             target_time_days=1.0,
+            rain_history=rain_history,
+            evap_history=evap_history,
+            pond_depth_mm=self._model_pond_mm,
         )
         sw_pinn = [float(x) for x in result["SW"]]
 
-        ll15 = self.soil_static["LL15"]
-        dul  = self.soil_static["DUL"]
-        sw_clip, n_below, n_above = clip_sw_to_valid_range(sw_pinn, ll15, dul)
+        sw_clip, n_below, n_above = clip_sw_to_valid_range(
+            sw_pinn, np.zeros(len(sw_pinn)), self.soil_static["SAT"]
+        )
 
         psi_new = compute_psi_mm_apsim(sw_clip, self.soil_static, PSI_DUL_MM)
 
         print(f"\n[day {self.day_idx:4d}] {date_str}")
         print(f"  P={float(rain):.3f} Radn={float(radn):.2f} "
               f"Tmax={float(maxt):.2f} Tmin={float(mint):.2f} "
-              f"Es={float(es):.4f} Eo={float(eo):.4f}")
+              f"Es={float(es):.4f} Eos={float(eos):.4f} Eo={float(eo):.4f} "
+              f"Pond={float(pond):.4f}")
         print(f"  SW_apsim  ={np.round(sw_list, 4).tolist()}")
         print(f"  SW_pinn   ={np.round(sw_pinn, 4).tolist()}")
         print(f"  SW_clip   ={np.round(sw_clip, 4).tolist()}  (below={n_below}, above={n_above})")
@@ -686,10 +708,16 @@ class PinnServer:
             "P": float(rain), "Radn": float(radn),
             "Tmax": float(maxt), "Tmin": float(mint),
             "E_s": float(es), "E_p": float(eo),
+            "Eos": float(eos), "Pond": float(pond),
+            **{k: result[k] for k in (
+                "q_top_m_day", "q_bottom_m_day", "runoff_m_day",
+                "evap_actual_m_day", "pond_m", "sink_total_m_day",
+            )},
         })
         self.day_idx += 1
 
-        self.latest["soil_water_volumetric"][:] = np.asarray(sw_clip, dtype=np.float64)
+        self.latest["soil_water_volumetric"][:] = np.asarray(sw_list, dtype=np.float64)
+        self.latest["pinn_soil_water_volumetric"][:] = np.asarray(sw_clip, dtype=np.float64)
         self.latest["soil_psi"][:]              = np.asarray(psi_new, dtype=np.float64)
         self.latest["soil_psi_read"][:]         = np.asarray(psi_check_list, dtype=np.float64)
         self.latest["rain"]           = float(rain)
@@ -698,6 +726,17 @@ class PinnServer:
         self.latest["temp_min"]       = float(mint)
         self.latest["evap_soil"]      = float(es)
         self.latest["evap_potential"] = float(eo)
+        self.latest["evap_potential_soil"] = float(eos)
+        self.latest["pond_depth"] = float(pond)
+        for name, key in (
+            ("pinn_q_top", "q_top_m_day"),
+            ("pinn_q_bottom", "q_bottom_m_day"),
+            ("pinn_runoff", "runoff_m_day"),
+            ("pinn_evap_actual", "evap_actual_m_day"),
+            ("pinn_pond_depth", "pond_m"),
+            ("pinn_sink_total", "sink_total_m_day"),
+        ):
+            self.latest[name] = float(result[key])
         try:
             self.latest["date"] = int(date_str.replace("-", ""))
         except Exception:
@@ -716,6 +755,9 @@ class PinnServer:
         try:
             today = self.get_var(VAR_TODAY)
             sw = self.get_var(VAR_SW)
+            pond = self.get_var(VAR_POND)
+            self._model_sw = [float(x) for x in sw]
+            self._model_pond_mm = float(pond)
             print(f"[eod] {today_to_str(today)}  "
                   f"SW={np.round([float(x) for x in sw], 4).tolist()}")
         except Exception as e:
@@ -740,8 +782,14 @@ class PinnServer:
                 "P": h["P"], "Radn": h["Radn"],
                 "Tmax": h["Tmax"], "Tmin": h["Tmin"],
                 "E_s": h["E_s"], "E_p": h["E_p"],
+                "Eos": h["Eos"], "Pond": h["Pond"],
                 "n_below": h["n_below"], "n_above": h["n_above"],
             }
+            for key in (
+                "q_top_m_day", "q_bottom_m_day", "runoff_m_day",
+                "evap_actual_m_day", "pond_m", "sink_total_m_day",
+            ):
+                row[key] = h[key]
             for i in range(n_layers):
                 row[f"SWapsim_{i+1}"] = h["SW_apsim"][i]
                 row[f"SWpinn_{i+1}"]  = h["SW_pinn"][i]

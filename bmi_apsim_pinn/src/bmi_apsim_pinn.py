@@ -20,6 +20,7 @@ from .prepare_pinn_input import parse_apsimx
 # =========================================================
 BMI_TO_APSIM = {
     "soil_water_volumetric": aps.VAR_SW,
+    "pinn_soil_water_volumetric": "PINN.SW",
     "soil_psi":              aps.VAR_PSI_SWIM3,
     "soil_psi_read":         aps.VAR_PSI_READ,
     "rain":                  aps.VAR_RAIN,
@@ -28,6 +29,14 @@ BMI_TO_APSIM = {
     "temp_min":              aps.VAR_MINT,
     "evap_soil":             aps.VAR_ES,
     "evap_potential":        aps.VAR_EO,
+    "evap_potential_soil":   aps.VAR_EOS,
+    "pond_depth":            aps.VAR_POND,
+    "pinn_q_top":            "PINN.q_top",
+    "pinn_q_bottom":         "PINN.q_bottom",
+    "pinn_runoff":           "PINN.runoff",
+    "pinn_evap_actual":      "PINN.evap_actual",
+    "pinn_pond_depth":       "PINN.pond",
+    "pinn_sink_total":       "PINN.sink_total",
     "date":                  aps.VAR_TODAY,
 }
 
@@ -55,15 +64,20 @@ INPUT_VARS = [
     "soil_water_volumetric",
     "rain", "radiation", "temp_max", "temp_min",
     "evap_soil", "evap_potential", "date",
+    "evap_potential_soil", "pond_depth",
     "soil_psi_read",
 ]
 
 OUTPUT_VARS = [
     "soil_psi",
+    "pinn_soil_water_volumetric",
+    "pinn_q_top", "pinn_q_bottom", "pinn_runoff",
+    "pinn_evap_actual", "pinn_pond_depth", "pinn_sink_total",
 ]
 
 VAR_UNITS = {
     "soil_water_volumetric": "mm/mm",
+    "pinn_soil_water_volumetric": "mm/mm",
     "soil_psi":              "mm",
     "soil_psi_read":         "mm",
     "rain":                  "mm",
@@ -72,6 +86,14 @@ VAR_UNITS = {
     "temp_min":              "degC",
     "evap_soil":             "mm",
     "evap_potential":        "mm",
+    "evap_potential_soil":   "mm/d",
+    "pond_depth":            "mm",
+    "pinn_q_top":            "m/d",
+    "pinn_q_bottom":         "m/d",
+    "pinn_runoff":           "m/d",
+    "pinn_evap_actual":      "m/d",
+    "pinn_pond_depth":       "m",
+    "pinn_sink_total":       "m/d",
     "date":                  "d",
 }
 
@@ -80,12 +102,16 @@ VAR_TYPE["date"] = "int64"
 
 ARRAY_VARS = [
     "soil_water_volumetric",
+    "pinn_soil_water_volumetric",
     "soil_psi",
     "soil_psi_read",
 ]
 SCALAR_VARS = [
     "rain", "radiation", "temp_max", "temp_min",
     "evap_soil", "evap_potential",
+    "evap_potential_soil", "pond_depth",
+    "pinn_q_top", "pinn_q_bottom", "pinn_runoff",
+    "pinn_evap_actual", "pinn_pond_depth", "pinn_sink_total",
 ]
 
 
@@ -132,7 +158,7 @@ class BmiApsimPinn:
         if not cfg_file.exists():
             default_cfg = {
                 "apsimx":  "config/test_field_2021.apsimx",
-                "model":   "pi_deeponet_apsim_campbell.pth",
+                "model":   "src/pi_deeponet_swim3_mvp.pth",
                 "out_dir": "run_output",
                 "mode":    "replace",
 
@@ -175,14 +201,9 @@ class BmiApsimPinn:
             return path
 
         apsimx_path = resolve(cfg["apsimx"])
-        model_path  = resolve(cfg.get("model",  aps.MODEL_PATH.name))
+        model_path  = resolve(cfg.get("model", str(aps.MODEL_PATH)))
         out_dir     = resolve(cfg.get("out_dir", aps.OUT_DIR.name))
         mode        = cfg.get("mode", aps.MODE)
-
-        # model_path: если из конфига пришло относительное имя, resolve()
-        # приклеит PROJECT_ROOT. Иначе берём полный путь из aps.MODEL_PATH.
-        if not model_path.is_absolute():
-            model_path = aps.MODEL_PATH
 
         out_dir.mkdir(parents=True, exist_ok=True)
         self._out_dir = out_dir

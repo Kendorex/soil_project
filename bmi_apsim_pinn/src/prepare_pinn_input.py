@@ -207,16 +207,16 @@ def build_apsim_soil_data(soil_static: dict, sw_current: list[float]) -> dict:
     }
 
 
-def build_climate_data(met_row: dict,
-                       e_s_mm: float | None = None,
-                       e_p_mm: float | None = None) -> dict:
-    P = float(met_row["rain"])
-    if e_s_mm is None:
-        e_s_mm = max(0.0, 0.2 * met_row["radn"])
-    if e_p_mm is None:
-        tmean = 0.5 * (met_row["maxt"] + met_row["mint"])
-        e_p_mm = max(0.0, 0.15 * max(0.0, tmean))
-    return {"P": P, "E_s": e_s_mm, "E_p": e_p_mm}
+def build_climate_data(met_row: dict, eos_mm: float) -> dict:
+    """Current-day forcing in the raw mm/day units used by the MVP adapter.
+
+    Eos must come from APSIM; radiation/temperature proxies are not the
+    potential soil evaporation used when training this model.
+    """
+    return {
+        "rain_mm_day": max(0.0, float(met_row["rain"])),
+        "evap_potential_soil_mm_day": max(0.0, float(eos_mm)),
+    }
 
 
 # =========================================================
