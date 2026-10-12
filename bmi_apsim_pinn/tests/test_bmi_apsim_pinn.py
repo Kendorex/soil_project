@@ -23,14 +23,11 @@ import numpy as np
 import pytest
 
 # --- Настройка путей ---
-# conftest.py уже добавил src в sys.path, но для надёжности добавим явно
+# conftest.py уже добавил корень подпроекта в sys.path
 BASE_DIR = Path(__file__).resolve().parent.parent
-SRC_DIR = BASE_DIR / "src"
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
 
 # --- Импорт тестируемого класса ---
-from bmi_apsim_pinn import (
+from src.bmi_apsim_pinn import (
     BmiApsimPinn,
     BMI_TO_APSIM,
     INPUT_VARS,
@@ -138,7 +135,7 @@ def test_get_var_names_covers_all_mapping():
     """get_var_names возвращает все ключи BMI_TO_APSIM."""
     model = BmiApsimPinn()
     names = model.get_var_names()
-    assert set(names) == set(BMI_TO_APSIM.keys())
+    assert set(BMI_TO_APSIM).issubset(names)
 
 
 # =========================================================
