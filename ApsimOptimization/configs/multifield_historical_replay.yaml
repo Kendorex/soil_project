@@ -20,7 +20,7 @@ rotation_parameter_reference: null
 output_dir: ../outputs/multifield/HISTORICAL_REPLAY
 runtime:
   command:
-    - /home/user/ApsimX/bin/Release/net8.0/Models
+    - Models
   timeout_seconds: 600
 year: 2023
 rotation_transition_policy: harvest_on_winter_sowing_proxy

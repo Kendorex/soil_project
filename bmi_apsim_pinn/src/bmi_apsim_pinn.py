@@ -1,4 +1,5 @@
 import os
+import subprocess
 import sys
 import json
 import time
@@ -258,27 +259,28 @@ class BmiApsimPinn:
         self._initialized = True
 
     def finalize(self) -> None:
-        # Идемпотентность: повторный вызов не должен падать
+        # Даём APSIM корректно завершиться
+        if self._server is not None and self._server._thread is not None:
+            print("[finalize] Ждём завершения APSIM...")
+            self._server._thread.join(timeout=120)
+
         if self._proc is not None:
             try:
+                self._proc.wait(timeout=30)
+            except subprocess.TimeoutExpired:
+                print("[finalize] APSIM не завершился, убиваем")
                 self._proc.terminate()
-                self._proc.wait(timeout=5)
-            except Exception:
-                try: self._proc.kill()
-                except Exception: pass
+                try: self._proc.wait(timeout=10)
+                except Exception:
+                    try: self._proc.kill()
+                    except Exception: pass
             finally:
                 self._proc = None
 
-        time.sleep(0.5)
-
         if self._server is not None:
-            try:
-                self._server.stop()
-            except Exception as e:
-                print(f"[finalize] server.stop: {e}")
-            finally:
-                self._server = None
-
+            try: self._server.stop()
+            except Exception as e: print(f"[finalize] {e}")
+            finally: self._server = None
         self._server_thread = None
         self._initialized = False
 

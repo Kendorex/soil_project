@@ -1,0 +1,114 @@
+schema_version: 1
+rotation_rules: ../data/rotation/rotation_transition_matrix.json
+
+# Последний документированный год в книге хозяйства
+# docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx — 2024.
+# Это отдельный источник фактических посадок; книга почвоведов содержит правила.
+start_year: 2025
+years: 5
+minimum_transition_score: 0.5
+top_k: 5
+candidate_pool: 20000
+farm_selection_beam_width: 5000
+
+# Овёс с подсевом и последующие годы травостоя являются разными состояниями.
+# Код П означает продолжение уже существующего травостоя и не подменяет собой
+# оценку Ц/Д/Нд для нового посева из матрицы почвоведов.
+state_model:
+  candidate_states:
+    - winter_rye
+    - spring_wheat
+    - oats_with_underseed
+    - potato
+    - legume_cereal_mixture
+  states:
+    winter_rye:
+      name: Озимая рожь
+      matrix_predecessor: winter_rye
+      matrix_successor: winter_rye
+    spring_wheat:
+      name: Яровая пшеница
+      matrix_predecessor: spring_wheat
+      matrix_successor: spring_wheat
+    oats_with_underseed:
+      name: Овес с подсевом многолетних трав
+      matrix_predecessor: oats
+      # Для входящего перехода совместный посев сопоставлен с категорией
+      # бобово-злаковых смесей. Исторический backtest 2019–2024 повысил долю
+      # принятых переходов с 64,9% до 86,5%. Последующий травостой не меняется.
+      matrix_successor: legume_cereal_mixture
+      forced_next: perennial_grass_year1
+    potato:
+      name: Картофель
+      matrix_predecessor: potato
+      matrix_successor: potato
+    legume_cereal_mixture:
+      name: Вико-овсяная смесь
+      matrix_predecessor: legume_cereal_mixture
+      matrix_successor: legume_cereal_mixture
+    perennial_grass_year1:
+      name: Многолетние травы 1-го года пользования
+      matrix_predecessor: clover
+      forced_next: perennial_grass_year2
+    perennial_grass_year2:
+      name: Многолетние травы 2-го года пользования
+      matrix_predecessor: clover
+      optional_continuations:
+        - perennial_grass_year3
+    perennial_grass_year3:
+      name: Многолетние травы 3-го года пользования
+      matrix_predecessor: clover
+
+# Состояния каждого поля в 2024 году взяты из фактической книги хозяйства.
+initial_states:
+  Field1: winter_rye
+  Field2: perennial_grass_year1
+  Field3: oats_with_underseed
+  Field4: perennial_grass_year2
+  Field5: spring_wheat
+  Field6: winter_rye
+  Field7: perennial_grass_year1
+  Field8: oats_with_underseed
+  Field9: spring_wheat
+  Field10: perennial_grass_year2
+
+# Диапазоны — фактические минимумы, максимумы и средние количества полей в год
+# за 2019–2024 годы. Они используются только для выбора среди одинаково
+# допустимых последовательностей, а не объявляются агрономической нормой.
+farm_crop_mix:
+  source:
+    workbook: docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx
+    sheet: Севооборот
+    range: A219:C278
+    years: 2019-2024
+  categories:
+    perennial_grass:
+      states: [perennial_grass_year1, perennial_grass_year2, perennial_grass_year3]
+      annual_min: 2
+      annual_max: 5
+      annual_target: 3.6666666667
+    oats_with_underseed:
+      states: [oats_with_underseed]
+      annual_min: 1
+      annual_max: 2
+      annual_target: 1.6666666667
+    winter_rye:
+      states: [winter_rye]
+      annual_min: 1
+      annual_max: 2
+      annual_target: 1.5
+    spring_wheat:
+      states: [spring_wheat]
+      annual_min: 1
+      annual_max: 2
+      annual_target: 1.6666666667
+    legume_cereal_mixture:
+      states: [legume_cereal_mixture]
+      annual_min: 0
+      annual_max: 1
+      annual_target: 0.1666666667
+    potato:
+      states: [potato]
+      annual_min: 0
+      annual_max: 0
+      annual_target: 0

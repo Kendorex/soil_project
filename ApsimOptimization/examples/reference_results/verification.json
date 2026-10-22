@@ -1,0 +1,23 @@
+{
+  "raw_databases_verified": 41,
+  "field_checks_verified": 410,
+  "successful_candidates": 40,
+  "feasible_candidates": 35,
+  "pareto_ids": [
+    "candidate_011",
+    "candidate_022",
+    "candidate_028",
+    "candidate_034",
+    "candidate_035",
+    "candidate_040"
+  ],
+  "same_sample_front_unchanged": true,
+  "common_policies": 9,
+  "common_policy_objectives_unchanged": true,
+  "historical_candidate_031_reverified": true,
+  "verification_note": "All 41 new-run databases plus the historical candidate_031 database were read without running APSIM. Objectives and constraint values were reproduced. Stored new-run front was independently recomputed.",
+  "source_archive": "multiyear_rotation_nsga2_2020_2023_20261016_165110_356871.tar.gz",
+  "source_archive_sha256": "9a3f48c67bc180509ea9560a3bee50cfe3357081fc18ab38b5a1c50fbd999e1d",
+  "raw_databases_included": false,
+  "pooled_front_solutions": 5
+}

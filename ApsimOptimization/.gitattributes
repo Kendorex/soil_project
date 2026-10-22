@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.ini text eol=lf
+*.met -text
+*.apsimx -text
+*.xlsx binary

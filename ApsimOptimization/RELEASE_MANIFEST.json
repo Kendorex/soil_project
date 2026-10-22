@@ -1,0 +1,322 @@
+{
+  "release_version": "2026.10.16-humic",
+  "main_entry_point": "scripts/run_multiyear_rotation_optimizer.py",
+  "humic_constraint": "hard; own period-start reference; whole profile; no decline on any field",
+  "validation": {
+    "passed_tests": 112,
+    "deselected_tests": 5,
+    "deselected_reason": "Respect user instruction to run optimization personally: synthetic search tests were not executed.",
+    "subtests_passed": 9,
+    "environment": "WSL Python 3.10.12; existing project .venv",
+    "apsim_started": false,
+    "production_optimizer_started": false,
+    "preparation_smoke_test": "passed; 10 field reports; no SQLite output created",
+    "runtime_python_ast_matches_original": true,
+    "model_and_weather_hashes_verified": true,
+    "one_markdown_file": "README.md"
+  },
+  "packaging_changes": [
+    "Only working entry points and their transitive Python dependencies included.",
+    "Config runtime executable changed from original local path to Models; set APSIM_MODELS before running. Scientific settings preserved.",
+    "Core report and SQLite reader tests separated from removed legacy experiment runner tests.",
+    "Text line endings normalized for Git; model and weather bytes preserved."
+  ],
+  "excluded": [
+    "experimental calibration scripts and configurations",
+    "old single-field optimizer",
+    "APSIM binaries, Python environments, caches, logs, SQLite databases",
+    "intermediate outputs, document builders, presentation assets and prior archives",
+    "development Markdown notes"
+  ],
+  "file_count_excluding_manifest": 72,
+  "files": {
+    ".gitattributes": {
+      "bytes": 168,
+      "sha256": "2256cc866af33fc2ee21ba11ffe061c73d45dfa37b2816218adaddc481e57551"
+    },
+    ".gitignore": {
+      "bytes": 208,
+      "sha256": "f4425b27c60f28baaf81ac83bcc0d015f5e6f836a5a935d9a7966a95659b5099"
+    },
+    "configs/multifield.yaml": {
+      "bytes": 6176,
+      "sha256": "dacd00eefa4ceb7c7e06eb151ee941038c4d6325c721c43945e02b9f70a3a0f7"
+    },
+    "configs/multifield_2023_n_diagnostic.yaml": {
+      "bytes": 12814,
+      "sha256": "4231935f816b01df4408cb059ee5a98a6e00279d106b71568582f82149d0d00f"
+    },
+    "configs/multifield_historical_replay.yaml": {
+      "bytes": 1806,
+      "sha256": "02e2e00f04fcd1f11952e118b7eda002f3cd5a27444868516045a54b6c947ef4"
+    },
+    "configs/multiyear_rotation_nsga2_2020_2023.yaml": {
+      "bytes": 4079,
+      "sha256": "1b353f772c267bba3d9fd69826c797b01644053efe96e787a64634bf47057c8a"
+    },
+    "configs/multiyear_rotation_replay_2019_2023.yaml": {
+      "bytes": 5250,
+      "sha256": "4edf36c1c1509c01d949da4a733b5d115a93903631542749a451a7f0c8fa481d"
+    },
+    "configs/rotation_planning_2019_2023.yaml": {
+      "bytes": 5523,
+      "sha256": "3d08ae3913238f874c3ee99ff4cf17eff32032241eb84eb22ebd12e60a7b7365"
+    },
+    "configs/rotation_planning_2019_2023_all_crops.yaml": {
+      "bytes": 5754,
+      "sha256": "590f998ce65f971acf861146a30c346da56559e55b6f624f67c77acb918cc633"
+    },
+    "configs/rotation_planning_2025_2029.yaml": {
+      "bytes": 4583,
+      "sha256": "6a99939e717d47a7f3a6ad850ac16a4919807861e31aa182ae5506437b91fbb3"
+    },
+    "data/calibration_weather/weather_irgina_2018.met": {
+      "bytes": 18446,
+      "sha256": "3d5cfadc393e531ee481f36f00708cc1666138e77bacf8166a3361bf17842540"
+    },
+    "data/economics/economic_constants.csv": {
+      "bytes": 654,
+      "sha256": "cbbff2128325783bb5471b6f6a23a128612d24b869a2f0f88d3b9f0a23130102"
+    },
+    "data/economics/fertilizer_prices.csv": {
+      "bytes": 326,
+      "sha256": "af7047b7e7d7499a337f3d3224d1a39822536c20f9581578ebb3510ca3e9b12b"
+    },
+    "data/observations/historical_2022_2023.json": {
+      "bytes": 12851,
+      "sha256": "fce6b6101d491a72efc2ca0c60ecbf563e687ebb700548645bb640424e3b9391"
+    },
+    "data/observations/multifield_2019_2023.json": {
+      "bytes": 26647,
+      "sha256": "73be87dd3b5c6e77898c3622c629bd07ed68ea170836cca005661f53e7c1137a"
+    },
+    "data/rotation/rotation_transition_matrix.json": {
+      "bytes": 30880,
+      "sha256": "a3efd73d880948c02e8f3658854bb23112e0e3af121e9a0e6328311167c57bb2"
+    },
+    "data/rotation/selected_rotation_2019_2023.json": {
+      "bytes": 1408,
+      "sha256": "13784077c72fb1f70634007003ee7d66343774461c491620286f7f67c1849768"
+    },
+    "data/rotation/source/Севообороты.xlsx": {
+      "bytes": 14577,
+      "sha256": "b82705bab1776b16d781ee22ef0ae2c9e543362dc2ac51a1f4d62c51233ef964"
+    },
+    "data/weather/weather_2019_2023_units_corrected.met": {
+      "bytes": 80816,
+      "sha256": "b7a74f9978cdb312281bbdfd9d03d5827901ffef82b6cc753c26945cd26a5cef"
+    },
+    "data/weather/weather_2019_2023_units_corrected.provenance.json": {
+      "bytes": 1665,
+      "sha256": "e228fc0793c5a12bdd4a5ff94dfa1e10a0cbd1ccbc39676b02a60a8fa5142ee4"
+    },
+    "docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx": {
+      "bytes": 1299872,
+      "sha256": "d234590b8bee54025609749598d914ae74b19539e2153dddb4091f1643e22e73"
+    },
+    "examples/reference_results/optimization_summary.json": {
+      "bytes": 2478,
+      "sha256": "80ea2a1a96d2f22c303eb812294066c7d2513405b1c52cc8abddc52683ae792d"
+    },
+    "examples/reference_results/validated_front.json": {
+      "bytes": 161358,
+      "sha256": "952a9146f71aa556c4ea636c8a8a6fa1d4795bab8299fd46df74d16aaf6d3b82"
+    },
+    "examples/reference_results/verification.json": {
+      "bytes": 908,
+      "sha256": "b66c5cbf4975414d338b1f38faa31f01ab5ba6979b71847d0f192fa768d3e1a4"
+    },
+    "pytest.ini": {
+      "bytes": 61,
+      "sha256": "94fdc2d545b2d4077a4d70229fd22ba3ccac21d49d1097d2873f76d04e9a3c7a"
+    },
+    "README.md": {
+      "bytes": 6365,
+      "sha256": "698583408fa13d6a1d754099c215bb6163d2bf0734218d20b8c810c0b972a1b2"
+    },
+    "requirements.lock.txt": {
+      "bytes": 615,
+      "sha256": "343bab376e5af041461809fb38b2e2ba530514ee799829075bd0f31c08ec0118"
+    },
+    "requirements.txt": {
+      "bytes": 71,
+      "sha256": "4139f2ab08d9a3ca8418aa086d8fa164fe65752ee810ceb7b5d6d91bae72a53b"
+    },
+    "results/final_20261002/decision_readiness.json": {
+      "bytes": 5913,
+      "sha256": "37f3adb8038b5b442ab23d6839c8906b9f5494775b5c6dba2332dc10984deb80"
+    },
+    "run_multifield.py": {
+      "bytes": 187,
+      "sha256": "00c806286849a3b2ad3d27cbd4d26679b9c90934b20f08044dda7084b1390347"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/evaluate_historical_replay.py": {
+      "bytes": 15165,
+      "sha256": "3c86b3f7beff633dca6851a42aad1a365d1decc26c8b82a42cc0cb8e8847263b"
+    },
+    "scripts/manual_multiyear_apsim.py": {
+      "bytes": 11288,
+      "sha256": "0c173ac4281918d1e21a947a9223de39d9b60a7517044e1e58b2beff85a4ff6d"
+    },
+    "scripts/plan_crop_rotation.py": {
+      "bytes": 12418,
+      "sha256": "a52c17c487c9da37680f3ecaae31de4b0738ea184d0bfc87aaffbcf090fc767d"
+    },
+    "scripts/run_multiyear_rotation_optimizer.py": {
+      "bytes": 15039,
+      "sha256": "1dbcc7ed0f3537f18bdf8000681c77a4f251a48748bc7503fcd9391047c2896e"
+    },
+    "scripts/run_rotation_apsim_replay.py": {
+      "bytes": 7876,
+      "sha256": "d283f2b7c06552ce5ec746b5a03abc30685be2fd4ae3f1aab95b719bbe96b4b4"
+    },
+    "simulation/calibrated/full_field2019_2023_calibrated_v3.apsimx": {
+      "bytes": 851546,
+      "sha256": "5975a634a209b61c42300f122cf63012c09002e3a9e34a8b923866c0fc3df855"
+    },
+    "simulation/calibrated/full_field2019_2023_calibrated_v3.provenance.json": {
+      "bytes": 8825,
+      "sha256": "9460df10c6ff3685b114af37d4970749a2568a7984de054b04e2647a86f9d070"
+    },
+    "src/__init__.py": {
+      "bytes": 70,
+      "sha256": "0a79ca0bfb7bfe8c0a67fddc1839dfa516ec54fc5119d61477e2875adbd11c0c"
+    },
+    "src/carbon_diagnostics.py": {
+      "bytes": 23631,
+      "sha256": "7e20b88427e85f6c78e7cd0a6db64146b0960dadddb76394b584c80244b37f55"
+    },
+    "src/carbon_reporting.py": {
+      "bytes": 9883,
+      "sha256": "731367526e069cd5e4666f09b3711cb3480054c4df45f477d1c1ef15915d1e29"
+    },
+    "src/fertility_constraints.py": {
+      "bytes": 13018,
+      "sha256": "983cfe8e1ae611b1361ff94aff12dde4234a89ab102cae7f5437b5a500b6e05c"
+    },
+    "src/historical_case.py": {
+      "bytes": 6741,
+      "sha256": "d8e12cb80b3be1b990ef4f647f6097a8a70993a4faf7c18c5db8cce8bb6d9c03"
+    },
+    "src/historical_readiness.py": {
+      "bytes": 5838,
+      "sha256": "58fd81d82b4d039028e68b21e8ff3aca71f1e01619928a783d1bf7aa68a84e87"
+    },
+    "src/met_weather.py": {
+      "bytes": 6127,
+      "sha256": "5dee605cfab7fddc3e4e0abaf15ba12ceff422a74fbbbf79bc2f646c2eb9c8c3"
+    },
+    "src/multifield_model.py": {
+      "bytes": 22100,
+      "sha256": "bd6cd5c9f20cdc728ea380ba2bb8aa4d6e7349da005bc7747ab807f7bb31dff5"
+    },
+    "src/multifield_optimizer.py": {
+      "bytes": 44066,
+      "sha256": "22dc5d22ab572e065a1e402a4ac3c537685a7a9f1d841824bbb64938d9777d7a"
+    },
+    "src/multifield_quality.py": {
+      "bytes": 27951,
+      "sha256": "a3b851ebdf3b5097bae658788b73c1faed1f334b4904aeb213b95ebd4f27cd24"
+    },
+    "src/multifield_results.py": {
+      "bytes": 9525,
+      "sha256": "d49b9aced4b5abff4dd5cf42471184521a12808ec3274cb78bbb43782fcdf45d"
+    },
+    "src/multiyear_rotation_optimizer.py": {
+      "bytes": 11446,
+      "sha256": "ea674e1ae30fcbe9f4d27f45e3f2d01221cff2d8c224b7eb528d8d1356966a4a"
+    },
+    "src/rotation_apsim_replay.py": {
+      "bytes": 9267,
+      "sha256": "b7b69f0e2b38b2ce13af73b5c8be7e3f2509a90a7f71cb1666f18311b216f165"
+    },
+    "src/rotation_planner.py": {
+      "bytes": 29397,
+      "sha256": "8c08de7cd51f2ad8234dc96b6a612b7793023c75281bfeda2b12d1016b88e4eb"
+    },
+    "src/rotation_visualization.py": {
+      "bytes": 8065,
+      "sha256": "05b2af0bdc562ac86728ff4fd8d3dbf260ded2faa214a1ca9a4fa93d00ddd266"
+    },
+    "tests/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/test_active_model_config.py": {
+      "bytes": 1332,
+      "sha256": "a7d83283fd557a9fba0e1361cb700a5d6d108efd7b441914bf8afb5ee1de7277"
+    },
+    "tests/test_carbon_diagnostics.py": {
+      "bytes": 3905,
+      "sha256": "3781c4335a3257457ab518bd77411b46ece6d8b5aad097bae8287f039e9fe956"
+    },
+    "tests/test_carbon_reader.py": {
+      "bytes": 6032,
+      "sha256": "1faa1bb12982296448c01ab772a93166da12f355dd07f22fc1165a3a55db0387"
+    },
+    "tests/test_carbon_reporting.py": {
+      "bytes": 5893,
+      "sha256": "28e98c8aac450611393cbd3002d13b8dc131943f4ac184ad51bc975e32fa2af1"
+    },
+    "tests/test_fertility_constraints.py": {
+      "bytes": 1858,
+      "sha256": "82a36bca4f91fe52986efe9ca061e8602e4bf986fd705b488964a754630f36e3"
+    },
+    "tests/test_historical_readiness.py": {
+      "bytes": 1987,
+      "sha256": "eaa9e33b90aa09265d0c82831872b7b84cf8a6881b8bac335e677d093496d758"
+    },
+    "tests/test_humic_constraints.py": {
+      "bytes": 6459,
+      "sha256": "7517ff760e76345cff8cdfd6e1e0b9eaa03b5822140fa8df22d84349297551a2"
+    },
+    "tests/test_manual_multiyear_apsim.py": {
+      "bytes": 471,
+      "sha256": "9f5a9b7b273a62378afeb5587104eaa1a4b9ae370488ef96e800287972e2a68a"
+    },
+    "tests/test_met_weather.py": {
+      "bytes": 1127,
+      "sha256": "e7c4c4125df164ece66b57803214c1c3c0506b9c191d5bbf6316b83752b20e5d"
+    },
+    "tests/test_multifield.py": {
+      "bytes": 22393,
+      "sha256": "5059c3ca4c5a5ce0c4a987bffbbaa80235febc9532bcfc34ea2157f21a96a704"
+    },
+    "tests/test_multifield_quality.py": {
+      "bytes": 2150,
+      "sha256": "2c5a63b4e943f3c1770a2dc71ae25d9e420eaa6ee36ea6c4da2d7fd0320190b8"
+    },
+    "tests/test_multifield_sowing_decisions.py": {
+      "bytes": 5349,
+      "sha256": "badc2f27ed03a9abbcf241d9721fa6679aff80e9deefb74352432badeae98325"
+    },
+    "tests/test_multiyear_package.py": {
+      "bytes": 1187,
+      "sha256": "d62a0d5b3a9c15604cb31f91a42f5e2fe2256b869eb0b7285f9f223efc767484"
+    },
+    "tests/test_multiyear_rotation_optimizer.py": {
+      "bytes": 2813,
+      "sha256": "67de9dd055697db6984dd38bb496008e118f36cac355875c7395e2ca114378df"
+    },
+    "tests/test_rotation_apsim_replay.py": {
+      "bytes": 5509,
+      "sha256": "9bab439905b11e2adb65211f6dff7089ed8e6a75279ecbf2d53e98db1a69d741"
+    },
+    "tests/test_rotation_planner.py": {
+      "bytes": 12931,
+      "sha256": "00ec4cf94c697f86d390854e5ff2291c43bb0358ea2979f91e899b10efee3b3b"
+    },
+    "tests/test_rotation_visualization.py": {
+      "bytes": 1643,
+      "sha256": "d54e4520867edcd320a8bc4a8e8d6bd41ceab547a0fdb8ab97b13aded617ff0b"
+    },
+    "VERSION": {
+      "bytes": 17,
+      "sha256": "d0c64307bf0a0455e09a3ee8d6013a50239e451164a6cc47a7e82fade86b976f"
+    }
+  }
+}
