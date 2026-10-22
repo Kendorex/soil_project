@@ -1,0 +1,98 @@
+schema_version: 1
+scenario:
+  kind: diagnostic_multiyear_rotation_optimization
+  recommendation_status: experimental_not_for_farm_use
+  purpose: compare crop-management policies on the fixed selected rotation under observed 2020-2023 weather
+
+replay_config: multiyear_rotation_replay_2019_2023.yaml
+output_dir: ../outputs/multifield/MULTIYEAR_ROTATION_NSGA2_2020_2023
+
+# 2019 remains in APSIM as a state-forming warm-up year but is deliberately
+# excluded from all three optimization objectives because its wheat and one oat
+# case retain a documented start-boundary failure.
+evaluation_years: [2020, 2021, 2022, 2023]
+
+# Mineral N stays a soft objective. Humic conservation is a separate hard
+# MODEL rule: end >= own period start on every field, over the whole profile.
+# This is not a measured humus norm. Set humic_carbon.mode to disabled to undo.
+fertility_constraints:
+  mode: objective_only
+  mineral_n_end:
+    enabled: true
+    reference: fixed_map_baseline
+    min_fraction_of_reference: 1.0
+    max_fraction_of_reference: null
+    absolute_min_kg_ha: null
+    absolute_max_kg_ha: null
+  humic_carbon:
+    mode: hard
+    reference: period_start
+    scope: whole_profile
+  unassessed_indicators:
+    - mobile_phosphorus
+    - exchangeable_potassium
+    - normative_humus_content
+    - soil_ph
+    - exchangeable_calcium_magnesium
+    - aggregate_structure
+
+# At most about 40 unique APSIM candidates. The earlier 16-candidate check
+# completed within the 20-minute budget; this is the presentation-scale run.
+nsga2:
+  population: 10
+  generations: 4
+  seed: 42
+
+# One policy is shared by every occurrence of a crop across fields and years.
+# Dates stay at observed year-specific values from the replay configuration.
+management_policies:
+  spring_wheat:
+    model_crop: Wheat
+    cultivar_options: [historical, Zlata, Irgina]
+    population_options_m2: [250, 300, 350, 400, 450, 500]
+    depth_options_mm: [20, 30, 40, 50, 60]
+    row_spacing_options_mm: [125, 150, 250]
+  oats_with_underseed:
+    model_crop: Oats
+    model_cultivar: Yakov
+    population_options_m2: [250, 400, 500, 600]
+    depth_options_mm: [20, 30, 40]
+    row_spacing_options_mm: [150]
+  winter_rye:
+    model_crop: Wheat
+    model_cultivar: Winter_rye_smoke
+    population_options_m2: [200, 600]
+    depth_options_mm: [20]
+    row_spacing_options_mm: [150]
+
+# The user selected active N per hectare as the dose interpretation. Prices are
+# inherited diagnostic proxies from the existing 2023 optimizer, not quotes.
+fertilizer:
+  doses_kg_n_ha: [0, 30, 60, 90, 120, 150, 180, 210]
+  forms:
+    urea_proxy: {apsim_type: UreaN, price_per_kg_n: 77.17}
+    ammonium_nitrate_proxy: {apsim_type: NH4NO3N, price_per_kg_n: 69.77}
+    uan_proxy: {apsim_type: UAN_N, price_per_kg_n: 110.94}
+    nitrate_proxy: {apsim_type: NO3N, price_per_kg_n: 323.53}
+
+economics:
+  currency: RUB_DIAGNOSTIC_PROXY
+  crop_price_per_kg_dm:
+    spring_wheat: 14.3
+    winter_rye: 14.3
+    oats_with_underseed: 14.3
+    perennial_grass_year1: 0.0
+    perennial_grass_year2: 0.0
+    perennial_grass_year3: 0.0
+  application_cost_per_ha: 480.0
+  other_cost_per_ha_year: 23000.0
+
+limitations:
+  - The crop map is fixed before NSGA-II; the optimizer changes management policies, not the rotation sequence.
+  - The 2019 simulation is used only for state carry-over and is excluded from objectives.
+  - Fertilizer prices, crop prices, application cost, and other cost are diagnostic proxies inherited from the existing project.
+  - Forage has no confirmed sale price, so its revenue is zero in the profit proxy while its biomass remains in the yield objective.
+  - Soil objective is normalized mineral-N shortfall relative to the fixed-map APSIM baseline, not a confirmed agronomic target interval.
+  - Rye and the clover-timothy stand remain documented structural proxies.
+  - Whole-profile model Humic must not decline over the evaluated period on any field; this is not a validated laboratory humus constraint.
+  - P, K, normative humus targets and seed-cost differences are not optimized because confirmed inputs are unavailable.

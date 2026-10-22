@@ -1,4 +1,3 @@
-# Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -6,27 +5,20 @@ __pycache__/
 htmlcov/
 .venv/
 venv/
-
-# Editors and operating systems
+.vendor/
 .env
 .env.*
 .DS_Store
 Thumbs.db
-*.code-workspace
-
-# Generated APSIM and optimizer files
-outputs/*
-!outputs/.gitkeep
+.idea/
+.vscode/
+outputs/
+release/
 *.db
 *.db-shm
 *.db-wal
 *.apsimx.bak
 *.log
-
-# Local archives and temporary work
+*.zip
 *.tar
 *.tar.gz
-*.zip
-archive/
-deliverables/
-*.inspect.ndjson

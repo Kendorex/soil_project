@@ -1,5 +1,5 @@
 # Диагностический многополевой сценарий для проверки APSIM + NSGA-II.
-# Диапазоны посева ограничены наблюдениями проекта и указанными в журнале
+# Диапазоны посева ограничены наблюдениями проекта и сохранёнными в исходной постановке
 # агрономическими источниками; это ещё не производственная рекомендация.
 schema_version: 1
 scenario:
@@ -34,7 +34,7 @@ rotation_parameter_reference: null
 output_dir: ../outputs/multifield/DIAGNOSTIC_2023_N
 runtime:
   command:
-    - /home/user/ApsimX/bin/Release/net8.0/Models
+    - Models
   timeout_seconds: 600
 year: 2023
 decision_period:

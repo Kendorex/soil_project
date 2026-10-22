@@ -1,0 +1,65 @@
+{
+  "status": "completed",
+  "scenario": {
+    "kind": "diagnostic_multiyear_rotation_optimization",
+    "recommendation_status": "experimental_not_for_farm_use",
+    "purpose": "compare crop-management policies on the fixed selected rotation under observed 2020-2023 weather"
+  },
+  "evaluation_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "warmup_year": 2019,
+  "evaluated_unique_candidates": 40,
+  "successful_candidates": 40,
+  "feasible_candidates": 35,
+  "infeasible_candidates": 5,
+  "failed_candidates": 0,
+  "pareto_solutions": 6,
+  "baseline": {
+    "yield_dm_kg": 16492.20687462227,
+    "net_profit_proxy": -96928.96648560288,
+    "soil_deviation": 0.0
+  },
+  "objectives": [
+    "maximize total harvested dry matter",
+    "maximize diagnostic net profit proxy",
+    "minimize mineral-N shortfall relative to fixed-map baseline"
+  ],
+  "fertility_constraints": {
+    "mode": "objective_only",
+    "mineral_n_end": {
+      "enabled": true,
+      "reference": "fixed_map_baseline",
+      "min_fraction_of_reference": 1.0,
+      "max_fraction_of_reference": null,
+      "absolute_min_kg_ha": null,
+      "absolute_max_kg_ha": null
+    },
+    "humic_carbon": {
+      "mode": "hard",
+      "reference": "period_start",
+      "scope": "whole_profile"
+    },
+    "unassessed_indicators": [
+      "mobile_phosphorus",
+      "exchangeable_potassium",
+      "normative_humus_content",
+      "soil_ph",
+      "exchangeable_calcium_magnesium",
+      "aggregate_structure"
+    ]
+  },
+  "limitations": [
+    "The crop map is fixed before NSGA-II; the optimizer changes management policies, not the rotation sequence.",
+    "The 2019 simulation is used only for state carry-over and is excluded from objectives.",
+    "Fertilizer prices, crop prices, application cost, and other cost are diagnostic proxies inherited from the existing project.",
+    "Forage has no confirmed sale price, so its revenue is zero in the profit proxy while its biomass remains in the yield objective.",
+    "Soil objective is normalized mineral-N shortfall relative to the fixed-map APSIM baseline, not a confirmed agronomic target interval.",
+    "Rye and the clover-timothy stand remain documented structural proxies.",
+    "Whole-profile model Humic must not decline over the evaluated period on any field; this is not a validated laboratory humus constraint.",
+    "P, K, normative humus targets and seed-cost differences are not optimized because confirmed inputs are unavailable."
+  ]
+}

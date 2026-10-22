@@ -1,0 +1,158 @@
+schema_version: 1
+rotation_rules: ../data/rotation/rotation_transition_matrix.json
+
+# Экспериментальный ретроспективный план на период с известной погодой.
+# APSIM и NSGA-II не запускаются. Карта проверяет только алгоритм севооборота.
+start_year: 2019
+years: 5
+minimum_transition_score: 0.5
+top_k: 8
+# Расширенный набор даёт заметно больше последовательностей. Ограничения ниже
+# сохраняют разнообразие кандидатов, но удерживают запуск в пределах нескольких
+# минут на обычном компьютере.
+candidate_pool: 1000
+farm_selection_beam_width: 2000
+
+# Фактическое состояние каждого поля в 2018 году из листа «Севооборот».
+initial_states:
+  Field1: four_component_grass_mix_2018
+  Field2: spring_wheat
+  Field3: winter_rye
+  Field4: oats_with_underseed
+  Field5: mustard
+  Field6: perennial_grass_year2
+  Field7: perennial_grass_year3
+  Field8: perennial_grass_year1
+  Field9: winter_rye
+  Field10: perennial_grass_year2
+
+state_model:
+  candidate_states:
+    - winter_rye
+    - spring_wheat
+    - oats_with_underseed
+    - legume_cereal_mixture
+    - mustard
+    - rape
+
+  states:
+    four_component_grass_mix_2018:
+      name: Четырёхкомпонентная травосмесь (факт 2018)
+      matrix_predecessor: clover
+      forced_next: perennial_grass_year1
+
+    winter_rye:
+      name: Озимая рожь
+      matrix_predecessor: winter_rye
+      matrix_successor: winter_rye
+
+    spring_wheat:
+      name: Яровая пшеница
+      matrix_predecessor: spring_wheat
+      matrix_successor: spring_wheat
+
+    oats_with_underseed:
+      name: Овес с подсевом многолетних трав
+      matrix_predecessor: oats
+      matrix_successor: legume_cereal_mixture
+      forced_next: perennial_grass_year1
+
+    legume_cereal_mixture:
+      name: Вико-овсяная смесь
+      matrix_predecessor: legume_cereal_mixture
+      matrix_successor: legume_cereal_mixture
+
+    perennial_grass_year1:
+      name: Многолетние травы 1-го года пользования
+      matrix_predecessor: clover
+      forced_next: perennial_grass_year2
+
+    perennial_grass_year2:
+      name: Многолетние травы 2-го года пользования
+      matrix_predecessor: clover
+      optional_continuations:
+        - perennial_grass_year3
+
+    perennial_grass_year3:
+      name: Многолетние травы 3-го года пользования
+      matrix_predecessor: clover
+
+    # Горчица и рапс отсутствуют в матрице почвоведов. Для них разрешены
+    # только переходы, которые действительно встречались в книге хозяйства
+    # за 2019–2024 годы. Они получают код И и не получают выдуманный балл.
+    mustard:
+      name: Горчица (экспериментальное планирование)
+      source_allowed_predecessors:
+        - legume_cereal_mixture
+        - rape
+      source_allowed_next:
+        - winter_rye
+        - spring_wheat
+        - rape
+
+    rape:
+      name: Рапс (экспериментальное планирование)
+      source_allowed_predecessors:
+        - spring_wheat
+        - perennial_grass_year3
+        - mustard
+      source_allowed_next:
+        - winter_rye
+        - spring_wheat
+        - mustard
+
+# Наблюдавшиеся количества полей за 2019–2024 годы используются только для
+# выбора среди последовательностей с одинаковым лучшим матричным баллом.
+farm_crop_mix:
+  source:
+    workbook: docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx
+    sheet: Севооборот
+    range: A219:C278
+    years: 2019-2024
+  categories:
+    perennial_grass:
+      states: [perennial_grass_year1, perennial_grass_year2, perennial_grass_year3]
+      annual_min: 2
+      annual_max: 5
+      annual_target: 3.6666666667
+    oats_with_underseed:
+      states: [oats_with_underseed]
+      annual_min: 1
+      annual_max: 2
+      annual_target: 1.6666666667
+    winter_rye:
+      states: [winter_rye]
+      annual_min: 1
+      annual_max: 2
+      annual_target: 1.5
+    spring_wheat:
+      states: [spring_wheat]
+      annual_min: 1
+      annual_max: 2
+      annual_target: 1.6666666667
+    legume_cereal_mixture:
+      states: [legume_cereal_mixture]
+      annual_min: 0
+      annual_max: 1
+      annual_target: 0.1666666667
+      horizon_min: 1
+    mustard:
+      states: [mustard]
+      annual_min: 0
+      annual_max: 2
+      annual_target: 0.6666666667
+      horizon_min: 1
+    rape:
+      states: [rape]
+      annual_min: 0
+      annual_max: 3
+      annual_target: 0.6666666667
+      horizon_min: 1
+
+limitations:
+  - This is an experimental rotation-planning scenario; APSIM and NSGA-II are not run.
+  - The 2018 predecessor is taken from the farm workbook for every field.
+  - Mustard and rape are absent from the soil-scientist matrix; only transitions observed in the farm workbook are allowed and marked И.
+  - Source-backed И transitions are feasible but do not receive a matrix quality score.
+  - Historical crop-count ranges are tie-breakers, not agronomic recommendations.
+  - Yield, profit, soil state, prices, machinery and production demand are not evaluated.

@@ -1,0 +1,130 @@
+schema_version: 1
+scenario:
+  kind: selected_rotation_2018_warmup_diagnostic
+  recommendation_status: experimental
+  purpose: test whether an autumn-2018 weather and predecessor warm-up removes the 2019 boundary failure
+
+base_model: ../simulation/calibrated/full_field2019_2023_calibrated_v3.apsimx
+weather: ../data/weather/weather_2019_2023_units_corrected.met
+rotation_map: ../data/rotation/selected_rotation_2019_2023.json
+output_dir: ../outputs/multifield/ROTATION_2019_2023_WARMUP
+rotation_transition_policy: harvest_on_winter_sowing_proxy
+runtime:
+  command:
+    - Models
+  timeout_seconds: 1200
+
+# Одна проверяемая гипотеза: нулевые урожаи зерновых 2019 вызваны стартом
+# симуляции 1 января 2019 без осеннего прогрева и реально существовавших трав.
+# Состояния взяты только из таблицы фактического севооборота. Однолетние
+# культуры, уже убранные к 1 сентября, обозначены как отсутствие посева.
+warmup:
+  enabled: true
+  start_date: '2018-09-01'
+  weather: ../data/calibration_weather/weather_irgina_2018.met
+  field_states:
+    Field1: perennial_grass_year1
+    Field2: warmup_no_crop
+    Field3: warmup_no_crop
+    Field4: perennial_grass_year1
+    Field5: warmup_no_crop
+    Field6: perennial_grass_year2
+    Field7: perennial_grass_year3
+    Field8: perennial_grass_year1
+    Field9: warmup_no_crop
+    Field10: perennial_grass_year2
+
+# Все значения ниже уже присутствуют в действующей модели v3. Для нового
+# расположения культур используются годовые наблюдавшиеся даты, а не новые
+# агрономические предположения. Статические полевые нормы N сохраняются из v3.
+profiles:
+  warmup_no_crop:
+    model_crop: '-'
+    cultivar: '-'
+    sowing_date: '-'
+    harvest_date: '-'
+    sowing_depth: '0'
+    row_spacing: '0'
+    population: '0'
+    primary_yield_components: []
+    product: predecessor_already_harvested
+  spring_wheat:
+    model_crop: Wheat
+    cultivar_by_year: {2019: Irgina, 2020: Zlata, 2021: Zlata, 2022: Zlata, 2023: Zlata}
+    sowing_date_by_year: {2019: 7-May, 2020: 11-May, 2021: 18-May, 2022: 12-May, 2023: 3-May}
+    harvest_date_by_year: {2019: 9-Aug, 2020: 20-Aug, 2021: 16-Aug, 2022: 17-Aug, 2023: 21-Aug}
+    sowing_depth: '20'
+    row_spacing: '150'
+    population: '200'
+    primary_yield_components: [Wheat]
+    product: grain
+  winter_rye:
+    model_crop: Wheat
+    cultivar: Winter_rye_smoke
+    sowing_date_by_year: {2019: 4-Sep, 2020: 5-Sep, 2021: 8-Sep, 2022: 9-Sep, 2023: 5-Sep}
+    harvest_date: 31-Aug
+    sowing_depth: '20'
+    row_spacing: '150'
+    population: '200'
+    primary_yield_components: [Wheat]
+    product: grain
+  oats_with_underseed:
+    model_crop: Oats+RedClover+PlantainForage
+    cultivar: Yakov;First_RedClover;First_Timothy
+    sowing_date_by_year: {2019: 7-May, 2020: 28-Apr, 2021: 18-May, 2022: 12-May, 2023: 4-May}
+    harvest_date: 31-Aug
+    sowing_depth: 20;10;10
+    row_spacing: 150;150;150
+    population: 250;150;150
+    primary_yield_components: [Oats]
+    product: grain
+  perennial_grass_year1:
+    model_crop: RedClover+PlantainForage
+    cultivar: First_RedClover;First_Timothy
+    sowing_date: '-'
+    harvest_date: 30-Sep
+    sowing_depth: 10;10
+    row_spacing: 150;150
+    population: 450;300
+    primary_yield_components: [RedClover, PlantainForage]
+    product: forage_biomass
+  perennial_grass_year2:
+    model_crop: RedClover+PlantainForage
+    cultivar: Second_RedClover;Second_Timothy
+    sowing_date: '-'
+    harvest_date: 30-Sep
+    sowing_depth: 10;10
+    row_spacing: 150;150
+    population: 450;300
+    primary_yield_components: [RedClover, PlantainForage]
+    product: forage_biomass
+  perennial_grass_year3:
+    model_crop: RedClover+PlantainForage
+    cultivar: Second_RedClover;Second_Timothy
+    sowing_date: '-'
+    harvest_date: 30-Sep
+    sowing_depth: 10;10
+    row_spacing: 150;150
+    population: 450;300
+    primary_yield_components: [RedClover, PlantainForage]
+    product: forage_biomass
+
+fields:
+  Field1: {area_ha: 0.2}
+  Field2: {area_ha: 0.2}
+  Field3: {area_ha: 0.2}
+  Field4: {area_ha: 0.2}
+  Field5: {area_ha: 0.2}
+  Field6: {area_ha: 0.2}
+  Field7: {area_ha: 0.2}
+  Field8: {area_ha: 0.2}
+  Field9: {area_ha: 0.2}
+  Field10: {area_ha: 0.2}
+
+limitations:
+  - This is a diagnostic APSIM replay of one selected map, not an optimized recommendation.
+  - The 2018 warm-up starts from the model's measured 2019 soil initialization; it tests a boundary hypothesis and is not a reconstructed 2018 field trial.
+  - Perennial predecessors use the existing structural clover-timothy proxy and existing harvest calendar because detailed 2018 management is unavailable.
+  - Static field fertilizer managers are retained from calibrated v3.
+  - Profit is not calculated because confirmed crop prices and costs are unavailable.
+  - Soil evaluation reports model mineral N; confirmed agronomic target intervals are unavailable.

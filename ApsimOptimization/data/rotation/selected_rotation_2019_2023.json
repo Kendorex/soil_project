@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "selected_for_apsim_baseline_evaluation",
+  "source_archive": "rotation_plan_2019_2023_20261007_175254_655356.tar.gz",
+  "start_year": 2019,
+  "end_year": 2023,
+  "fields": {
+    "Field1": ["perennial_grass_year1", "perennial_grass_year2", "spring_wheat", "winter_rye", "oats_with_underseed"],
+    "Field2": ["winter_rye", "oats_with_underseed", "perennial_grass_year1", "perennial_grass_year2", "spring_wheat"],
+    "Field3": ["oats_with_underseed", "perennial_grass_year1", "perennial_grass_year2", "spring_wheat", "winter_rye"],
+    "Field4": ["perennial_grass_year1", "perennial_grass_year2", "spring_wheat", "winter_rye", "oats_with_underseed"],
+    "Field5": ["spring_wheat", "winter_rye", "oats_with_underseed", "perennial_grass_year1", "perennial_grass_year2"],
+    "Field6": ["perennial_grass_year3", "spring_wheat", "winter_rye", "oats_with_underseed", "perennial_grass_year1"],
+    "Field7": ["spring_wheat", "winter_rye", "oats_with_underseed", "perennial_grass_year1", "perennial_grass_year2"],
+    "Field8": ["perennial_grass_year2", "spring_wheat", "winter_rye", "oats_with_underseed", "perennial_grass_year1"],
+    "Field9": ["oats_with_underseed", "perennial_grass_year1", "perennial_grass_year2", "spring_wheat", "winter_rye"],
+    "Field10": ["winter_rye", "oats_with_underseed", "perennial_grass_year1", "perennial_grass_year2", "spring_wheat"]
+  }
+}
