@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "field_area_ha": 0.1,
+  "planning_config": "rotation_planning_2025_2029.yaml",
+  "model_root": "../simulation/calibrated_history",
+  "output_root": "../../../runs/future_rotation",
+  "historical_weather_end": "2023-12-31",
+  "climate_analogue_years": {
+    "2024": 2018,
+    "2025": 2019,
+    "2026": 2020,
+    "2027": 2021,
+    "2028": 2022,
+    "2029": 2023
+  },
+  "crop_mix_mode": "hard_bounds",
+  "humic_constraint": "objective_only",
+  "timeout_seconds": 1800,
+  "optimization": {
+    "objectives": [
+      "yield",
+      "humic"
+    ],
+    "algorithm": "auto",
+    "management_preset": null,
+    "settings": {},
+    "search_scope": "joint",
+    "crop_map_repair": "milp"
+  },
+  "nsga2": {
+    "population": 10,
+    "generations": 4,
+    "seed": 42,
+    "verbose": true
+  },
+  "assumptions": [
+    "This is the retained 2025-2029 example with supplied 2024 field crop/grass-age states, not an observed future-weather forecast.",
+    "Archived weather ends at 2024-01-01. All years after 2023, including the 2024 bridge, use explicit historical climate analogues.",
+    "Missing leap dates are interpolated from February 28 and March 1. Other dates match by month and day, not day-of-year index.",
+    "Future crop calendars and profiles are copied from the latest compatible calibrated occurrence on the same field, or another calibrated field if unavailable locally.",
+    "The original planner used historical crop counts as tie-breakers. This scenario explicitly requires its annual/horizon ranges as hard field-count constraints.",
+    "The search can use any matrix transition with score at least 0.5 and retains compulsory perennial stand continuation.",
+    "Potato and the separate legume-cereal-mixture state are excluded until matching calibrated APSIM components and management are supplied.",
+    "Economics use inherited diagnostic prices; only harvested Wheat/Oats grain has a supplied sale price.",
+    "The end of the modeled horizon retains native RotationManager terminal behavior; no unobserved 2030 planting is invented.",
+    "Humic is an optimization objective, not a feasibility constraint. Absolute stock losses remain reported for each field; a feasible crop map may lose soil carbon.",
+    "Joint search changes legal crop sequences and crop-level management policies. Starting management preset is only an anchor, not a fixed technology."
+  ],
+  "management_reference": "../data/management_reference.json"
+}

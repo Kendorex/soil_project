@@ -1,0 +1,11 @@
+{
+  "engine": "apsim",
+  "model_config": "../models/apsim/configs/multifield_2023_n_diagnostic.yaml",
+  "command": ["C:/Program Files/APSIM2026.9.8115.0/bin/Models.exe"],
+  "years": [2023],
+  "source_reports": "optimizer_only",
+  "variables": [
+    {"path": ["Field2", "dose_kg_product_ha"], "values": [0.0, 30.0, 60.0]}
+  ],
+  "nsga2": {"population": 3, "generations": 2, "seed": 42}
+}

@@ -1,0 +1,4 @@
+name: aquacrop_bmi_rs
+language: python
+package: aquacrop_bmi_rs
+class: AquaCropBmi

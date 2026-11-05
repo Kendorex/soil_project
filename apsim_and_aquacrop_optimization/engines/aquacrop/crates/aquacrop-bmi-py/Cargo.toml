@@ -1,0 +1,21 @@
+[package]
+name = "aquacrop-bmi-py"
+authors.workspace = true
+description = "PyO3/Python BMI 2.0 binding for the AquaCrop Rust core, built on aquacrop-bmi"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+version.workspace = true
+publish = false
+
+[lib]
+name = "_aquacrop_bmi_rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+aquacrop-bmi.workspace = true
+numpy = "0.29"
+pyo3 = { version = "0.29", features = ["extension-module"] }
+
+[lints]
+workspace = true

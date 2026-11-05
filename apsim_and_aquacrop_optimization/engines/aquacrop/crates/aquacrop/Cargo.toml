@@ -1,0 +1,23 @@
+[package]
+name = "aquacrop"
+authors.workspace = true
+description = "Idiomatic Rust interface for the AquaCrop crop growth model"
+documentation = "https://docs.rs/aquacrop"
+edition.workspace = true
+keywords = ["agriculture", "crop-model", "simulation", "water"]
+categories = ["science", "simulation"]
+license.workspace = true
+readme = "README.md"
+rust-version.workspace = true
+version.workspace = true
+
+[features]
+default = []
+file-io = ["aquacrop-core/file-io"]
+serde = ["aquacrop-core/serde"]
+
+[dependencies]
+aquacrop-core.workspace = true
+
+[lints]
+workspace = true

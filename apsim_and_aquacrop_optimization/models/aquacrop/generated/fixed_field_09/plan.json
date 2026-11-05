@@ -1,0 +1,39 @@
+{
+  "workspace_root": "C:\\Users\\user\\Desktop\\apsim_and_aquacrop_optimization",
+  "field_id": "fixed_field_09",
+  "aqua_root": "models/aquacrop/generated/fixed_field_09",
+  "project_file": "LIST/Field.PRM",
+  "output_dir": "runs/aquacrop_direct/fixed_field_09",
+  "initial_water": [
+    0.34782507087372827,
+    0.3084351300050112,
+    0.34965,
+    0.34650000000000003,
+    0.343,
+    0.33880000000000005,
+    0.33845000000000003
+  ],
+  "maximum_compartment_thickness_m": 0.1,
+  "runs": [
+    {
+      "id": "2019_OatsClover_Green",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2020_Mustard_Mustard_sort",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2021_Rape_Rape_sort",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2022_Mustard_Mustard_sort",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2023_Wheat_Winter_rye_smoke",
+      "reset_assimilates": true
+    }
+  ]
+}

@@ -1,0 +1,1377 @@
+{
+  "field": {
+    "schema_version": 1,
+    "id": "fixed_field_10",
+    "source_project": "configs/rotation_fixed.apsimx",
+    "source_simulation": "Wheat",
+    "source_zone": "Field10",
+    "weather_file": "configs/weather_rotation.met",
+    "co2_file": "DATA/aquacrop_weather/MaunaLoa.CO2",
+    "mixture_mode": "effective_crop",
+    "forage_season": {
+      "start": "04-01",
+      "end": "10-31"
+    },
+    "maximum_compartment_thickness_m": 0.1,
+    "mulch_cover_percent": 0,
+    "fertility_stress_percent": 0,
+    "notes": [
+      "Fixed harvest-year rotation with perennial carry-over and autumn sowing.",
+      "Single effective crop approximation; native HarvestReport and standing Yield are retained separately."
+    ],
+    "management_mode": "fixed_rotation"
+  },
+  "period_start": "2019-01-01",
+  "period_end": "2023-12-31",
+  "area_ha": 1.0,
+  "latitude": 56.8,
+  "soil_layer_count": 7,
+  "source_rotation": [
+    {
+      "year": 2019,
+      "declared_components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 450.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 300.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "active_perennials": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 450.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 300.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_date": "2019-01-01",
+      "harvest_dates": [
+        "2019-07-15"
+      ],
+      "source_harvest_crops": [
+        "RedClover",
+        "PlantainForage"
+      ],
+      "harvest_use": "hay",
+      "pasture_age": 3,
+      "cultivar_application": "source sowing only; actual stand retained across hay years"
+    },
+    {
+      "year": 2020,
+      "declared_components": [
+        {
+          "crop": "Mustard",
+          "cultivar": "Mustard_sort",
+          "population_m2": 200.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "active_perennials": [],
+      "sowing_date": "2020-05-10",
+      "harvest_dates": [
+        "2020-08-31"
+      ],
+      "source_harvest_crops": [
+        "Mustard"
+      ],
+      "harvest_use": "grain",
+      "pasture_age": 0,
+      "cultivar_application": "source sowing only; actual stand retained across hay years"
+    },
+    {
+      "year": 2021,
+      "declared_components": [
+        {
+          "crop": "Wheat",
+          "cultivar": "Zlata",
+          "population_m2": 200.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "active_perennials": [],
+      "sowing_date": "2021-05-18",
+      "harvest_dates": [
+        "2021-08-16"
+      ],
+      "source_harvest_crops": [
+        "Wheat"
+      ],
+      "harvest_use": "grain",
+      "pasture_age": 0,
+      "cultivar_application": "source sowing only; actual stand retained across hay years"
+    },
+    {
+      "year": 2022,
+      "declared_components": [
+        {
+          "crop": "Oats",
+          "cultivar": "Yakov",
+          "population_m2": 250.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "active_perennials": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_date": "2022-05-12",
+      "harvest_dates": [
+        "2022-08-31"
+      ],
+      "source_harvest_crops": [
+        "Oats"
+      ],
+      "harvest_use": "grain",
+      "pasture_age": 0,
+      "cultivar_application": "source sowing only; actual stand retained across hay years"
+    },
+    {
+      "year": 2023,
+      "declared_components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 450.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 300.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "active_perennials": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_date": "2022-05-13",
+      "harvest_dates": [
+        "2023-07-15"
+      ],
+      "source_harvest_crops": [
+        "RedClover",
+        "PlantainForage"
+      ],
+      "harvest_use": "hay",
+      "pasture_age": 1,
+      "cultivar_application": "source sowing only; actual stand retained across hay years"
+    }
+  ],
+  "segments": [
+    {
+      "id": "2019_ForageMix_Local",
+      "year": 2019,
+      "kind": "forage",
+      "source_yield_column": "MixYield",
+      "harvest_use": "hay",
+      "crop_start": "2019-04-01",
+      "crop_end": "2019-08-19",
+      "components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 450.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 300.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "cultivation_year": 1,
+      "catalog_crop": "ForageMix_Local",
+      "harvest_dates": [
+        "2019-07-15"
+      ],
+      "source_sowing_date": "2019-01-01",
+      "reset_assimilates": true,
+      "simulation_start": "2019-01-01",
+      "simulation_end": "2020-05-09"
+    },
+    {
+      "id": "2020_Mustard_Mustard_sort",
+      "year": 2020,
+      "kind": "grain",
+      "source_yield_column": "MustardYield",
+      "harvest_use": "grain",
+      "crop_start": "2020-05-10",
+      "crop_end": "2020-08-30",
+      "components": [
+        {
+          "crop": "Mustard",
+          "cultivar": "Mustard_sort",
+          "population_m2": 200.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "cultivation_year": 1,
+      "catalog_crop": "Mustard_Mustard_sort",
+      "harvest_dates": [
+        "2020-08-31"
+      ],
+      "source_sowing_date": "2020-05-10",
+      "reset_assimilates": true,
+      "simulation_start": "2020-05-10",
+      "simulation_end": "2021-05-17"
+    },
+    {
+      "id": "2021_Wheat_Zlata",
+      "year": 2021,
+      "kind": "grain",
+      "source_yield_column": "WheatYield",
+      "harvest_use": "grain",
+      "crop_start": "2021-05-18",
+      "crop_end": "2021-08-15",
+      "components": [
+        {
+          "crop": "Wheat",
+          "cultivar": "Zlata",
+          "population_m2": 200.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "cultivation_year": 1,
+      "catalog_crop": "Wheat_Zlata",
+      "harvest_dates": [
+        "2021-08-16"
+      ],
+      "source_sowing_date": "2021-05-18",
+      "reset_assimilates": true,
+      "simulation_start": "2021-05-18",
+      "simulation_end": "2022-05-11"
+    },
+    {
+      "id": "2022_OatsForageMix_Yakov",
+      "year": 2022,
+      "kind": "grain",
+      "source_yield_column": "OatsYield",
+      "harvest_use": "grain",
+      "crop_start": "2022-05-12",
+      "crop_end": "2022-08-30",
+      "components": [
+        {
+          "crop": "Oats",
+          "cultivar": "Yakov",
+          "population_m2": 250.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "cultivation_year": 1,
+      "catalog_crop": "OatsForageMix_Yakov",
+      "harvest_dates": [
+        "2022-08-31"
+      ],
+      "source_sowing_date": "2022-05-12",
+      "reset_assimilates": true,
+      "simulation_start": "2022-05-12",
+      "simulation_end": "2022-08-30"
+    },
+    {
+      "id": "2022_understorey",
+      "year": 2022,
+      "kind": "forage",
+      "source_yield_column": "MixYield",
+      "harvest_use": "understorey",
+      "crop_start": "2022-08-31",
+      "crop_end": "2022-10-31",
+      "components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "cultivation_year": 1,
+      "catalog_crop": "ForageMix_Local",
+      "harvest_dates": [],
+      "source_sowing_date": "2022-05-13",
+      "reset_assimilates": true,
+      "simulation_start": "2022-08-31",
+      "simulation_end": "2023-03-31"
+    },
+    {
+      "id": "2023_ForageMix_Local",
+      "year": 2023,
+      "kind": "forage",
+      "source_yield_column": "MixYield",
+      "harvest_use": "hay",
+      "crop_start": "2023-04-01",
+      "crop_end": "2023-10-31",
+      "components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "LocalClover",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "TimothyProxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "cultivation_year": 2,
+      "catalog_crop": "ForageMix_Local",
+      "harvest_dates": [
+        "2023-07-15"
+      ],
+      "source_sowing_date": "2022-05-13",
+      "reset_assimilates": true,
+      "simulation_start": "2023-04-01",
+      "simulation_end": "2023-12-31"
+    }
+  ],
+  "source_cultivar_commands": {
+    "LocalClover": [
+      "[Leaf].Photosynthesis.FT.XYPairs.X = 0,4,9,15,18.5,23,27,30,37.5",
+      "[Leaf].Photosynthesis.FT.XYPairs.Y = 0,0,0.1125,0.45,0.75,0.75,0.75,0.375,0",
+      "[Leaf].NRetranslocationFactor.TemperatureFactor.XYPairs.X = 0,4,9,15,18.5,23,27,30,37.5",
+      "[Leaf].NRetranslocationFactor.TemperatureFactor.XYPairs.Y = 0,0,0.15,0.6,1,1,1,0.5,0",
+      "[Phenology].Inductive.Target.FixedValue = 15",
+      "[Phenology].Reproductive.Target.FixedValue = 5000",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Petiole].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Petiole].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Petiole].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Petiole].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Nodule].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0",
+      "[Nodule].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0",
+      "[Nodule].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Nodule].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0"
+    ],
+    "Zlata": [
+      "[Phenology].HeadEmergencePpSensitivity.FixedValue = 2.0",
+      "[Phenology].Phyllochron.BasePhyllochron.FixedValue = 75.0",
+      "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue = 0.8",
+      "[Phenology].PhyllochronPpSensitivity.FixedValue = 0.4",
+      "[Phenology].CAMP.FLNparams.MinLN = 5.0",
+      "[Phenology].CAMP.FLNparams.PpLN = 2.5",
+      "[Phenology].CAMP.FLNparams.VrnLN = 7",
+      "[Phenology].CAMP.FLNparams.VxPLN = 0.0",
+      "[Phenology].GrainFilling.Target.FixedValue = 250",
+      "[Phenology].GrainRipening.Target.FixedValue = 100",
+      "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue = 13"
+    ],
+    "Irgina": [
+      "[Phenology].HeadEmergencePpSensitivity.FixedValue = 2.0",
+      "[Phenology].Phyllochron.BasePhyllochron.FixedValue = 50",
+      "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue = 0.8",
+      "[Phenology].PhyllochronPpSensitivity.FixedValue = 0.4",
+      "[Phenology].CAMP.FLNparams.MinLN = 5",
+      "[Phenology].CAMP.FLNparams.PpLN = 2.5",
+      "[Phenology].CAMP.FLNparams.VrnLN = 7",
+      "[Phenology].CAMP.FLNparams.VxPLN = 0.0",
+      "[Phenology].GrainFilling.Target.FixedValue = 225",
+      "[Phenology].GrainRipening.Target.FixedValue = 100"
+    ],
+    "Winter_rye_smoke": [
+      "[Phenology].HeadEmergencePpSensitivity.FixedValue = 2.8",
+      "[Phenology].Phyllochron.BasePhyllochron.FixedValue = 98",
+      "[Leaf].ExtinctionCoeff.VegetativePhase.FixedValue = 0.85",
+      "[Phenology].PhyllochronPpSensitivity.FixedValue = 0.2",
+      "[Phenology].CAMP.FLNparams.MinLN = 7.25",
+      "[Phenology].CAMP.FLNparams.PpLN = 0.9",
+      "[Phenology].CAMP.FLNparams.VrnLN = 5.7",
+      "[Phenology].CAMP.FLNparams.VxPLN = 5.5",
+      "[Phenology].GrainFilling.Target.FixedValue = 280",
+      "[Phenology].GrainRipening.Target.FixedValue = 120",
+      "[Phenology].CAMP.EnvData.VrnTreatTemp = 5.8",
+      "[Phenology].CAMP.EnvData.VrnTreatDuration = 60",
+      "[Phenology].HeadEmergenceLongDayBase.FixedValue = 50"
+    ],
+    "Yakov": [
+      "[Phenology].MinimumLeafNumber.FixedValue = 6.5",
+      "[Phenology].VrnSensitivity.FixedValue = 0",
+      "[Phenology].PpSensitivity.FixedValue = 3.5",
+      "[Phenology].EarlyReproductiveLongDayBase.FixedValue = 5.5",
+      "[Phenology].EarlyReproductivePpSensitivity.FixedValue = 0.5",
+      "[Structure].Phyllochron.BasePhyllochron.FixedValue = 85",
+      "[Leaf].CohortParameters.MaxArea.AreaLargestLeaves.FixedValue = 3500",
+      "[Leaf].CohortParameters.SenescenceDuration.Multiplier.FixedValue = 2.5",
+      "[Leaf].CohortParameters.GrowthDuration.AgeFactor.XYPairs.Y = 1,1,0.1",
+      "[Grain].MaximumPotentialGrainSize.FixedValue = 0.04",
+      "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue = 45",
+      "[Leaf].ExtinctionCoeff.FixedValue = 0.7",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Panicle].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Panicle].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Panicle].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Panicle].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0"
+    ],
+    "TimothyProxy": [
+      "[Phenology].ThermalTime.Response.X = 15.0, 34.5, 45.0",
+      "[Phenology].ThermalTime.Response.Y = 0.0, 20.0, 0.0",
+      "[Leaf].Photosynthesis.FT.XYPairs.X = 15, 17, 22, 28, 34.5, 42, 45",
+      "[Leaf].Photosynthesis.FT.XYPairs.Y = 0, 0.0375, 0.225, 0.75, 0.75, 0.075, 0",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Leaf].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Stem].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0.9",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0.9",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Inflorescence].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Root].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionLiveToRemove = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionDeadToRemove = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionLiveToResidue = 0",
+      "[Taproot].BiomassRemovalDefaults.HarvestFractionDeadToResidue = 0"
+    ],
+    "Mustard_sort": [
+      "[Phenology].Vegetative.Target.XYPairs.X = 0, 25",
+      "[Phenology].Vegetative.Target.XYPairs.Y = 210, 1",
+      "",
+      "[Phenology].StemElongation.Target.PPResponse.Amount.FixedValue = 180",
+      "[Leaf].Phyllochron.Base.FixedValue = 55"
+    ],
+    "Rape_sort": [
+      "[Phenology].Vegetative.Target.XYPairs.X = 0, 25",
+      "[Phenology].Vegetative.Target.XYPairs.Y = 290, 1",
+      "",
+      "[Phenology].StemElongation.Target.PPResponse.Amount.FixedValue = 240",
+      "[Leaf].Phyllochron.Base.FixedValue = 65"
+    ]
+  },
+  "source_soil_crop_parameters": [
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.06,
+        0.06,
+        0.06,
+        0.04,
+        0.04,
+        0.02,
+        0.01
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "WheatSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.06,
+        0.06,
+        0.06,
+        0.05,
+        0.05,
+        0.03,
+        0.02
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "RedCloverSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.06,
+        0.06,
+        0.06,
+        0.045,
+        0.04,
+        0.02,
+        0.01
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8,
+        0.5,
+        0.2
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "PlantainForageSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.06,
+        0.06,
+        0.06,
+        0.04,
+        0.03,
+        0.015,
+        0.005
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.8,
+        0.3,
+        0.1
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "OatsSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.09,
+        0.08,
+        0.06,
+        0.04,
+        0.02,
+        0.01,
+        0.005
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "PotatoSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.09,
+        0.08,
+        0.06,
+        0.04,
+        0.02,
+        0.01,
+        0.005
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "MustardSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.SoilCrop, Models",
+      "LL": [
+        0.261,
+        0.248,
+        0.28,
+        0.28,
+        0.28,
+        0.28,
+        0.28
+      ],
+      "KL": [
+        0.09,
+        0.08,
+        0.06,
+        0.04,
+        0.02,
+        0.01,
+        0.005
+      ],
+      "XF": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "LLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "KLMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "XFMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "RapeSoil",
+      "ResourceName": null,
+      "Children": [],
+      "Enabled": true,
+      "ReadOnly": false
+    }
+  ],
+  "source_unmapped_soil_blocks": [
+    {
+      "$type": "Models.Soils.Organic, Models",
+      "FOMCNRatio": 30.0,
+      "Thickness": [
+        150.0,
+        150.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "Carbon": [
+        1.44,
+        1.16,
+        1.04,
+        0.93,
+        0.81,
+        0.73,
+        0.5
+      ],
+      "CarbonUnits": 0,
+      "SoilCNRatio": [
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0,
+        12.0
+      ],
+      "FBiom": [
+        0.06,
+        0.04,
+        0.03,
+        0.02,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "FInert": [
+        0.35,
+        0.55,
+        0.75,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "FOM": [
+        347.1290323127564,
+        270.3443621919937,
+        163.97214434990104,
+        99.45413288704063,
+        60.32198083112468,
+        36.58713082867487,
+        22.1912165985086
+      ],
+      "CarbonMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "FOMMetadata": null,
+      "Name": "Organic",
+      "ResourceName": null,
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.Chemical, Models",
+      "Thickness": [
+        150.0,
+        150.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "PH": [
+        5.09,
+        5.09,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "PHUnits": 0,
+      "EC": null,
+      "ESP": null,
+      "CEC": null,
+      "ECMetadata": null,
+      "CLMetadata": null,
+      "CECMetadata": null,
+      "ESPMetadata": null,
+      "PHMetadata": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "Name": "Chemical",
+      "ResourceName": null,
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.Solute, Models",
+      "Thickness": [
+        150.0,
+        150.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "InitialValues": [
+        4.0,
+        3.5,
+        3.0,
+        2.0,
+        1.5,
+        1.0,
+        0.5
+      ],
+      "InitialValuesUnits": 0,
+      "WaterTableConcentration": 0.0,
+      "D0": 0.0,
+      "Exco": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "FIP": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "DepthConstant": 0.0,
+      "MaxDepthSoluteAccessible": 0.0,
+      "RunoffEffectivenessAtMovingSolute": 0.0,
+      "MaxEffectiveRunoff": 0.0,
+      "ConcInSolution": null,
+      "Name": "NO3",
+      "ResourceName": null,
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.Solute, Models",
+      "Thickness": [
+        150.0,
+        150.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "InitialValues": [
+        1.0,
+        0.8,
+        0.5,
+        0.3,
+        0.2,
+        0.1,
+        0.05
+      ],
+      "InitialValuesUnits": 0,
+      "WaterTableConcentration": 0.0,
+      "D0": 0.05,
+      "Exco": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "FIP": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "DepthConstant": 0.0,
+      "MaxDepthSoluteAccessible": 0.0,
+      "RunoffEffectivenessAtMovingSolute": 0.0,
+      "MaxEffectiveRunoff": 0.0,
+      "ConcInSolution": null,
+      "Name": "NH4",
+      "ResourceName": null,
+      "Enabled": true,
+      "ReadOnly": false
+    },
+    {
+      "$type": "Models.Soils.Solute, Models",
+      "Thickness": [
+        150.0,
+        150.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0,
+        300.0
+      ],
+      "InitialValues": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "InitialValuesUnits": 1,
+      "WaterTableConcentration": 0.0,
+      "D0": 0.05,
+      "Exco": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "FIP": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "DepthConstant": 0.0,
+      "MaxDepthSoluteAccessible": 0.0,
+      "RunoffEffectivenessAtMovingSolute": 0.0,
+      "MaxEffectiveRunoff": 0.0,
+      "ConcInSolution": null,
+      "Name": "Urea",
+      "ResourceName": null,
+      "Enabled": true,
+      "ReadOnly": false
+    }
+  ],
+  "source_management": [
+    {
+      "Parameters": [
+        {
+          "Key": "RotationCrops",
+          "Value": "RedClover+PlantainForage, Mustard, Wheat, Oats+RedClover+PlantainForage, RedClover+PlantainForage"
+        },
+        {
+          "Key": "RotationCultivars",
+          "Value": "LocalClover;TimothyProxy, Mustard_sort, Zlata, Yakov;LocalClover;TimothyProxy, LocalClover;TimothyProxy"
+        },
+        {
+          "Key": "RotationSowingDepths",
+          "Value": "10;10, 20, 20, 20;10;10, 10;10"
+        },
+        {
+          "Key": "RotationRowSpacings",
+          "Value": "150;150, 150, 150, 150;150;150, 150;150"
+        },
+        {
+          "Key": "RotationPopulations",
+          "Value": "450;300, 200, 200, 250;150;150, 450;300"
+        },
+        {
+          "Key": "RotationSowingDates",
+          "Value": "-, 10-May, 18-May, 12-May, -"
+        },
+        {
+          "Key": "RotationHarvestDates",
+          "Value": "15-Jul, 31-Aug, 16-Aug, 31-Aug, 15-Jul"
+        },
+        {
+          "Key": "RotationHarvestCrops",
+          "Value": "RedClover+PlantainForage, Mustard, Wheat, Oats, RedClover+PlantainForage"
+        },
+        {
+          "Key": "RotationUses",
+          "Value": "hay, grain, grain, grain, hay"
+        },
+        {
+          "Key": "PastureAges",
+          "Value": "3, 0, 0, 0, 1"
+        },
+        {
+          "Key": "TerminationDate",
+          "Value": "20-Aug"
+        },
+        {
+          "Key": "WinterDiebackDate",
+          "Value": "01-Dec"
+        }
+      ],
+      "Name": "RotationManager",
+      "Enabled": true
+    },
+    {
+      "Parameters": [
+        {
+          "Key": "FertiliserTypes",
+          "Value": "NH4NO3N, NH4NO3N, NH4NO3N, NH4NO3N, NH4NO3N"
+        },
+        {
+          "Key": "FertiliserAmounts",
+          "Value": "60, 60, 60, 60, 60"
+        },
+        {
+          "Key": "ApplyAtCrops",
+          "Value": "Wheat, Oats, Mustard, Rape"
+        }
+      ],
+      "Name": "Fertilise at sowing",
+      "Enabled": true
+    },
+    {
+      "Parameters": [
+        {
+          "Key": "Crop",
+          "Value": "[Wheat]"
+        }
+      ],
+      "Name": "Harvest",
+      "Enabled": false
+    },
+    {
+      "Parameters": [
+        {
+          "Key": "LowerBCType",
+          "Value": "seepage"
+        },
+        {
+          "Key": "LowerBCValue",
+          "Value": "-500"
+        }
+      ],
+      "Name": "SWIMSetLowerBC",
+      "Enabled": true
+    },
+    {
+      "Parameters": [
+        {
+          "Key": "Identifier",
+          "Value": "<undefined>"
+        }
+      ],
+      "Name": "Synchroniser",
+      "Enabled": false
+    }
+  ],
+  "approximation": "uncalibrated effective crops; continuous water/salt state; biological stand reconstructed between effective crop windows; fixed source dates replayed; vernalization/photoperiod, exact winter dieback and species competition are not reproduced"
+}

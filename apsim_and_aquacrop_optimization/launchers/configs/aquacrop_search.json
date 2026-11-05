@@ -1,0 +1,36 @@
+{
+  "engine": "aquacrop",
+  "model_root": "../../models/aquacrop",
+  "command": [
+    "../../engines/aquacrop/field-target/debug/aquacrop-field-runner.exe"
+  ],
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "field_ids": [
+    "fixed_field_01"
+  ],
+  "variables": [
+    {
+      "path": [
+        "fixed_field_01",
+        "crop_parameters",
+        "2020_ForageMix_Local",
+        "water_productivity"
+      ],
+      "values": [
+        15.0,
+        16.8,
+        18.0
+      ]
+    }
+  ],
+  "nsga2": {
+    "population": 3,
+    "generations": 2,
+    "seed": 42
+  }
+}

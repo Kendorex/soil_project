@@ -1,0 +1,35 @@
+{
+  "kind": "one_time_static_parameter_import",
+  "runtime_engine": "AquaCrop only",
+  "historical_parameter_source_sha256": "a3466c98bacf1abac2772425175e6abb4d0c8b28fe364a5cc13f84716c4cf390",
+  "initial_water": "Independent field-capacity assumption, not an external simulated state.",
+  "calibration_status": "Uncalibrated effective AquaCrop profiles. Static soil/calendar import does not transfer calibration.",
+  "economics": "Explicit native crop-state costs; no imported fertilizer applications or external optimization presets.",
+  "stored_weather": {
+    "period": [
+      "2024-01-01",
+      "2029-12-31"
+    ],
+    "days": 2192,
+    "sha256": "5d3cad36a573f8268d18bb5ee99c106095c135cc9beadebf553cc81589fecf74"
+  },
+  "weather_construction_audit": {
+    "kind": "historical_climate_analogue_not_forecast",
+    "source_weather_sha256": "8af5fd282b11ccc632286fd9c3e6a509bd070e8481b64882dabaaaf05ff33773",
+    "historical_end": "2023-12-31",
+    "target_to_source_year": {
+      "2024": 2018,
+      "2025": 2019,
+      "2026": 2020,
+      "2027": 2021,
+      "2028": 2022,
+      "2029": 2023
+    },
+    "leap_days_interpolated": [
+      "2024-02-29",
+      "2028-02-29"
+    ],
+    "days": 9497,
+    "ignored_source_dates_after_history_end": 1
+  }
+}

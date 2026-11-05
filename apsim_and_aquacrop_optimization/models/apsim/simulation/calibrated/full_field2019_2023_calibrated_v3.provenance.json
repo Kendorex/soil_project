@@ -1,0 +1,243 @@
+{
+  "status": "assembled_from_accepted_historical_accuracy_evidence",
+  "created_utc": "2026-10-02T10:11:36.625514+00:00",
+  "source_model": "full_field2019_2023_calibrated_v2.apsimx (parent artifact not included in clean release)",
+  "source_model_sha256": "74aaee9dae2df7c9a72d725a550b0695ac7b62b9fa0ea640dab18b9736cc6f65",
+  "source_provenance": "full_field2019_2023_calibrated_v2.provenance.json (parent artifact not included in clean release)",
+  "source_provenance_sha256": "89c757444cef86c2722bc8141450b783e0a67cb0a9c4ca9bc2f9c965ff403c92",
+  "output_model": "simulation/calibrated/full_field2019_2023_calibrated_v3.apsimx",
+  "output_model_sha256": "5975a634a209b61c42300f122cf63012c09002e3a9e34a8b923866c0fc3df855",
+  "single_changed_command": {
+    "cultivar": "Zlata",
+    "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+    "value": "13",
+    "source_cultivar": "Konya",
+    "source_status": "APSIM reference value; not a measured Zlata parameter"
+  },
+  "changes": [
+    {
+      "path": "/Simulations/Wheat/Field1/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field2/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field3/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field4/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field5/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field6/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field7/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field8/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field9/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    },
+    {
+      "path": "/Simulations/Wheat/Field10/Wheat/Zlata",
+      "command": "[Grain].NumberFunction.GrainNumber.GrainsPerGramOfStem.FixedValue",
+      "old": null,
+      "new": "13",
+      "operation": "added"
+    }
+  ],
+  "evidence": {
+    "component_screen_archive": "wheat_grain_number_profile_20261002_124408_362222.tar.gz (not included in clean release)",
+    "component_screen_archive_sha256": "0b7c70e5a444340352fea6df7595fbdb089b8d5e99b4baee7a9ec2176e5b79a3",
+    "full_replay_archive": "wheat_gpg13_full_replay_20261002_130023_983612.tar.gz (not included in clean release)",
+    "full_replay_archive_sha256": "e9a0a46a75043e7a65593a6c770f3b2cd15306f2c9fa5e37e0ec820bccbcb970",
+    "full_replay_acceptance": {
+      "checks": {
+        "complete_37_case_coverage": true,
+        "development_rmse_improved": true,
+        "development_mae_improved": true,
+        "validation_rmse_improved": true,
+        "validation_mae_improved": true,
+        "spring_wheat_rmse_improved": true,
+        "zlata_rmse_improved": true
+      },
+      "passed": true,
+      "status": "full_replay_supports_gpg13_for_model_assembly_review",
+      "bias_tradeoffs_not_used_as_hidden_threshold": {
+        "all_2019_2023": {
+          "control_bias_t_ha": -0.6189211984648523,
+          "candidate_bias_t_ha": -0.721606145929062,
+          "absolute_bias_improved": false
+        },
+        "development_2019_2022": {
+          "control_bias_t_ha": -0.8058658167158449,
+          "candidate_bias_t_ha": -0.913424366917897,
+          "absolute_bias_improved": false
+        },
+        "validation_2023": {
+          "control_bias_t_ha": -0.11417072918717205,
+          "candidate_bias_t_ha": -0.20369694925920784,
+          "absolute_bias_improved": false
+        },
+        "spring_wheat_all": {
+          "control_bias_t_ha": 0.1121502153039681,
+          "candidate_bias_t_ha": -0.3201648278275153,
+          "absolute_bias_improved": false
+        },
+        "zlata_all": {
+          "control_bias_t_ha": 0.3038859603473921,
+          "candidate_bias_t_ha": -0.1901883746600175,
+          "absolute_bias_improved": true
+        }
+      }
+    },
+    "full_replay_metrics": {
+      "current_zlata": {
+        "all_2019_2023": {
+          "n": 37,
+          "mae_t_ha": 1.444729231704791,
+          "rmse_t_ha": 1.8741409878295885,
+          "bias_t_ha": -0.6189211984648523,
+          "r2_1to1": -1.663873101464708,
+          "pearson_r": -0.0063841936199181175
+        },
+        "development_2019_2022": {
+          "n": 27,
+          "mae_t_ha": 1.477146327248379,
+          "rmse_t_ha": 1.9425697679896232,
+          "bias_t_ha": -0.8058658167158449,
+          "r2_1to1": -1.4103880998762541,
+          "pearson_r": 0.08901773467610326
+        },
+        "validation_2023": {
+          "n": 10,
+          "mae_t_ha": 1.3572030737371046,
+          "rmse_t_ha": 1.675481338870417,
+          "bias_t_ha": -0.11417072918717205,
+          "r2_1to1": -4.395991728710523,
+          "pearson_r": -0.4057880067775727
+        },
+        "spring_wheat_all": {
+          "n": 8,
+          "mae_t_ha": 1.058593417959789,
+          "rmse_t_ha": 1.2691246682459256,
+          "bias_t_ha": 0.1121502153039681,
+          "r2_1to1": -10.710291623940241,
+          "pearson_r": 0.650010450850931
+        },
+        "zlata_all": {
+          "n": 7,
+          "mae_t_ha": 1.0341067633826158,
+          "rmse_t_ha": 1.274615874259639,
+          "bias_t_ha": 0.3038859603473921,
+          "r2_1to1": -16.884533545744635,
+          "pearson_r": 0.4887602760101416
+        },
+        "non_zlata_all": {
+          "n": 30,
+          "mae_t_ha": 1.5405411409799654,
+          "rmse_t_ha": 1.9881854790681492,
+          "bias_t_ha": -0.834242868854376,
+          "r2_1to1": -1.719927488796182,
+          "pearson_r": -0.010995347737505008
+        }
+      },
+      "konya_gpg13": {
+        "all_2019_2023": {
+          "n": 37,
+          "mae_t_ha": 1.4068189062297296,
+          "rmse_t_ha": 1.8142786355425042,
+          "bias_t_ha": -0.721606145929062,
+          "r2_1to1": -1.4964161744893634,
+          "pearson_r": 0.04234601231217327
+        },
+        "development_2019_2022": {
+          "n": 27,
+          "mae_t_ha": 1.445547830918674,
+          "rmse_t_ha": 1.8942445685359077,
+          "bias_t_ha": -0.913424366917897,
+          "r2_1to1": -1.2919536184561706,
+          "pearson_r": 0.14264366319942542
+        },
+        "validation_2023": {
+          "n": 10,
+          "mae_t_ha": 1.3022508095695804,
+          "rmse_t_ha": 1.5782607733429441,
+          "bias_t_ha": -0.20369694925920784,
+          "r2_1to1": -3.787950040217722,
+          "pearson_r": -0.36694770728449694
+        },
+        "spring_wheat_all": {
+          "n": 8,
+          "mae_t_ha": 0.9299222943208623,
+          "rmse_t_ha": 0.9837228113014764,
+          "bias_t_ha": -0.3201648278275153,
+          "r2_1to1": -6.035656432770518,
+          "pearson_r": 0.6554769957942413
+        },
+        "zlata_all": {
+          "n": 7,
+          "mae_t_ha": 0.8870540506524139,
+          "rmse_t_ha": 0.943306082411297,
+          "bias_t_ha": -0.1901883746600175,
+          "r2_1to1": -8.795446596556722,
+          "pearson_r": 0.49079197063655844
+        },
+        "non_zlata_all": {
+          "n": 30,
+          "mae_t_ha": 1.5280973725311031,
+          "rmse_t_ha": 1.9626569851223101,
+          "bias_t_ha": -0.8456036258918392,
+          "r2_1to1": -1.6505276537114026,
+          "pearson_r": -0.0006987981586540676
+        }
+      }
+    }
+  },
+  "interpretation_limits": [
+    "The GPG13 value is source-backed but remains a Konya proxy for Zlata.",
+    "Whole-history negative bias increased even though MAE and RMSE improved.",
+    "Unconfirmed straw export is not included in this model assembly.",
+    "This model does not establish optimization bounds, prices, or soil targets."
+  ]
+}

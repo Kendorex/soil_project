@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+python/aquacrop_bmi_rs/*.so
+python/aquacrop_bmi_rs/*.pyd

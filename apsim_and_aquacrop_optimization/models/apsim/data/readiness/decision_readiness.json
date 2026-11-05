@@ -1,0 +1,174 @@
+{
+  "selected_case": "control",
+  "selected": {
+    "status": "historical_validation_not_ready_for_decision_optimization",
+    "recommendation_allowed": false,
+    "validation_year": 2023,
+    "calibration_years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "training_observed_mean_t_ha": 2.799259259259259,
+    "validation_model_metrics": {
+      "n": 10,
+      "mae_t_ha": 1.2127738811617377,
+      "rmse_t_ha": 1.4997316004651235,
+      "bias_t_ha": -0.5612256230638213,
+      "r2_1to1": -3.3233377993708375,
+      "pearson_r": -0.31601917493675014,
+      "spearman_r": -0.296969696969697
+    },
+    "validation_training_mean_metrics": {
+      "n": 10,
+      "mae_t_ha": 0.7127037037037036,
+      "rmse_t_ha": 0.8368039908289249,
+      "bias_t_ha": 0.4242592592592592,
+      "r2_1to1": -0.3459829869911588,
+      "pearson_r": null
+    },
+    "checks": {
+      "complete_validation_coverage": {
+        "passed": true,
+        "actual": 10,
+        "required": 10
+      },
+      "all_validation_harvest_events_present": {
+        "passed": true,
+        "missing": []
+      },
+      "validation_rmse_better_than_training_mean": {
+        "passed": false,
+        "model_rmse_t_ha": 1.4997316004651235,
+        "training_mean_rmse_t_ha": 0.8368039908289249
+      },
+      "positive_validation_field_ranking": {
+        "passed": false,
+        "spearman_r": -0.296969696969697
+      }
+    },
+    "failed_checks": [
+      "validation_rmse_better_than_training_mean",
+      "positive_validation_field_ranking"
+    ],
+    "threshold_policy": "No absolute agronomic error threshold was assumed. Readiness requires complete held-out coverage, harvest events, lower RMSE than the calibration-period mean, and positive Spearman field ranking."
+  },
+  "by_case": {
+    "control": {
+      "status": "historical_validation_not_ready_for_decision_optimization",
+      "recommendation_allowed": false,
+      "validation_year": 2023,
+      "calibration_years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "training_observed_mean_t_ha": 2.799259259259259,
+      "validation_model_metrics": {
+        "n": 10,
+        "mae_t_ha": 1.2127738811617377,
+        "rmse_t_ha": 1.4997316004651235,
+        "bias_t_ha": -0.5612256230638213,
+        "r2_1to1": -3.3233377993708375,
+        "pearson_r": -0.31601917493675014,
+        "spearman_r": -0.296969696969697
+      },
+      "validation_training_mean_metrics": {
+        "n": 10,
+        "mae_t_ha": 0.7127037037037036,
+        "rmse_t_ha": 0.8368039908289249,
+        "bias_t_ha": 0.4242592592592592,
+        "r2_1to1": -0.3459829869911588,
+        "pearson_r": null
+      },
+      "checks": {
+        "complete_validation_coverage": {
+          "passed": true,
+          "actual": 10,
+          "required": 10
+        },
+        "all_validation_harvest_events_present": {
+          "passed": true,
+          "missing": []
+        },
+        "validation_rmse_better_than_training_mean": {
+          "passed": false,
+          "model_rmse_t_ha": 1.4997316004651235,
+          "training_mean_rmse_t_ha": 0.8368039908289249
+        },
+        "positive_validation_field_ranking": {
+          "passed": false,
+          "spearman_r": -0.296969696969697
+        }
+      },
+      "failed_checks": [
+        "validation_rmse_better_than_training_mean",
+        "positive_validation_field_ranking"
+      ],
+      "threshold_policy": "No absolute agronomic error threshold was assumed. Readiness requires complete held-out coverage, harvest events, lower RMSE than the calibration-period mean, and positive Spearman field ranking."
+    },
+    "replay": {
+      "status": "historical_validation_not_ready_for_decision_optimization",
+      "recommendation_allowed": false,
+      "validation_year": 2023,
+      "calibration_years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "training_observed_mean_t_ha": 2.799259259259259,
+      "validation_model_metrics": {
+        "n": 10,
+        "mae_t_ha": 1.3022508095695804,
+        "rmse_t_ha": 1.5782607733429441,
+        "bias_t_ha": -0.20369694925920784,
+        "r2_1to1": -3.787950040217722,
+        "pearson_r": -0.36694770728449694,
+        "spearman_r": -0.09090909090909091
+      },
+      "validation_training_mean_metrics": {
+        "n": 10,
+        "mae_t_ha": 0.7127037037037036,
+        "rmse_t_ha": 0.8368039908289249,
+        "bias_t_ha": 0.4242592592592592,
+        "r2_1to1": -0.3459829869911588,
+        "pearson_r": null
+      },
+      "checks": {
+        "complete_validation_coverage": {
+          "passed": true,
+          "actual": 10,
+          "required": 10
+        },
+        "all_validation_harvest_events_present": {
+          "passed": true,
+          "missing": []
+        },
+        "validation_rmse_better_than_training_mean": {
+          "passed": false,
+          "model_rmse_t_ha": 1.5782607733429441,
+          "training_mean_rmse_t_ha": 0.8368039908289249
+        },
+        "positive_validation_field_ranking": {
+          "passed": false,
+          "spearman_r": -0.09090909090909091
+        }
+      },
+      "failed_checks": [
+        "validation_rmse_better_than_training_mean",
+        "positive_validation_field_ranking"
+      ],
+      "threshold_policy": "No absolute agronomic error threshold was assumed. Readiness requires complete held-out coverage, harvest events, lower RMSE than the calibration-period mean, and positive Spearman field ranking."
+    }
+  },
+  "inputs": {
+    "config": "configs/multifield_historical_replay.yaml",
+    "model_sha256": "5975a634a209b61c42300f122cf63012c09002e3a9e34a8b923866c0fc3df855",
+    "weather_sha256": "b7a74f9978cdb312281bbdfd9d03d5827901ffef82b6cc753c26945cd26a5cef",
+    "observations_sha256": "73be87dd3b5c6e77898c3622c629bd07ed68ea170836cca005661f53e7c1137a"
+  },
+  "evaluation_dir": "outputs/multifield/HISTORICAL_REPLAY/evaluation_20261002_150208 (generated, not included)"
+}

@@ -1,0 +1,15 @@
+{
+  "source": "new_calibr/result",
+  "model": "simulation.apsimx",
+  "weather": "weather.met",
+  "period": [
+    "2004-01-01",
+    "2023-12-31"
+  ],
+  "sha256": {
+    "simulation.apsimx": "a3466c98bacf1abac2772425175e6abb4d0c8b28fe364a5cc13f84716c4cf390",
+    "weather.met": "8af5fd282b11ccc632286fd9c3e6a509bd070e8481b64882dabaaaf05ff33773"
+  },
+  "launch_profile": "apsim_baseline",
+  "legacy_optimization": "Legacy optimization configs retain the 2019-2023 model; RotationManager requires a separate adapter."
+}

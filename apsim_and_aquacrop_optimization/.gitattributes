@@ -1,0 +1,4 @@
+# Preserve exact calibration payloads and their recorded SHA-256 fingerprints.
+*.apsimx -text
+*.met -text
+*.xlsx -text

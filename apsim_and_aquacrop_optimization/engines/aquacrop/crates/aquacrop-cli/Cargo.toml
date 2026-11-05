@@ -1,0 +1,29 @@
+[package]
+name = "aquacrop-cli"
+authors.workspace = true
+description = "Command-line interface compatible with the AquaCrop model"
+documentation = "https://docs.rs/aquacrop-cli"
+edition.workspace = true
+keywords = ["agriculture", "crop-model", "simulation", "cli"]
+categories = ["command-line-utilities", "science", "simulation"]
+license.workspace = true
+readme = "README.md"
+rust-version.workspace = true
+version.workspace = true
+
+[[bin]]
+name = "aquacrop"
+path = "src/main.rs"
+doc = false
+
+[dependencies]
+aquacrop-core = { workspace = true, features = ["file-io"] }
+clap = { version = "4.6.3", features = ["derive"] }
+const_format = "0.2.36"
+
+[dev-dependencies]
+aquacrop-conformance.workspace = true
+tempfile = "3.27.0"
+
+[lints]
+workspace = true
