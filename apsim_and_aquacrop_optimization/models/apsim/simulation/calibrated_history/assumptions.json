@@ -1,0 +1,1271 @@
+{
+  "schema_version": "1.0",
+  "conversion": {
+    "forage_dm_fraction": 0.2,
+    "green_dm_fraction": 0.2,
+    "grain_moisture": 0.14,
+    "note": "Fixed measurement-basis assumptions, never fitted together with cultivar parameters; source point means preserved separately"
+  },
+  "records": [
+    {
+      "field": "Field1",
+      "year": "2004",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2004",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2004",
+      "crop": "Ячмень с подсевом многолетних трав",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field5",
+      "year": "2004",
+      "crop": "Овес",
+      "assumptions": "harvest date assumed",
+      "proxy": ""
+    },
+    {
+      "field": "Field6",
+      "year": "2004",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2004",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2004",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2004",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2004",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2005",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2005",
+      "crop": "Вико-овсяная смесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete; cultivar unspecified, separate shared cultivar",
+      "proxy": "Vetch represented by RedClover; whole aboveground dry matter harvested"
+    },
+    {
+      "field": "Field3",
+      "year": "2005",
+      "crop": "Ячмень с подсевом многолетних трав",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field4",
+      "year": "2005",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2005",
+      "crop": "Яровая пшеница",
+      "assumptions": "Phenophase before observed sowing excluded: Фенофазы!L36=2005-05-16",
+      "proxy": ""
+    },
+    {
+      "field": "Field6",
+      "year": "2005",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2005",
+      "crop": "Овес",
+      "assumptions": "harvest date assumed",
+      "proxy": ""
+    },
+    {
+      "field": "Field8",
+      "year": "2005",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2005",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2005",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2006",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2006",
+      "crop": "Ячмень с подсевом многолетних трав",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field3",
+      "year": "2006",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2006",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2006",
+      "crop": "Ячмень с подсевом многолетних трав",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field6",
+      "year": "2006",
+      "crop": "Овес",
+      "assumptions": "harvest date assumed",
+      "proxy": ""
+    },
+    {
+      "field": "Field8",
+      "year": "2006",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2006",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2006",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2007",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2007",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field3",
+      "year": "2007",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2007",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2007",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2007",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field8",
+      "year": "2007",
+      "crop": "Ячмень",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": ""
+    },
+    {
+      "field": "Field9",
+      "year": "2007",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2007",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2008",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2008",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field2",
+      "year": "2008",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "Invalid date excluded: Фенофазы!M15='31.06': day 31 must be in range 1..30 for month 6 in year 2008",
+      "proxy": ""
+    },
+    {
+      "field": "Field3",
+      "year": "2008",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2008",
+      "crop": "Ячмень",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": ""
+    },
+    {
+      "field": "Field5",
+      "year": "2008",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2008",
+      "crop": "Лен",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Flax uses an unvalidated Canola biomass placeholder; straw/fibre target unknown, yield excluded from fitting"
+    },
+    {
+      "field": "Field7",
+      "year": "2008",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2008",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2008",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2009",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2009",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field3",
+      "year": "2009",
+      "crop": "Ячмень",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": ""
+    },
+    {
+      "field": "Field5",
+      "year": "2009",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2009",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field7",
+      "year": "2009",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2009",
+      "crop": "Лен",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Flax uses an unvalidated Canola biomass placeholder; straw/fibre target unknown, yield excluded from fitting"
+    },
+    {
+      "field": "Field9",
+      "year": "2009",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2009",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2010",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2010",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2010",
+      "crop": "Лен",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Flax uses an unvalidated Canola biomass placeholder; straw/fibre target unknown, yield excluded from fitting"
+    },
+    {
+      "field": "Field5",
+      "year": "2010",
+      "crop": "Ячмень",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": ""
+    },
+    {
+      "field": "Field6",
+      "year": "2010",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2010",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2010",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field9",
+      "year": "2010",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2010",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2011",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2011",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field3",
+      "year": "2011",
+      "crop": "Лен",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Flax uses an unvalidated Canola biomass placeholder; straw/fibre target unknown, yield excluded from fitting"
+    },
+    {
+      "field": "Field4",
+      "year": "2011",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field6",
+      "year": "2011",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2011",
+      "crop": "Ячмень",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": ""
+    },
+    {
+      "field": "Field8",
+      "year": "2011",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2011",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2011",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2012",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2012",
+      "crop": "Ячмень",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": ""
+    },
+    {
+      "field": "Field3",
+      "year": "2012",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field4",
+      "year": "2012",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2012",
+      "crop": "Лен",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Flax uses an unvalidated Canola biomass placeholder; straw/fibre target unknown, yield excluded from fitting"
+    },
+    {
+      "field": "Field6",
+      "year": "2012",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2012",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2012",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2012",
+      "crop": "Залежь",
+      "assumptions": "sowing/establishment date assumed",
+      "proxy": "Unmanaged spontaneous vegetation represented by a forage proxy"
+    },
+    {
+      "field": "Field1",
+      "year": "2013",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2013",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field3",
+      "year": "2013",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2013",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2013",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field7",
+      "year": "2013",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field8",
+      "year": "2013",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2013",
+      "crop": "Пятикомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field10",
+      "year": "2013",
+      "crop": "Яровая пшеница",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete; cultivar unspecified, separate shared cultivar",
+      "proxy": ""
+    },
+    {
+      "field": "Field1",
+      "year": "2014",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2014",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field3",
+      "year": "2014",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2014",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2014",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2014",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field7",
+      "year": "2014",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field9",
+      "year": "2014",
+      "crop": "Пятикомпонентная травосмесь / чистый пар",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species; mixed pasture/fallow label interpreted as pasture, requires confirmation"
+    },
+    {
+      "field": "Field10",
+      "year": "2014",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field1",
+      "year": "2015",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2015",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field3",
+      "year": "2015",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2015",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2015",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field7",
+      "year": "2015",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field8",
+      "year": "2015",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field9",
+      "year": "2015",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field10",
+      "year": "2015",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field1",
+      "year": "2016",
+      "crop": "Выводное поле (козлятник восточный)",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Eastern galega represented by a perennial legume proxy (RedClover)"
+    },
+    {
+      "field": "Field2",
+      "year": "2016",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2016",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field5",
+      "year": "2016",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2016",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field7",
+      "year": "2016",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2016",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field9",
+      "year": "2016",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field10",
+      "year": "2016",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field2",
+      "year": "2017",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field3",
+      "year": "2017",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field4",
+      "year": "2017",
+      "crop": "Озимая рожь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field6",
+      "year": "2017",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2017",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2017",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field9",
+      "year": "2017",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field10",
+      "year": "2017",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field1",
+      "year": "2018",
+      "crop": "Четырёхкомпонентная травосмесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Unknown mixture composition represented by two functional components; not invented individual species"
+    },
+    {
+      "field": "Field3",
+      "year": "2018",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field4",
+      "year": "2018",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field5",
+      "year": "2018",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field6",
+      "year": "2018",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2018",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2018",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2018",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field10",
+      "year": "2018",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field1",
+      "year": "2019",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field2",
+      "year": "2019",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field3",
+      "year": "2019",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field4",
+      "year": "2019",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2019",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field6",
+      "year": "2019",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2019",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2019",
+      "crop": "Вико-овсяная смесь",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete; cultivar unspecified, separate shared cultivar",
+      "proxy": "Vetch represented by RedClover; whole aboveground dry matter harvested"
+    },
+    {
+      "field": "Field10",
+      "year": "2019",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field1",
+      "year": "2020",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field2",
+      "year": "2020",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field2",
+      "year": "2020",
+      "crop": "Озимая рожь",
+      "assumptions": "Invalid date excluded: Фенофазы!M70='22.00': month must be in 1..12, not 0",
+      "proxy": ""
+    },
+    {
+      "field": "Field3",
+      "year": "2020",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field4",
+      "year": "2020",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2020",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field7",
+      "year": "2020",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field8",
+      "year": "2020",
+      "crop": "Многолетние травы 3-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; pasture cultivar not recorded; shared Vik7/Vik9Proxy hypothesis, no annual cultivar replacement",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field9",
+      "year": "2020",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field10",
+      "year": "2020",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field1",
+      "year": "2021",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field2",
+      "year": "2021",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field3",
+      "year": "2021",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2021",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2021",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field7",
+      "year": "2021",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field8",
+      "year": "2021",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field9",
+      "year": "2021",
+      "crop": "Рапс",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field1",
+      "year": "2022",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field3",
+      "year": "2022",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field4",
+      "year": "2022",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field5",
+      "year": "2022",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field6",
+      "year": "2022",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field8",
+      "year": "2022",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field9",
+      "year": "2022",
+      "crop": "Горчица",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed; N30 assumed; fertiliser history incomplete",
+      "proxy": "Mustard represented by Canola; Harvest product unknown; legacy seed-harvest scenario retained as a management hypothesis; observed yield excluded from fitting"
+    },
+    {
+      "field": "Field10",
+      "year": "2022",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field1",
+      "year": "2023",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field2",
+      "year": "2023",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field4",
+      "year": "2023",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field5",
+      "year": "2023",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field6",
+      "year": "2023",
+      "crop": "Многолетние травы 2-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    },
+    {
+      "field": "Field7",
+      "year": "2023",
+      "crop": "Овес с подсевом многолетних трав",
+      "assumptions": "harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage"
+    },
+    {
+      "field": "Field9",
+      "year": "2023",
+      "crop": "Озимая рожь",
+      "assumptions": "harvest date assumed",
+      "proxy": "Winter rye represented by Wheat with a separate winter cultivar"
+    },
+    {
+      "field": "Field10",
+      "year": "2023",
+      "crop": "Многолетние травы 1-го года пользования",
+      "assumptions": "sowing/establishment date assumed; harvest date assumed",
+      "proxy": "Timothy represented by PlantainForage; not a validated species model"
+    }
+  ],
+  "limitations": [
+    "Species proxies for rye, timothy, galega, vetch and unknown mixtures are hypotheses.",
+    "Flax and rape/mustard yields with unknown product/moisture basis are excluded.",
+    "Missing operations/fertilizer use fixed documented assumptions; mature initial swards are approximated.",
+    "Initial cultivar library includes historical calibrated priors, potentially informed by later years.",
+    "Bounded time-limited search does not establish optimum, identifiability or uncertainty intervals."
+  ]
+}

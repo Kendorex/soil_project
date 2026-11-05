@@ -1,0 +1,366 @@
+{
+  "requested_layout": {
+    "models/apsim": [
+      "configs",
+      "data",
+      "simulation"
+    ],
+    "models/aquacrop": [
+      "project.json",
+      "configs",
+      "DATA",
+      "fields",
+      "management",
+      "generated"
+    ]
+  },
+  "retained_runtime": [
+    "agro/apsim",
+    "agro/aquacrop"
+  ],
+  "retained_results": [
+    "runs",
+    "for_me",
+    "results"
+  ],
+  "delete": [
+    {
+      "path": "models/aquacrop/archive",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 23825683
+    },
+    {
+      "path": "models/aquacrop/calibration_vniimz",
+      "kind": "directory",
+      "files": 472,
+      "bytes": 113289603
+    },
+    {
+      "path": "models/aquacrop/outputs",
+      "kind": "directory",
+      "files": 264,
+      "bytes": 109294422
+    },
+    {
+      "path": "models/aquacrop/reference",
+      "kind": "directory",
+      "files": 90,
+      "bytes": 33118250
+    },
+    {
+      "path": "models/aquacrop/__pycache__",
+      "kind": "directory",
+      "files": 7,
+      "bytes": 123713
+    },
+    {
+      "path": "models/apsim/.pytest_cache",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0
+    },
+    {
+      "path": "models/apsim/docs",
+      "kind": "directory",
+      "files": 1,
+      "bytes": 1299872
+    },
+    {
+      "path": "models/apsim/examples",
+      "kind": "directory",
+      "files": 3,
+      "bytes": 164744
+    },
+    {
+      "path": "models/apsim/results",
+      "kind": "directory",
+      "files": 1,
+      "bytes": 5913
+    },
+    {
+      "path": "models/apsim/scripts",
+      "kind": "directory",
+      "files": 10,
+      "bytes": 109836
+    },
+    {
+      "path": "models/apsim/src",
+      "kind": "directory",
+      "files": 30,
+      "bytes": 514809
+    },
+    {
+      "path": "models/apsim/tests",
+      "kind": "directory",
+      "files": 36,
+      "bytes": 331519
+    },
+    {
+      "path": "models/aquacrop/.gitignore",
+      "kind": "file",
+      "files": 1,
+      "bytes": 171,
+      "sha256": "031154b3b5096395a2a05b9da23d07026bc9d125832bc27d7da68e30f6fd9271"
+    },
+    {
+      "path": "models/aquacrop/backend.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 5384,
+      "sha256": "d7281574ee85a3c1afc403c9b693faed3e4e23d1e71b259fcf1d60586c0a0492"
+    },
+    {
+      "path": "models/aquacrop/calibrate_vniimz.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 13479,
+      "sha256": "e20fb6c044ce14cbbdbae2762403f70455bd1faf47e8ebd48df004fa34793796"
+    },
+    {
+      "path": "models/aquacrop/export_vniimz_results.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 4430,
+      "sha256": "aceef490ac7231e4724b317df809da086ff6b28457ab15dd3f6fa3e4e64e6e23"
+    },
+    {
+      "path": "models/aquacrop/field_config.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32750,
+      "sha256": "065e214447b9ab0f5c65bee0801cd4bc00f8ce79ab260519fd34a45d77c3a211"
+    },
+    {
+      "path": "models/aquacrop/field_reference.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 10364,
+      "sha256": "0d33d945dd139e0eff7b706d2996f7759421c9d22db695bf90894a833f167b38"
+    },
+    {
+      "path": "models/aquacrop/FIELDS.md",
+      "kind": "file",
+      "files": 1,
+      "bytes": 16776,
+      "sha256": "99fedef9b2dfcb26a7928b0e2149962ff1b9a6f0f4eff8e2e0f8bde1c04266a0"
+    },
+    {
+      "path": "models/aquacrop/fixed_rotation.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 8910,
+      "sha256": "5e2fee365950f33ae873fc595718d2ea4e939b183a321d0d2e6e478a80c0c774"
+    },
+    {
+      "path": "models/aquacrop/plot_all_fields.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 9445,
+      "sha256": "e3bc13dfbcbfbf8df987457be263669c2d24647d084037b8601225a68d5c0db3"
+    },
+    {
+      "path": "models/aquacrop/plot_field_results.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 19946,
+      "sha256": "37811babf29f76e3910dfdec5c05f0e4054a327de05e7063a92ddfd82a410ff4"
+    },
+    {
+      "path": "models/aquacrop/plot_field_year_bars.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 6334,
+      "sha256": "d703d5b4706a6bc40515c5d43350db4ed39788626ac3ede0bb54f617f3d2220e"
+    },
+    {
+      "path": "models/aquacrop/plot_vniimz.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 14326,
+      "sha256": "f85199b6376c05f38931463fe6479ff9f9e523861db52d88b464e74b852f4074"
+    },
+    {
+      "path": "models/aquacrop/README.md",
+      "kind": "file",
+      "files": 1,
+      "bytes": 3364,
+      "sha256": "f6947513618f34e5961fc337bdcff2944c073774a1cf82fcb7c6936942bc4969"
+    },
+    {
+      "path": "models/aquacrop/report_vniimz.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 9930,
+      "sha256": "f83943842180ac6cd703caf013709b6b0a88b2af0b32a40fadcd2004f05595ce"
+    },
+    {
+      "path": "models/aquacrop/run_fields.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 12513,
+      "sha256": "31517541ab5b968fc08d014a6e432a05d1df8bc368c2a9efa7249c34a247e7c5"
+    },
+    {
+      "path": "models/aquacrop/run_vniimz.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 1008,
+      "sha256": "45413552e010c399359f1cb53afdfc6f318470117115ee857aaa1092be59e760"
+    },
+    {
+      "path": "models/aquacrop/run_vniimz_apsim.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 4418,
+      "sha256": "9bb8b9d4f0a0441e4aec8231d823ed56d5ff5e23b001316204686bbfbab20c1b"
+    },
+    {
+      "path": "models/aquacrop/test_fixed_rotation.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 5855,
+      "sha256": "382979b8125ffcde54f0536100623f6470c549321cd4993ad36645223680caa8"
+    },
+    {
+      "path": "models/aquacrop/test_vniimz.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 5497,
+      "sha256": "d5a3efef9e54fec824627daa003d6a3e79edf269e03f88f998eeea129d734d7d"
+    },
+    {
+      "path": "models/aquacrop/vniimz_observations.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 4787,
+      "sha256": "bdbb33e3810683b6023ba1bc5120cd1944acc5d6a3a94ba91d5b67b221523b99"
+    },
+    {
+      "path": "models/aquacrop/weather_utils.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 1533,
+      "sha256": "408fd5d347b0e2c316e299efbb47c09d41c644937dfea241dd47085f94c270b6"
+    },
+    {
+      "path": "models/apsim/.gitattributes",
+      "kind": "file",
+      "files": 1,
+      "bytes": 168,
+      "sha256": "2256cc866af33fc2ee21ba11ffe061c73d45dfa37b2816218adaddc481e57551"
+    },
+    {
+      "path": "models/apsim/.gitignore",
+      "kind": "file",
+      "files": 1,
+      "bytes": 208,
+      "sha256": "f4425b27c60f28baaf81ac83bcc0d015f5e6f836a5a935d9a7966a95659b5099"
+    },
+    {
+      "path": "models/apsim/CHANGES_SUMMARY.md",
+      "kind": "file",
+      "files": 1,
+      "bytes": 12446,
+      "sha256": "201b3b7bc9db1dbe5c8c0e951ba17ecee74b4f11b842fde64e24781f0861bf67"
+    },
+    {
+      "path": "models/apsim/pytest.ini",
+      "kind": "file",
+      "files": 1,
+      "bytes": 61,
+      "sha256": "94fdc2d545b2d4077a4d70229fd22ba3ccac21d49d1097d2873f76d04e9a3c7a"
+    },
+    {
+      "path": "models/apsim/README.md",
+      "kind": "file",
+      "files": 1,
+      "bytes": 6729,
+      "sha256": "bd6c5f83f25a3d6c0f7f53438fe64c3ca627973b74c2ea3e0dce47915897bb22"
+    },
+    {
+      "path": "models/apsim/RELEASE_MANIFEST.json",
+      "kind": "file",
+      "files": 1,
+      "bytes": 12752,
+      "sha256": "11eadabedfd395e97c1fc27b3418e169fe3443ea7c73d6461be7736e66021964"
+    },
+    {
+      "path": "models/apsim/requirements.lock.txt",
+      "kind": "file",
+      "files": 1,
+      "bytes": 615,
+      "sha256": "343bab376e5af041461809fb38b2e2ba530514ee799829075bd0f31c08ec0118"
+    },
+    {
+      "path": "models/apsim/requirements.txt",
+      "kind": "file",
+      "files": 1,
+      "bytes": 71,
+      "sha256": "4139f2ab08d9a3ca8418aa086d8fa164fe65752ee810ceb7b5d6d91bae72a53b"
+    },
+    {
+      "path": "models/apsim/run_multifield.py",
+      "kind": "file",
+      "files": 1,
+      "bytes": 187,
+      "sha256": "00c806286849a3b2ad3d27cbd4d26679b9c90934b20f08044dda7084b1390347"
+    },
+    {
+      "path": "models/apsim/VERSION",
+      "kind": "file",
+      "files": 1,
+      "bytes": 17,
+      "sha256": "d0c64307bf0a0455e09a3ee8d6013a50239e451164a6cc47a7e82fade86b976f"
+    },
+    {
+      "path": "models/apsim/configs/rotation_planning_2019_2023.yaml",
+      "kind": "file",
+      "files": 1,
+      "bytes": 5523,
+      "sha256": "3d08ae3913238f874c3ee99ff4cf17eff32032241eb84eb22ebd12e60a7b7365"
+    },
+    {
+      "path": "models/apsim/configs/rotation_planning_2019_2023_all_crops.yaml",
+      "kind": "file",
+      "files": 1,
+      "bytes": 5754,
+      "sha256": "590f998ce65f971acf861146a30c346da56559e55b6f624f67c77acb918cc633"
+    },
+    {
+      "path": "models/apsim/configs/rotation_planning_2025_2029.yaml",
+      "kind": "file",
+      "files": 1,
+      "bytes": 4583,
+      "sha256": "6a99939e717d47a7f3a6ad850ac16a4919807861e31aa182ae5506437b91fbb3"
+    }
+  ],
+  "total_files": 950,
+  "total_bytes": 282318698,
+  "approval_reason": "Automatic approval review rejected bulk removal; explicit reviewed scope required.",
+  "retained_input_documents": [
+    {
+      "source": "models/apsim/docs/20260804_ВНИИМЗ_трансекта/20260804_ВНИИМЗ_трансекта.xlsx",
+      "retained": "data/observations/original_20260804_ВНИИМЗ_трансекта.xlsx",
+      "sha256": "d234590b8bee54025609749598d914ae74b19539e2153dddb4091f1643e22e73"
+    }
+  ],
+  "verification": {
+    "tests_passed": 122,
+    "native_prepared_files_identical": 21,
+    "native_daily_trace_identical": true,
+    "numerical_inputs_unchanged": true
+  },
+  "status": "completed",
+  "automatic_review": "Approved and executed after explicit user confirmation; initial rejections retained as history.",
+  "approved_on": "2026-10-27",
+  "completed_on": "2026-10-27",
+  "verification_after_cleanup": {
+    "tests_passed": 125,
+    "subtests_passed": 9,
+    "unchanged_numerical_input_files": 223,
+    "retained_model_files": 291,
+    "all_approved_targets_absent": true,
+    "layout_matches_requested": true
+  }
+}

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agro-optimization"
+version = "0.1.0"
+description = "Independent crop models, simulation adapters and multi-objective optimization"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2.0", "scipy>=1.9", "pymoo>=0.6.1.6,<0.7", "PyYAML>=6", "openpyxl>=3.1", "matplotlib>=3.9"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["agro*"]
+namespaces = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--import-mode=importlib"

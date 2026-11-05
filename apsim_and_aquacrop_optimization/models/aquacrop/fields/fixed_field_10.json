@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "fixed_field_10",
+  "source_simulation": "Wheat",
+  "source_zone": "Field10",
+  "weather_file": "configs/weather_rotation.met",
+  "co2_file": "DATA/aquacrop_weather/MaunaLoa.CO2",
+  "mixture_mode": "effective_crop",
+  "forage_season": {
+    "start": "04-01",
+    "end": "10-31"
+  },
+  "maximum_compartment_thickness_m": 0.1,
+  "mulch_cover_percent": 0,
+  "fertility_stress_percent": 0,
+  "notes": [
+    "Fixed harvest-year rotation with perennial carry-over and autumn sowing.",
+    "Single effective crop approximation; native HarvestReport and standing Yield are retained separately."
+  ],
+  "management_mode": "fixed_rotation"
+}

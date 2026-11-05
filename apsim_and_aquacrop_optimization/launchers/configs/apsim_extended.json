@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "population": 20,
+  "generations": 10,
+  "seed": 42,
+  "jobs": [
+    {"id":"01_apsim_joint_seed42","engine":"apsim","algorithm":"nsga2","seed":42,"objectives":["yield","profit","humic"],"config":"../../models/apsim/configs/future_rotation_2025_2029.json","management_preset":"yield"},
+    {"id":"02_apsim_joint_seed123","engine":"apsim","algorithm":"nsga2","seed":123,"objectives":["yield","profit","humic"],"config":"../../models/apsim/configs/future_rotation_2025_2029.json","management_preset":"yield"},
+    {"id":"03_apsim_joint_seed2026","engine":"apsim","algorithm":"nsga2","seed":2026,"objectives":["yield","profit","humic"],"config":"../../models/apsim/configs/future_rotation_2025_2029.json","management_preset":"yield"}
+  ]
+}

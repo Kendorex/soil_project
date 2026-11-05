@@ -1,0 +1,32 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "aquacrop-bmi-rs"
+version = "0.1.0"
+description = "BMI 2.0 Python binding for the AquaCrop Rust core"
+requires-python = ">=3.9"
+
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+dependencies = [
+    "numpy>=1.22"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7",
+    "bmipy>=2.0",
+]
+
+[project.entry-points."pymt.plugins"]
+AquaCropRs = "aquacrop_bmi_rs:AquaCropBmi"
+
+[tool.maturin]
+python-source = "python"
+module-name = "aquacrop_bmi_rs._aquacrop_bmi_rs"
+features = ["pyo3/extension-module"]

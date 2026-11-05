@@ -1,0 +1,16 @@
+{
+  "engine": "aquacrop",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "field_ids": null,
+  "decisions": {},
+  "model_root": "../../models/aquacrop",
+  "command": [
+    "../../engines/aquacrop/field-target/debug/aquacrop-field-runner.exe"
+  ]
+}

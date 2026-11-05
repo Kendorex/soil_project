@@ -1,0 +1,14 @@
+summary: >
+  AquaCrop is a crop water productivity model developed by FAO to simulate crop
+  yield response to water availability and management. This is a from-scratch
+  Rust reimplementation of AquaCrop v7.3's simulation engine, exposed as a BMI
+  2.0 component via PyO3, developed and verified for byte-for-byte physics
+  parity against the official Fortran model.
+
+url: https://gitlab.esoil.ru/sdt-models/aquacrop-rs
+
+author: aquacrop-rs contributors
+
+version: "0.1.0"
+
+license: see repository

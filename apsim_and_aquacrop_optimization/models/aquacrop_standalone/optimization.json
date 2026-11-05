@@ -1,0 +1,37 @@
+{
+  "engine": "aquacrop_standalone",
+  "model_root": ".",
+  "output_root": "../../runs/aquacrop_standalone",
+  "command": [
+    "../../engines/aquacrop/field-target/debug/aquacrop-field-runner.exe"
+  ],
+  "timeout_seconds": 1800,
+  "water_balance_tolerance_mm": 0.01,
+  "objectives": [
+    "yield",
+    "profit"
+  ],
+  "search": {
+    "algorithm": "auto",
+    "population": 10,
+    "generations": 4,
+    "seed": 42,
+    "verbose": true
+  },
+  "economics": {
+    "currency": "RUB_DIAGNOSTIC_PROXY",
+    "price_per_kg_dm": {
+      "Wheat": 14.3,
+      "Oats": 14.3,
+      "Mix": 0.0
+    },
+    "cost_per_ha_by_state": {
+      "oats_with_underseed": 23000.0,
+      "perennial_grass_year1": 23000.0,
+      "perennial_grass_year2": 23000.0,
+      "perennial_grass_year3": 23000.0,
+      "spring_wheat": 23000.0,
+      "winter_rye": 23000.0
+    }
+  }
+}

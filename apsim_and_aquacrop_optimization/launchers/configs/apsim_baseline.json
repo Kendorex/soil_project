@@ -1,0 +1,10 @@
+{
+  "engine": "apsim",
+  "native_full_simulation": true,
+  "field_area_ha": 0.1,
+  "model_root": "../../models/apsim/simulation/calibrated_history",
+  "command": [
+    "C:/Program Files/APSIM2026.9.8115.0/bin/Models.exe"
+  ],
+  "timeout_seconds": 1800
+}

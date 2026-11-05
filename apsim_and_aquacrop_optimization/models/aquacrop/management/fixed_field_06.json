@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "field_id": "fixed_field_06",
+  "events": [
+    {
+      "date": "2019-01-01",
+      "event": "sow",
+      "crop": "RedClover",
+      "cultivar": "LocalClover"
+    },
+    {
+      "date": "2019-01-01",
+      "event": "sow",
+      "crop": "PlantainForage",
+      "cultivar": "TimothyProxy"
+    },
+    {
+      "date": "2019-08-20",
+      "event": "end",
+      "crop": "RedClover"
+    },
+    {
+      "date": "2019-08-20",
+      "event": "end",
+      "crop": "PlantainForage"
+    },
+    {
+      "date": "2020-05-11",
+      "event": "sow",
+      "crop": "Wheat",
+      "cultivar": "Zlata"
+    },
+    {
+      "date": "2021-05-18",
+      "event": "sow",
+      "crop": "Oats",
+      "cultivar": "Yakov"
+    },
+    {
+      "date": "2021-05-19",
+      "event": "sow",
+      "crop": "RedClover",
+      "cultivar": "LocalClover"
+    },
+    {
+      "date": "2021-05-19",
+      "event": "sow",
+      "crop": "PlantainForage",
+      "cultivar": "TimothyProxy"
+    },
+    {
+      "date": "2019-07-15",
+      "event": "harvest",
+      "crop": "RedClover+PlantainForage",
+      "use": "hay"
+    },
+    {
+      "date": "2020-08-20",
+      "event": "harvest",
+      "crop": "Wheat",
+      "use": "grain"
+    },
+    {
+      "date": "2021-08-31",
+      "event": "harvest",
+      "crop": "Oats",
+      "use": "grain"
+    },
+    {
+      "date": "2022-07-15",
+      "event": "harvest",
+      "crop": "RedClover+PlantainForage",
+      "use": "hay"
+    },
+    {
+      "date": "2023-07-15",
+      "event": "harvest",
+      "crop": "RedClover+PlantainForage",
+      "use": "hay"
+    }
+  ],
+  "harvests": [
+    {
+      "Date": "2019-07-15 00:00:00",
+      "Crop": "RedClover+PlantainForage",
+      "Use": "hay"
+    },
+    {
+      "Date": "2020-08-20 00:00:00",
+      "Crop": "Wheat",
+      "Use": "grain"
+    },
+    {
+      "Date": "2021-08-31 00:00:00",
+      "Crop": "Oats",
+      "Use": "grain"
+    },
+    {
+      "Date": "2022-07-15 00:00:00",
+      "Crop": "RedClover+PlantainForage",
+      "Use": "hay"
+    },
+    {
+      "Date": "2023-07-15 00:00:00",
+      "Crop": "RedClover+PlantainForage",
+      "Use": "hay"
+    }
+  ]
+}

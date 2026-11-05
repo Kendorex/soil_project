@@ -1,0 +1,34 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+authors = ["Petr Tsymbarovich <petr@tsymbarovich.ru>"]
+edition = "2024"
+license = "BSD-3-Clause"
+rust-version = "1.85"
+version = "0.1.0"
+
+[workspace.lints.rust]
+missing_docs = "warn"
+unsafe_code = "warn"
+
+[workspace.lints.clippy]
+all = "warn"
+expect_used = "warn"
+panic = "warn"
+pedantic = "warn"
+unwrap_used = "warn"
+
+[workspace.dependencies]
+assertables = "10.1.0"
+aquacrop = { path = "crates/aquacrop" }
+aquacrop-bmi = { path = "crates/aquacrop-bmi" }
+aquacrop-bmi-py = { path = "crates/aquacrop-bmi-py" }
+aquacrop-conformance = { path = "crates/aquacrop-conformance" }
+aquacrop-core = { path = "crates/aquacrop-core" }
+
+[profile.release]
+strip = "symbols"
+lto = "thin"
+codegen-units = 1

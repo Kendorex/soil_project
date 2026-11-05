@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "fixed_field_08",
+  "weather_file": "configs/weather.met",
+  "co2_file": "DATA/aquacrop_weather/MaunaLoa.CO2",
+  "mixture_mode": "effective_crop",
+  "forage_season": {
+    "start": "04-01",
+    "end": "10-31"
+  },
+  "maximum_compartment_thickness_m": 0.1,
+  "mulch_cover_percent": 0,
+  "fertility_stress_percent": 0,
+  "management_mode": "standalone",
+  "model_file": "configs/fixed_field_08.json",
+  "notes": [
+    "Standalone JSON inputs; no external simulation or soil metrics."
+  ]
+}

@@ -1,0 +1,17 @@
+[package]
+name = "aquacrop-conformance"
+authors.workspace = true
+description = "Private AquaCrop conformance tests"
+edition.workspace = true
+license.workspace = true
+publish = false
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+aquacrop-core = { workspace = true, features = ["file-io"] }
+assertables = { workspace = true }
+tempfile = "3.27.0"
+
+[lints]
+workspace = true

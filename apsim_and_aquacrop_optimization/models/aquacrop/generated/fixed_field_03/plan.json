@@ -1,0 +1,43 @@
+{
+  "workspace_root": "C:\\Users\\user\\Desktop\\apsim_and_aquacrop_optimization",
+  "field_id": "fixed_field_03",
+  "aqua_root": "models/aquacrop/generated/fixed_field_03",
+  "project_file": "LIST/Field.PRM",
+  "output_dir": "runs/aquacrop_direct/fixed_field_03",
+  "initial_water": [
+    0.4226750381627768,
+    0.3599266084642368,
+    0.40935000000000005,
+    0.4035,
+    0.39699999999999996,
+    0.38920000000000005,
+    0.38855
+  ],
+  "maximum_compartment_thickness_m": 0.1,
+  "runs": [
+    {
+      "id": "2019_OatsForageMix_Argamak",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2019_understorey",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2020_ForageMix_Local",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2021_ForageMix_Local",
+      "reset_assimilates": false
+    },
+    {
+      "id": "2022_Wheat_Winter_rye_smoke",
+      "reset_assimilates": true
+    },
+    {
+      "id": "2023_Wheat_Zlata",
+      "reset_assimilates": true
+    }
+  ]
+}

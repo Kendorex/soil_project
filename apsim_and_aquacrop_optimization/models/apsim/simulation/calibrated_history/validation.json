@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "apsim_returncode": 0,
+  "annual_records": 200,
+  "phenology_dates": 305,
+  "max_yield_difference_t_ha": 0.0,
+  "phase_dates_match": true,
+  "frozen_soil_unchanged": true,
+  "report_tables": [
+    "HarvestReport_Field1",
+    "HarvestReport_Field10",
+    "HarvestReport_Field2",
+    "HarvestReport_Field3",
+    "HarvestReport_Field4",
+    "HarvestReport_Field5",
+    "HarvestReport_Field6",
+    "HarvestReport_Field7",
+    "HarvestReport_Field8",
+    "HarvestReport_Field9",
+    "PhenologyReport_Field1",
+    "PhenologyReport_Field10",
+    "PhenologyReport_Field2",
+    "PhenologyReport_Field3",
+    "PhenologyReport_Field4",
+    "PhenologyReport_Field5",
+    "PhenologyReport_Field6",
+    "PhenologyReport_Field7",
+    "PhenologyReport_Field8",
+    "PhenologyReport_Field9",
+    "Report_Field1",
+    "Report_Field10",
+    "Report_Field2",
+    "Report_Field3",
+    "Report_Field4",
+    "Report_Field5",
+    "Report_Field6",
+    "Report_Field7",
+    "Report_Field8",
+    "Report_Field9"
+  ],
+  "warnings": [
+    {
+      "message": "ASSUMED ESTABLISHMENT: pasture missing or composition changed; sown on 2018-05-15",
+      "count": 1
+    },
+    {
+      "message": "ASSUMED ESTABLISHMENT: pasture missing or composition changed; sown on 2019-05-15",
+      "count": 1
+    },
+    {
+      "message": "INITIAL STATE APPROXIMATION: existing sward/winter cereal is sown on simulation start; mature roots and pre-start reserves are unavailable.",
+      "count": 7
+    },
+    {
+      "message": "The value of Weather.AMP (26,15331) is > 20 oC. Please check the value.",
+      "count": 1
+    },
+    {
+      "message": "Warning: Weather on 31.12.2003 does not exist. Today's weather on 01.01.2004 was used instead.",
+      "count": 20
+    }
+  ],
+  "component_verification": {
+    "checks_passed": 8,
+    "checks_skipped": 0,
+    "moved_folder_real_apsim_integration": true,
+    "fresh_calibration_period": [
+      2004,
+      2006
+    ],
+    "note": "A real candidate epoch and independent export replay were executed from a moved bundle and an unrelated working directory; the full 2004-2023 example was independently replayed, not refitted during packaging."
+  }
+}

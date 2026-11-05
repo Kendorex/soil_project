@@ -1,0 +1,7 @@
+Shallow constant water table
+     7.3   : AquaCrop Version (January 2026)
+     1     : groundwater table at fixed depth and with constant salinity
+
+   Day    Depth (m)    ECw (dS/m)
+====================================
+     1      1.20          3.00

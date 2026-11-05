@@ -1,0 +1,191 @@
+startDate: 2014-05-21
+stopDate: 2014-10-31
+
+parameters:
+  evaporationDeclineFactor: 4
+  wetBareSoilCoefficient: 1.1
+  minimumCanopyForHarvestIndex: 5
+  initialRootDepth: 70
+  maximumRootExpansion: 5.0
+  rootStressShape: -6
+  germinationWater: 20
+  depletionEtAdjustmentFactor: 1.0
+  deficientAerationDelay: 3
+  senescenceExponent: 1.0
+  earlySenescenceThresholdReduction: 12
+  upperSoilDepth: 10
+  maximumEvaporationDepth: 30
+  runoffDepth: 0.3
+  antecedentMoistureCorrection: true
+  saltDiffusion: 20
+  saltSolubility: 100
+  capillaryRiseShape: 16
+  defaultMinimumTemperature: 12.0
+  defaultMaximumTemperature: 28.0
+  gddMethod: clamp_upper_temperature
+  effectiveRainfallMethod: usda_soil_conservation_service
+  effectiveRainfall: 70
+  showersPerDecade: 2
+  aggregatedRainfallEvaporationReduction: 5
+
+crop:
+  cycle:
+    type: growing_degree_days
+    calendarDays:
+      emergence: 2
+      maximumRooting: 178
+      senescence: 180
+      maturity: 180
+      flowering: 0
+      floweringLength: 0
+      harvestIndex: 17
+      canopyGrowthCoefficient: 0.17713
+      canopyDeclineCoefficient: 0.03636
+    gdd:
+      emergence: 5
+      maximumRooting: 1920
+      senescence: 1920
+      maturity: 1920
+      flowering: 0
+      floweringLength: 0
+      harvestIndex: 118
+      canopyGrowthCoefficient: 0.012
+      canopyDeclineCoefficient: 0.006
+  kind: forage
+  plantingMethod: seed
+  depletionAdjustment: fao
+  temperature:
+    base: 5.0
+    upper: 30.0
+    pollinationMinimum: 8
+    pollinationMaximum: 40
+    fullTranspirationGdd: 8.0
+  waterStress:
+    canopyExpansionUpper: 0.15
+    canopyExpansionLower: 0.55
+    canopyExpansionShape: 3.0
+    stomatalClosureUpper: 0.6
+    stomatalClosureShape: 3.0
+    senescenceUpper: 0.7
+    senescenceShape: 3.0
+    etoDelaySenescence: 600
+    pollinationUpper: 0.9
+    anaerobicPointVolume: 2
+  fertilityStress:
+    calibrationStress: 50
+    canopyGrowthShape: 2.35
+    maximumCanopyShape: 0.79
+    waterProductivityShape: -0.16
+    canopyDeclineShape: 6.26
+  salinityStress:
+    eceMinimum: 2
+    eceMaximum: 16
+    canopyDistortion: 25
+    stomatalResponse: 100
+  rooting:
+    minimumDepth: 0.3
+    maximumDepth: 3.0
+    shape: 15
+    extractionTopQuarter: 0.02
+    extractionBottomQuarter: 0.01
+    firstYearMinimumDepth: 0.3
+    sownInFirstYear: true
+  assimilateTransfer:
+    enabled: true
+    storagePeriod: 100
+    stored: 65
+    mobilized: 60
+  evapotranspiration:
+    kcTop: 1.15
+    kcDeclineCumulative: 11.0
+    lateSeasonEvaporationReduction: 60
+  canopy:
+    seedlingSize: 2.5
+    regrowthPlantSize: 19.38
+    plantingDensity: 2000000
+    selfThinningYears: 9
+    selfThinningShape: 0.5
+    maximumCover: 0.95
+  development:
+    determinacyLinkedToFlowering: false
+    potentialExcessFruits: null
+    dryMatter: 20
+  productivity:
+    normalizedWaterProductivity: 15.0
+    yieldFormationWaterProductivity: 100
+    elevatedCo2Adaptation: 100
+    referenceHarvestIndex: 100
+    preFloweringHarvestIndexIncrease: null
+    vegetativeGrowthImpactCoefficient: null
+    stomatalClosureImpactCoefficient: null
+    maximumHarvestIndexIncrease: null
+  prematureEndDay: null
+  perennialPeriod:
+    onset:
+      criterion: growing_degree_days
+      firstDay: 1
+      firstMonth: 4
+      searchLength: 120
+      threshold: 20.0
+      successive: 8
+      occurrences: 2
+    end:
+      criterion: growing_degree_days
+      lastDay: 31
+      lastMonth: 10
+      extraYears: 0
+      searchLength: 60
+      threshold: 10.0
+      successive: 8
+      occurrences: 1
+
+soil:
+  curveNumber: 46
+  readilyEvaporableWater: 7
+  layers:
+    - thickness: 1.5
+      saturation: 46.0
+      fieldCapacity: 29.0
+      wiltingPoint: 13.0
+      saturatedHydraulicConductivity: 1200.0
+      penetrability: 100
+      gravelMass: 0
+      capillaryRiseParameters: [-0.3906, 1.255639]
+
+management:
+  mulchCover: 0
+  mulchEvaporationReduction: 50
+  fertilityStress: 50
+  bundHeight: 0.0
+  runoffEnabled: true
+  curveNumberCorrection: 0
+  weedCover: 0
+  weedCoverDelta: 0
+  weedCanopyShape: 100.0
+  weedSelfThinningReplacement: 100
+  cuttings:
+    considered: true
+    canopyCoverAfterCutting: 25
+    firstWindowDay: 1
+    windowLength: null
+    generated: false
+    criterion: not_applicable
+    harvestAtMaturity: false
+    firstListDayNumber: 41274
+    records:
+      - fromDay: 194
+        target: null
+      - fromDay: 243
+        target: null
+      - fromDay: 536
+        target: null
+      - fromDay: 572
+        target: null
+      - fromDay: 607
+        target: null
+      - fromDay: 897
+        target: null
+      - fromDay: 932
+        target: null
+      - fromDay: 972
+        target: null

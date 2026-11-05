@@ -1,0 +1,20 @@
+[package]
+name = "aquacrop-field-runner"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+aquacrop-core = { path = "../crates/aquacrop-core", features = ["file-io", "serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "warn"
+unwrap_used = "warn"
+expect_used = "warn"

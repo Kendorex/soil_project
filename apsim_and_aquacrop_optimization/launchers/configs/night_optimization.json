@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "population": 10,
+  "generations": 4,
+  "seed": 42,
+  "jobs": [
+    {
+      "id": "01_apsim_nsga2",
+      "engine": "apsim",
+      "algorithm": "nsga2",
+      "objectives": [
+        "yield",
+        "profit",
+        "humic"
+      ],
+      "config": "../../models/apsim/configs/future_rotation_2025_2029.json",
+      "management_preset": "yield"
+    },
+    {
+      "id": "02_apsim_nsga3",
+      "engine": "apsim",
+      "algorithm": "nsga3",
+      "objectives": [
+        "yield",
+        "profit",
+        "mineral_n",
+        "humic"
+      ],
+      "config": "../../models/apsim/configs/future_rotation_2025_2029.json",
+      "management_preset": "yield"
+    },
+    {
+      "id": "03_aquacrop_apsim_nsga2",
+      "engine": "aquacrop",
+      "algorithm": "nsga2",
+      "objectives": [
+        "yield",
+        "profit",
+        "humic"
+      ],
+      "config": "../../models/apsim/configs/future_rotation_aquacrop_2025_2029.json",
+      "management_preset": "yield"
+    },
+    {
+      "id": "04_aquacrop_apsim_nsga3",
+      "engine": "aquacrop",
+      "algorithm": "nsga3",
+      "objectives": [
+        "yield",
+        "profit",
+        "mineral_n",
+        "humic"
+      ],
+      "config": "../../models/apsim/configs/future_rotation_aquacrop_2025_2029.json",
+      "management_preset": "yield"
+    },
+    {
+      "id": "05_aquacrop_standalone_nsga2",
+      "engine": "aquacrop_standalone",
+      "algorithm": "nsga2",
+      "objectives": [
+        "yield",
+        "profit"
+      ],
+      "config": "../../models/aquacrop_standalone/optimization.json"
+    },
+    {
+      "id": "06_aquacrop_standalone_nsga3",
+      "engine": "aquacrop_standalone",
+      "algorithm": "nsga3",
+      "objectives": [
+        "yield",
+        "profit",
+        "water_use",
+        "drainage"
+      ],
+      "config": "../../models/aquacrop_standalone/optimization.json"
+    }
+  ]
+}

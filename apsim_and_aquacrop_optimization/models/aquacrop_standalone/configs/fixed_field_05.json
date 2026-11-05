@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "area_ha": 1.0,
+  "period": {
+    "start": "2024-01-01",
+    "end": "2029-12-31"
+  },
+  "profiles": {
+    "perennial_grass_year1": {
+      "components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "Vik7",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "Vik9Proxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_day_month": "15-May",
+      "harvest_day_month": "15-Jul",
+      "harvest_product": "RedClover+PlantainForage",
+      "use": "hay",
+      "pasture_age": 1
+    },
+    "perennial_grass_year2": {
+      "components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "Vik7",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "Vik9Proxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_day_month": "15-May",
+      "harvest_day_month": "15-Jul",
+      "harvest_product": "RedClover+PlantainForage",
+      "use": "hay",
+      "pasture_age": 2
+    },
+    "oats_with_underseed": {
+      "components": [
+        {
+          "crop": "Oats",
+          "cultivar": "Yakov",
+          "population_m2": 250.0,
+          "depth_mm": 20.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "RedClover",
+          "cultivar": "Vik7",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "Vik9Proxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_day_month": "28-Apr",
+      "harvest_day_month": "31-Aug",
+      "harvest_product": "Oats",
+      "use": "grain",
+      "pasture_age": 0
+    },
+    "perennial_grass_year3": {
+      "components": [
+        {
+          "crop": "RedClover",
+          "cultivar": "Vik7",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        },
+        {
+          "crop": "PlantainForage",
+          "cultivar": "Vik9Proxy",
+          "population_m2": 150.0,
+          "depth_mm": 10.0,
+          "row_spacing_mm": 150.0
+        }
+      ],
+      "sowing_day_month": "15-May",
+      "harvest_day_month": "15-Jul",
+      "harvest_product": "RedClover+PlantainForage",
+      "use": "hay",
+      "pasture_age": 3
+    },
+    "spring_wheat": {
+      "components": [
+        {
+          "crop": "Wheat",
+          "cultivar": "Irgina",
+          "population_m2": 453.75,
+          "depth_mm": 30.0,
+          "row_spacing_mm": 200.0
+        }
+      ],
+      "sowing_day_month": "15-May",
+      "harvest_day_month": "12-Aug",
+      "harvest_product": "Wheat",
+      "use": "grain",
+      "pasture_age": 0
+    },
+    "winter_rye": {
+      "components": [
+        {
+          "crop": "Wheat",
+          "cultivar": "Winter_rye_smoke",
+          "population_m2": 230.0,
+          "depth_mm": 30.0,
+          "row_spacing_mm": 200.0
+        }
+      ],
+      "sowing_day_month": "05-Sep",
+      "harvest_day_month": "31-Aug",
+      "harvest_product": "Wheat",
+      "use": "grain",
+      "pasture_age": 0
+    }
+  },
+  "sequence": [
+    "spring_wheat",
+    "winter_rye",
+    "oats_with_underseed",
+    "perennial_grass_year1",
+    "perennial_grass_year2",
+    "spring_wheat"
+  ],
+  "soil": {
+    "layers": [
+      {
+        "thickness_m": 0.15,
+        "saturation": 0.515,
+        "field_capacity": 0.51,
+        "wilting_point": 0.260500109036505,
+        "conductivity_mm_day": 20.0
+      },
+      {
+        "thickness_m": 0.15,
+        "saturation": 0.487,
+        "field_capacity": 0.42,
+        "wilting_point": 0.248361738469248,
+        "conductivity_mm_day": 20.0
+      },
+      {
+        "thickness_m": 0.3,
+        "saturation": 0.48,
+        "field_capacity": 0.479,
+        "wilting_point": 0.28,
+        "conductivity_mm_day": 20.0
+      },
+      {
+        "thickness_m": 0.3,
+        "saturation": 0.472,
+        "field_capacity": 0.47,
+        "wilting_point": 0.28,
+        "conductivity_mm_day": 20.0
+      },
+      {
+        "thickness_m": 0.3,
+        "saturation": 0.464,
+        "field_capacity": 0.46,
+        "wilting_point": 0.28,
+        "conductivity_mm_day": 20.0
+      },
+      {
+        "thickness_m": 0.3,
+        "saturation": 0.449,
+        "field_capacity": 0.448,
+        "wilting_point": 0.28,
+        "conductivity_mm_day": 20.0
+      },
+      {
+        "thickness_m": 0.3,
+        "saturation": 0.452,
+        "field_capacity": 0.447,
+        "wilting_point": 0.28,
+        "conductivity_mm_day": 20.0
+      }
+    ],
+    "curve_number": 50,
+    "rew_mm": 2,
+    "initial_water_m3_m3": [
+      0.51,
+      0.42,
+      0.479,
+      0.47,
+      0.46,
+      0.448,
+      0.447
+    ],
+    "initialization": "Field capacity assumption at 2024-01-01, not an imported simulated state."
+  }
+}

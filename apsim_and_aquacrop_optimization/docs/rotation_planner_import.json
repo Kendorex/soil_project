@@ -1,0 +1,35 @@
+{
+  "source_project": "C:\\Users\\user\\Desktop\\soil_project\\ApsimOptimization",
+  "imported_files": [
+    {
+      "source": "src/rotation_planner.py",
+      "source_sha256": "8c08de7cd51f2ad8234dc96b6a612b7793023c75281bfeda2b12d1016b88e4eb",
+      "destination": "agro/planning/rotation_planner.py",
+      "destination_sha256": "8c08de7cd51f2ad8234dc96b6a612b7793023c75281bfeda2b12d1016b88e4eb"
+    },
+    {
+      "source": "src/rotation_visualization.py",
+      "source_sha256": "05b2af0bdc562ac86728ff4fd8d3dbf260ded2faa214a1ca9a4fa93d00ddd266",
+      "destination": "agro/planning/rotation_visualization.py",
+      "destination_sha256": "05b2af0bdc562ac86728ff4fd8d3dbf260ded2faa214a1ca9a4fa93d00ddd266"
+    },
+    {
+      "source": "scripts/plan_crop_rotation.py",
+      "source_sha256": "a52c17c487c9da37680f3ecaae31de4b0738ea184d0bfc87aaffbcf090fc767d",
+      "destination": "agro/planning/cli.py",
+      "destination_sha256": "7bcd2a905b2f6fab25b341cf90d8005dd69d88d86df489e95f9466434e7b90b6"
+    },
+    {
+      "source": "configs/rotation_planning_2025_2029.yaml",
+      "source_sha256": "6a99939e717d47a7f3a6ad850ac16a4919807861e31aa182ae5506437b91fbb3",
+      "destination": "models/apsim/configs/rotation_planning_2025_2029.yaml",
+      "destination_sha256": "ae2c3ef7d4b92aa321587762917aa0117c28c962cafab40be4d9e7b6a136c686"
+    }
+  ],
+  "notes": [
+    "Core planning and visualization modules copied without numerical changes.",
+    "CLI imports, configuration path and artifact locations adapted to this repository.",
+    "Initial 2024 field states and 2025-2029 scenario retained; no new future states invented."
+  ],
+  "rotation_matrix_sha256": "a3efd73d880948c02e8f3658854bb23112e0e3af121e9a0e6328311167c57bb2"
+}

@@ -1,0 +1,580 @@
+{
+  "schema_version": "1.0",
+  "baseline": {
+    "yield_n": 156,
+    "yield_mae_t_ha": 1.3956137342029622,
+    "yield_rmse_t_ha": 1.8386873828336028,
+    "phase_n": 305,
+    "phase_matched": 296,
+    "phase_missing": 9,
+    "phase_mae_days": 31.652027027027028,
+    "phase_penalized_mae_days": 33.37377049180328
+  },
+  "final_fit": {
+    "yield_n": 156,
+    "yield_mae_t_ha": 0.9007422790183366,
+    "yield_rmse_t_ha": 1.2593826588010144,
+    "phase_n": 305,
+    "phase_matched": 302,
+    "phase_missing": 3,
+    "phase_mae_days": 26.397350993377483,
+    "phase_penalized_mae_days": 27.022950819672133
+  },
+  "pre_update_validation": {
+    "yield_n": 130,
+    "yield_mae_t_ha": 1.2509147031781604,
+    "yield_rmse_t_ha": 1.6207940112519936,
+    "phase_n": 282,
+    "phase_matched": 277,
+    "phase_missing": 5,
+    "phase_mae_days": 29.050541516245488,
+    "phase_penalized_mae_days": 30.131205673758867
+  },
+  "baseline_on_pre_update_years": {
+    "yield_n": 130,
+    "yield_mae_t_ha": 1.540586308722122,
+    "yield_rmse_t_ha": 1.9719507222443926,
+    "phase_n": 282,
+    "phase_matched": 273,
+    "phase_missing": 9,
+    "phase_mae_days": 33.56043956043956,
+    "phase_penalized_mae_days": 35.361702127659576
+  },
+  "by_crop_use": [
+    {
+      "evaluation": "baseline",
+      "use": "fallow",
+      "yield_n": 0,
+      "yield_mae_t_ha": null,
+      "yield_rmse_t_ha": null,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "baseline",
+      "use": "grain",
+      "yield_n": 71,
+      "yield_mae_t_ha": 1.274836910254786,
+      "yield_rmse_t_ha": 1.7617868082641621,
+      "phase_n": 237,
+      "phase_matched": 237,
+      "phase_missing": 0,
+      "phase_mae_days": 27.455696202531644,
+      "phase_penalized_mae_days": 27.455696202531644
+    },
+    {
+      "evaluation": "baseline",
+      "use": "green",
+      "yield_n": 2,
+      "yield_mae_t_ha": 4.274064349804586,
+      "yield_rmse_t_ha": 4.929524495045764,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "baseline",
+      "use": "hay",
+      "yield_n": 83,
+      "yield_mae_t_ha": 1.4295685928670256,
+      "yield_rmse_t_ha": 1.764521547571397,
+      "phase_n": 68,
+      "phase_matched": 59,
+      "phase_missing": 9,
+      "phase_mae_days": 48.50847457627118,
+      "phase_penalized_mae_days": 54.0
+    },
+    {
+      "evaluation": "baseline",
+      "use": "unmanaged",
+      "yield_n": 0,
+      "yield_mae_t_ha": null,
+      "yield_rmse_t_ha": null,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "final_fit",
+      "use": "fallow",
+      "yield_n": 0,
+      "yield_mae_t_ha": null,
+      "yield_rmse_t_ha": null,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "final_fit",
+      "use": "grain",
+      "yield_n": 71,
+      "yield_mae_t_ha": 1.003671442313598,
+      "yield_rmse_t_ha": 1.2580676696530393,
+      "phase_n": 237,
+      "phase_matched": 237,
+      "phase_missing": 0,
+      "phase_mae_days": 28.632911392405063,
+      "phase_penalized_mae_days": 28.632911392405063
+    },
+    {
+      "evaluation": "final_fit",
+      "use": "green",
+      "yield_n": 2,
+      "yield_mae_t_ha": 2.5497958331167787,
+      "yield_rmse_t_ha": 2.936112659424774,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "final_fit",
+      "use": "hay",
+      "yield_n": 83,
+      "yield_mae_t_ha": 0.7729582103176085,
+      "yield_rmse_t_ha": 1.1913711985760285,
+      "phase_n": 68,
+      "phase_matched": 65,
+      "phase_missing": 3,
+      "phase_mae_days": 18.246153846153845,
+      "phase_penalized_mae_days": 21.41176470588235
+    },
+    {
+      "evaluation": "final_fit",
+      "use": "unmanaged",
+      "yield_n": 0,
+      "yield_mae_t_ha": null,
+      "yield_rmse_t_ha": null,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "pre_update_validation",
+      "use": "fallow",
+      "yield_n": 0,
+      "yield_mae_t_ha": null,
+      "yield_rmse_t_ha": null,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "pre_update_validation",
+      "use": "grain",
+      "yield_n": 62,
+      "yield_mae_t_ha": 1.3323677585428189,
+      "yield_rmse_t_ha": 1.6342050505166394,
+      "phase_n": 214,
+      "phase_matched": 214,
+      "phase_missing": 0,
+      "phase_mae_days": 29.57943925233645,
+      "phase_penalized_mae_days": 29.57943925233645
+    },
+    {
+      "evaluation": "pre_update_validation",
+      "use": "green",
+      "yield_n": 1,
+      "yield_mae_t_ha": 4.013103177277648,
+      "yield_rmse_t_ha": 4.013103177277648,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    },
+    {
+      "evaluation": "pre_update_validation",
+      "use": "hay",
+      "yield_n": 67,
+      "yield_mae_t_ha": 1.134313540391469,
+      "yield_rmse_t_ha": 1.5444783752807112,
+      "phase_n": 68,
+      "phase_matched": 63,
+      "phase_missing": 5,
+      "phase_mae_days": 27.253968253968253,
+      "phase_penalized_mae_days": 31.86764705882353
+    },
+    {
+      "evaluation": "pre_update_validation",
+      "use": "unmanaged",
+      "yield_n": 0,
+      "yield_mae_t_ha": null,
+      "yield_rmse_t_ha": null,
+      "phase_n": 0,
+      "phase_matched": 0,
+      "phase_missing": 0,
+      "phase_mae_days": null,
+      "phase_penalized_mae_days": null
+    }
+  ],
+  "stages": [
+    {
+      "end": 2006,
+      "reason": "initial_three_years",
+      "before": {
+        "loss": 1.4956113906859665,
+        "yield_loss": 0.4140583603829361,
+        "phenology_loss": 1.0815530303030303,
+        "prior_loss": 0.0,
+        "yield_n": 26,
+        "phase_n": 23
+      },
+      "after": {
+        "loss": 1.277852751426586,
+        "yield_loss": 0.3062231888637726,
+        "phenology_loss": 0.9715530303030304,
+        "prior_loss": 0.0025510753261004044,
+        "yield_n": 26,
+        "phase_n": 23
+      },
+      "evaluations": 25,
+      "seconds": 467.2861310997978,
+      "summary": {
+        "yield_n": 26,
+        "yield_mae_t_ha": 0.6021481512313587,
+        "yield_rmse_t_ha": 0.853731058454811,
+        "phase_n": 23,
+        "phase_matched": 23,
+        "phase_missing": 0,
+        "phase_mae_days": 8.695652173913043,
+        "phase_penalized_mae_days": 8.695652173913043
+      }
+    },
+    {
+      "end": 2007,
+      "reason": "new_observed_cultivar:Wheat/Irgina",
+      "before": {
+        "loss": 1.9918456662096793,
+        "yield_loss": 1.1484276542336185,
+        "phenology_loss": 0.8433522727272729,
+        "prior_loss": 0.0021913082929323987,
+        "yield_n": 35,
+        "phase_n": 31
+      },
+      "after": {
+        "loss": 1.34188509675538,
+        "yield_loss": 0.49837570821764937,
+        "phenology_loss": 0.8433522727272729,
+        "prior_loss": 0.005237193681920276,
+        "yield_n": 35,
+        "phase_n": 31
+      },
+      "evaluations": 25,
+      "seconds": 526.0307471998967,
+      "summary": {
+        "yield_n": 35,
+        "yield_mae_t_ha": 0.7324900829927276,
+        "yield_rmse_t_ha": 1.0165944157124855,
+        "phase_n": 31,
+        "phase_matched": 31,
+        "phase_missing": 0,
+        "phase_mae_days": 7.967741935483871,
+        "phase_penalized_mae_days": 7.967741935483871
+      }
+    },
+    {
+      "end": 2009,
+      "reason": "two_year_update",
+      "before": {
+        "loss": 1.996039654968728,
+        "yield_loss": 0.6179688629222256,
+        "phenology_loss": 1.3779136762360447,
+        "prior_loss": 0.005237193681920276,
+        "yield_n": 51,
+        "phase_n": 46
+      },
+      "after": {
+        "loss": 1.8230676662309058,
+        "yield_loss": 0.5346059107037003,
+        "phenology_loss": 1.2876345693779907,
+        "prior_loss": 0.027572871640486902,
+        "yield_n": 51,
+        "phase_n": 46
+      },
+      "evaluations": 25,
+      "seconds": 638.3335761995986,
+      "summary": {
+        "yield_n": 51,
+        "yield_mae_t_ha": 0.962894508888815,
+        "yield_rmse_t_ha": 1.3012058919482632,
+        "phase_n": 46,
+        "phase_matched": 46,
+        "phase_missing": 0,
+        "phase_mae_days": 9.173913043478262,
+        "phase_penalized_mae_days": 9.173913043478262
+      }
+    },
+    {
+      "end": 2011,
+      "reason": "two_year_update",
+      "before": {
+        "loss": 15.487460695773098,
+        "yield_loss": 0.7893097161334247,
+        "phenology_loss": 14.69732379349046,
+        "prior_loss": 0.027572871640486902,
+        "yield_n": 67,
+        "phase_n": 70
+      },
+      "after": {
+        "loss": 15.419825105442952,
+        "yield_loss": 0.7216719600586863,
+        "phenology_loss": 14.69732379349046,
+        "prior_loss": 0.02764506312686457,
+        "yield_n": 67,
+        "phase_n": 70
+      },
+      "evaluations": 15,
+      "seconds": 374.48425889993086,
+      "summary": {
+        "yield_n": 67,
+        "yield_mae_t_ha": 1.024598914509551,
+        "yield_rmse_t_ha": 1.390585316610187,
+        "phase_n": 70,
+        "phase_matched": 68,
+        "phase_missing": 2,
+        "phase_mae_days": 13.088235294117647,
+        "phase_penalized_mae_days": 15.285714285714286
+      }
+    },
+    {
+      "end": 2013,
+      "reason": "new_observed_cultivar:Wheat/WheatUnspecified",
+      "before": {
+        "loss": 11.640635518559916,
+        "yield_loss": 0.8208816145557036,
+        "phenology_loss": 10.819027056277056,
+        "prior_loss": 0.024228257571858834,
+        "yield_n": 81,
+        "phase_n": 94
+      },
+      "after": {
+        "loss": 11.346176236205771,
+        "yield_loss": 0.5264114242972863,
+        "phenology_loss": 10.819027056277056,
+        "prior_loss": 0.024591854380944106,
+        "yield_n": 81,
+        "phase_n": 94
+      },
+      "evaluations": 15,
+      "seconds": 407.5957112000324,
+      "summary": {
+        "yield_n": 81,
+        "yield_mae_t_ha": 0.8581179181350737,
+        "yield_rmse_t_ha": 1.1446763532174244,
+        "phase_n": 94,
+        "phase_matched": 92,
+        "phase_missing": 2,
+        "phase_mae_days": 13.73913043478261,
+        "phase_penalized_mae_days": 15.361702127659575
+      }
+    },
+    {
+      "end": 2014,
+      "reason": "new_observed_cultivar:Wheat/Winter_rye_smoke",
+      "before": {
+        "loss": 14.701583491420429,
+        "yield_loss": 0.5262589110529787,
+        "phenology_loss": 14.174667977855478,
+        "prior_loss": 0.021886750399040252,
+        "yield_n": 87,
+        "phase_n": 110
+      },
+      "after": {
+        "loss": 12.588851031284095,
+        "yield_loss": 0.4559615707781053,
+        "phenology_loss": 12.132096549284048,
+        "prior_loss": 0.026430374064682724,
+        "yield_n": 87,
+        "phase_n": 110
+      },
+      "evaluations": 13,
+      "seconds": 376.0962278000079,
+      "summary": {
+        "yield_n": 87,
+        "yield_mae_t_ha": 0.8231887559308516,
+        "yield_rmse_t_ha": 1.1013713287026188,
+        "phase_n": 110,
+        "phase_matched": 110,
+        "phase_missing": 0,
+        "phase_mae_days": 17.154545454545456,
+        "phase_penalized_mae_days": 17.154545454545456
+      }
+    },
+    {
+      "end": 2016,
+      "reason": "two_year_update",
+      "before": {
+        "loss": 12.969465630017122,
+        "yield_loss": 0.4878591615541043,
+        "phenology_loss": 12.480813557241078,
+        "prior_loss": 0.026430374064682724,
+        "yield_n": 101,
+        "phase_n": 150
+      },
+      "after": {
+        "loss": 10.189757088996453,
+        "yield_loss": 0.6948240439728995,
+        "phenology_loss": 9.49340463912838,
+        "prior_loss": 0.05094686317246832,
+        "yield_n": 101,
+        "phase_n": 150
+      },
+      "evaluations": 17,
+      "seconds": 612.6900240997784,
+      "summary": {
+        "yield_n": 101,
+        "yield_mae_t_ha": 0.8223344277634677,
+        "yield_rmse_t_ha": 1.1723629809515732,
+        "phase_n": 150,
+        "phase_matched": 150,
+        "phase_missing": 0,
+        "phase_mae_days": 24.34,
+        "phase_penalized_mae_days": 24.34
+      }
+    },
+    {
+      "end": 2018,
+      "reason": "two_year_update",
+      "before": {
+        "loss": 11.663640531402017,
+        "yield_loss": 0.7247149393596579,
+        "phenology_loss": 10.937397186147185,
+        "prior_loss": 0.05094686317246832,
+        "yield_n": 116,
+        "phase_n": 186
+      },
+      "after": {
+        "loss": 11.661627379651252,
+        "yield_loss": 0.7227211877791879,
+        "phenology_loss": 10.937397186147185,
+        "prior_loss": 0.05030019082929234,
+        "yield_n": 116,
+        "phase_n": 186
+      },
+      "evaluations": 17,
+      "seconds": 630.7625024002045,
+      "summary": {
+        "yield_n": 116,
+        "yield_mae_t_ha": 0.821891917308437,
+        "yield_rmse_t_ha": 1.1579331966573678,
+        "phase_n": 186,
+        "phase_matched": 183,
+        "phase_missing": 3,
+        "phase_mae_days": 26.808743169398905,
+        "phase_penalized_mae_days": 27.827956989247312
+      }
+    },
+    {
+      "end": 2020,
+      "reason": "new_observed_cultivar:Oats/Yakov;Wheat/Zlata",
+      "before": {
+        "loss": 9.57479669667673,
+        "yield_loss": 0.9042706252308442,
+        "phenology_loss": 8.66928918150746,
+        "prior_loss": 0.041229664614174044,
+        "yield_n": 130,
+        "phase_n": 219
+      },
+      "after": {
+        "loss": 8.856194703171216,
+        "yield_loss": 0.8924908191328053,
+        "phenology_loss": 7.962400292618572,
+        "prior_loss": 0.04345304732800516,
+        "yield_n": 130,
+        "phase_n": 219
+      },
+      "evaluations": 15,
+      "seconds": 599.8951260000467,
+      "summary": {
+        "yield_n": 130,
+        "yield_mae_t_ha": 0.8428212168895473,
+        "yield_rmse_t_ha": 1.1834627663628627,
+        "phase_n": 219,
+        "phase_matched": 216,
+        "phase_missing": 3,
+        "phase_mae_days": 25.5,
+        "phase_penalized_mae_days": 26.383561643835616
+      }
+    },
+    {
+      "end": 2022,
+      "reason": "two_year_update",
+      "before": {
+        "loss": 8.107739443520504,
+        "yield_loss": 0.9084181801372563,
+        "phenology_loss": 7.198017671963409,
+        "prior_loss": 0.04345304732800516,
+        "yield_n": 146,
+        "phase_n": 273
+      },
+      "after": {
+        "loss": 8.106082860228243,
+        "yield_loss": 0.9067109443291841,
+        "phenology_loss": 7.198017671963409,
+        "prior_loss": 0.045141464521627456,
+        "yield_n": 146,
+        "phase_n": 273
+      },
+      "evaluations": 12,
+      "seconds": 626.2057663002051,
+      "summary": {
+        "yield_n": 146,
+        "yield_mae_t_ha": 0.8984520242929428,
+        "yield_rmse_t_ha": 1.2625110129086374,
+        "phase_n": 273,
+        "phase_matched": 270,
+        "phase_missing": 3,
+        "phase_mae_days": 25.833333333333332,
+        "phase_penalized_mae_days": 26.53846153846154
+      }
+    },
+    {
+      "end": 2023,
+      "reason": "final_refit",
+      "before": {
+        "loss": 7.963573459709816,
+        "yield_loss": 0.9087449213685009,
+        "phenology_loss": 7.0534742944056665,
+        "prior_loss": 0.045141464521627456,
+        "yield_n": 156,
+        "phase_n": 305
+      },
+      "after": {
+        "loss": 7.962887598239903,
+        "yield_loss": 0.9080616570560474,
+        "phenology_loss": 7.0534742944056665,
+        "prior_loss": 0.045054892606301945,
+        "yield_n": 156,
+        "phase_n": 305
+      },
+      "evaluations": 17,
+      "seconds": 816.1333365999162,
+      "summary": {
+        "yield_n": 156,
+        "yield_mae_t_ha": 0.9007422790183366,
+        "yield_rmse_t_ha": 1.2593826588010144,
+        "phase_n": 305,
+        "phase_matched": 302,
+        "phase_missing": 3,
+        "phase_mae_days": 26.397350993377483,
+        "phase_penalized_mae_days": 27.022950819672133
+      }
+    }
+  ],
+  "interpretation": "Final fit and conditional chronological pre-update validation are separate; weather and operations are known. Crop proxies and initial cultivar priors are not independently validated."
+}

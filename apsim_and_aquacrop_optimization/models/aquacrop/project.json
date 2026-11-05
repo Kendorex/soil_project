@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "description": "Fixed rotation configuration with explicit source harvest events",
+  "source_project": "configs/rotation_fixed.apsimx",
+  "fields": [
+    "fields/fixed_field_01.json",
+    "fields/fixed_field_02.json",
+    "fields/fixed_field_03.json",
+    "fields/fixed_field_04.json",
+    "fields/fixed_field_05.json",
+    "fields/fixed_field_06.json",
+    "fields/fixed_field_07.json",
+    "fields/fixed_field_08.json",
+    "fields/fixed_field_09.json",
+    "fields/fixed_field_10.json"
+  ]
+}
