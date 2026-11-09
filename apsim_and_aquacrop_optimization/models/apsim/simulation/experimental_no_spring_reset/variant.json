@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "experimental_rotation_manager_variant",
+  "parent_model": "../calibrated_history/simulation.apsimx",
+  "parent_model_sha256": "a3466c98bacf1abac2772425175e6abb4d0c8b28fe364a5cc13f84716c4cf390",
+  "model_sha256": "a41baefcb78c21d307689be5f0dc8e7ed45c0664ce2e96a4a4796d987ce1e856",
+  "weather_sha256": "8af5fd282b11ccc632286fd9c3e6a509bd070e8481b64882dabaaaf05ff33773",
+  "change": "Removed forced March 1 reset to phase 3 in all ten RotationManagers for every year",
+  "parameter_status": "Inherited final cultivar parameters, not refitted for this manager variant",
+  "evaluation": "runs/analysis/apsim_full_history_test_20261106/comparison.json",
+  "evaluation_scope": "Retrospective all-field yield checks improved; legacy perennial phase-date errors increased"
+}
